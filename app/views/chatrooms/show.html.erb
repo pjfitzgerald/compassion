@@ -1,0 +1,11 @@
+
+
+<% if @message.user_id == current_user %>
+  <div class="chat-messagebox chat-user">
+    
+  </div>
+<% else %>
+  <div class="chat-messagebox chat-partner">
+    
+  </div>
+<% end %>
