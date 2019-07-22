@@ -8,6 +8,14 @@
   padding: 100px;
 }
 
+.landing h2, .landing-about h2 {
+  font-family: 'Lato', sans-serif;
+}
+
+.landing p, .landing-about p {
+  font-family: 'Fira Sans', sans-serif;
+}
+
 .welcome-card {
   display: flex;
   flex-direction: column;
@@ -81,7 +89,7 @@
   border: none;
 }
 
-.far, .fas, .about-card h4 {
+.about-card i, .about-card i, .about-card h4 {
   color: #93D295;
 }
 
@@ -98,10 +106,10 @@
   width: 35vw;
   flex-direction: column;
   display: flex;
-  padding: 50px;
+  padding: 60px;
 }
 
-.question-about button, .question-card button {
+.question-about button {
   background: white;
   height: 40px;
   width: 150px;
@@ -120,9 +128,13 @@
   display: flex;
   flex-direction: column;
   width: 50vw;
-  height: 60vh;
-  padding: 100px;
+  margin-left: 80px;
+  height: 50vh;
+  padding: 80px;
   text-align: center;
+  align-items: center;
+  position: relative;
+  border-radius: 16px;
 }
 
 .question-text {
@@ -132,6 +144,118 @@
 .question-submit {
 
 }
+
+.question-icon {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  top: 4px;
+  left: 4px;
+  padding: 3px 9px 3px 3px;
+}
+
+.question-card i, .question-card p {
+  color: white;
+}
+
+.home-question input {
+  border: .5px solid white;
+  background: #6EAD70;
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.question-submit {
+  background: white;
+}
+
+
+.home-newchat {
+  border: 1px solid white;
+  background: transparent;
+  width: 200px;
+  padding: 10px 0px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,.2);
+  color: white;
+}
+
+.homepage-users {
+  display: flex;
+  background: red;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+
+.home-user-cards {
+  display: flex;
+  justify-content: space-around;
+  width: 60vw;
+}
+
+.home-user-card {
+  display: flex;
+  background: white;
+  width: 30vw;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.home-user-bottom {
+  display: flex;
+}
+
+.kiwi {
+  height: 100px;
+  border-radius: 50%;
+  border: 2px white solid;
+  width: 100px;
+  background: rgb(35, 153, 143);
+}
+
+.hippo {
+  height: 100px;
+  border-radius: 50%;
+  border: 2px white solid;
+  width: 100px;
+  background: rgb(230, 155, 25);
+}
+
+.dragon {
+  height: 100px;
+  border-radius: 50%;
+  border: 2px white solid;
+  width: 100px;
+  background: rgb(45, 156, 235);
+}
+
+.user-card-top {
+  background: #93D295;
+  width: 100%;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
