@@ -1,0 +1,243 @@
+<style>
+
+  /* —————————————————————————————————————
+  —————————— SIDEBAR NAVIGATION ——————————
+  ———————————————————————————————————————— */
+
+  /* —————————— CONTAINER —————————— */
+
+  .navigation-container {
+    height: 100vh;
+    width: 108px;
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    background: #93D295; /* CHANGE TO "PRIMARY" */
+  }
+
+  /* —————————— BUTTON EXPAND —————————— */
+
+  .button-expand-large {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin: auto;
+    height: 40px;
+    width: 40px;
+    top: 20px;
+    right: 0;
+    left: 0;
+    background: #93D295; /* CHANGE TO "PRIMARY" */
+    border: 3px solid white;
+    border-radius: 100%;
+    box-shadow: 0px 2px 3px rgba(0,0,0,.2);
+    cursor: pointer;
+    transition: 0.25s;
+  }
+
+  .button-expand-large:hover {
+    box-shadow: 0px 2px 3px rgba(0,0,0,0);
+  }
+
+  .fa-plus {
+    color: white;
+    font-size: 1.25em;
+  }
+
+  /* —————————— AVATAR —————————— */
+
+  .avatar-medium {
+    background: url(../app/assets/images/avatar-medium-koala.png) no-repeat;
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+    border: 1px solid red;
+  }
+
+  /* —————————————————————————————————
+  —————————— DASHBOARD BODY ——————————
+  ———————————————————————————————————— */
+
+  .dashboard-body {
+    position: relative;
+    margin-left: 150px;
+    width: auto;
+    overflow: auto;
+    z-index: 1;
+  }
+
+</style>
+
+<div class="dashboard-container">
+
+  <div class="navigation-container">
+    <div class="button-expand-large">
+      <i class="fas fa-plus"></i>
+    </div>
+    <div class="avatar-medium">
+      <img src="" alt="">
+    </div>
+    <div class="icon-home-white"></div>
+    <div class="icon-new-chat-white"></div>
+    <div class="icon-ongoing-conversation-white"></div>
+    <div class="icon-journal-white"></div>
+    <div class="icon-settings-white"></div>
+  </div> <!-- End of .navigation-closed-container -->
+
+  <!-- BODY -->
+  <div class="dashboard-body">
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+      <h1>Kind Koala</h1>
+      <ul>
+        <li><strong>13</strong> ongoing conversations</li>
+        <li><strong>Not</strong> answered todays questions</li>
+        <li><strong>2</strong> days since last journal entry</li>
+      </ul>
+    </div> <!-- End of .topbar -->
+
+    <!-- QUESTION-HEADER -->
+    <div class="question-header-container">
+      <div class="question-box">
+        <div class="icon-back"></div>
+        <div class="icon-info"></div>
+        <h1>What is your favourite season of the year?</h1>
+        <h4>Question 3/3</h4>
+        <form action="">
+          <input type="text" placeholder="Write your answer here...">
+          <input type="submit">
+        </form>
+        <button>Start new chat</button>
+      </div>
+    </div> <!-- End of .question-header-container -->
+
+    <!-- ONGOING CONVERSATIONS -->
+    <div class="ongoing-container">
+      <h1>Ongoing conversations</h1>
+      <input type="text" class="search">
+      <div class="ongoing-slider">
+        <div class="icon-arrow"></div>
+        <!-- Card #1 -->
+        <div class="ongoing-card-1">
+          <div class="ongoing-card-top">
+            <div class="avatar-large"></div>
+          </div>
+          <div class="ongoing-card-middle">
+            <h2>Tired Tiger</h2>
+            <p>Started conversation 07.07.2019</p>
+          </div>
+          <div class="ongoing-card-bottom">
+            <button class="button-primary">Continue</button>
+            <button class="button-secondary">End</button>
+          </div>
+        </div>
+        <!-- Card #2 -->
+        <div class="ongoing-card-2">
+          <div class="ongoing-card-top">
+            <div class="avatar-large"></div>
+          </div>
+          <div class="ongoing-card-middle">
+            <h2>Lazy Lion</h2>
+            <p>Started conversation 07.07.2019</p>
+          </div>
+          <div class="ongoing-card-bottom">
+            <button class="button-primary">Continue</button>
+            <button class="button-secondary">End</button>
+          </div>
+        </div>
+        <!-- Card #3 -->
+        <div class="ongoing-card-3">
+          <div class="ongoing-card-top">
+            <div class="avatar-large"></div>
+          </div>
+          <div class="ongoing-card-middle">
+            <h2>Polite Panda</h2>
+            <p>Started conversation 07.07.2019</p>
+          </div>
+          <div class="ongoing-card-bottom">
+            <button class="button-primary">Continue</button>
+            <button class="button-secondary">End</button>
+          </div>
+        </div>
+        <div class="icon-arrow"></div>
+      </div>
+    </div> <!-- End of .ongoing-container -->
+
+    <!-- JOURNAL -->
+    <div class="journal-container">
+      <!-- NEW ENTRY -->
+      <div class="new-journal-entry">
+        <div class="new-journal-entry-top">
+          <h1>Todays journal entry</h1>
+          <p>07.07.2019</p>
+        </div>
+        <div class="new-journal-entry-bottom">
+          <form action="">
+            <input type="text" class="label" placeholder="Title">
+            <input type="text" class="text-area" placeholder="Your text goes here">
+            <input type="text" class="add-photo">
+            <input type="submit">
+          </form>
+        </div>
+      </div>
+      <!-- LATEST ENTRIES -->
+      <div class="latest-journal-entries">
+        <div class="latest-journal-entries-first">
+          <h2>Bad Tinderdate</h2>
+          <h4>07.07.2019</h4>
+          <p>Last night I went out on a Tinderdate. It sucked horrendously because …</p>
+          <button class="secondary">Read</button>
+        </div>
+        <div class="latest-journal-entries-second">
+          <h2>Good Sunday</h2>
+          <h4>06.06.2019</h4>
+          <p>I woke up this Sunday feeling great. I made myself a big breakfast, wen …</p>
+          <button class="secondary">Read</button>
+        </div>
+        <div class="latest-journal-entries-third">
+          <h2>Social Media hysteria</h2>
+          <h4>05.05.2019</h4>
+          <p>What’s up with social media being the most important aspect of ever …</p>
+          <button class="secondary">Read</button>
+        </div>
+      </div>
+    </div> <!-- End of .journal-container -->
+
+    <div class="text-container">
+      <h1>Talk to someone</h1>
+      <p>There are currently 437 people online. I bet they all would like to talk to you! Start a new chat and see what a new conversation can bring you.</p>
+      <button class="primary">Start new chat</button>
+    </div> <!-- End of .text-container -->
+
+    <div class="footer-container">
+      <div class="logo">
+        <div class="logo-emblem-white"></div>
+        <h2>Compassion</h2>
+        <p>We can all help.</p>
+        <p>Talk. Experience. Share.</p>
+      </div>
+      <div class="follow">
+        <div class="icon-facebook"></div>
+        <div class="icon-instagram"></div>
+        <div class="icon-twitter"></div>
+      </div>
+      <div class="legal">
+        <ul>
+          <li>Terms</li>
+          <li>Privacy</li>
+        </ul>
+      </div>
+      <div class="project">
+        <ul>
+          <li>Designguide</li>
+          <li>Components</li>
+        </ul>
+      </div>
+    </div>
+
+  </div> <!-- End of .dashboard-body -->
+
+</div> <!-- End of .dashboard-container -->
