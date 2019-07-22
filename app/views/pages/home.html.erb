@@ -42,19 +42,74 @@
 <div class="landing-questions">
   <div class="question-about">
     <h3>Get the Conversation Going</h3>
+    <br>
     <p>We’ll help you get the conversation going by asking three questions each day. These answers will serve as the initial… lorem ipsum</p>
     <button class="landing-signup">Signup</button>
   </div>
   <div class="question-card">
-    <div class="curvedarrow"></div>
+    <span class="question-icon">
+      <i class="fas fa-reply fa-lg"></i>
+      <i class="far fa-question-circle fa-lg"></i>
+    </span>
     <h3>What is your favorite season of the year?</h3>
     <p>Question 3/3</p>
     <%= render 'form' %>
-    <button>Start new chat</button>
+    <br>
+    <button disabled class="home-newchat">Start new chat</button>
   </div>
 </div>
 
-
+<div class="homepage-users">
+  <div class="home-user-top">
+    <h4>Jump back in where you left off!</h4>
+  </div>
+  <br><br>
+  <div class="home-user-bottom">
+    <i class="fas fa-caret-left fa-5x"></i>
+    <div class="home-user-cards">
+      <div class="home-user-card">
+        <div class="user-card-top">
+          <i class="fas fa-kiwi-bird fa-3x kiwi"></i>
+        </div>
+        <div class="home-card-content">
+          <h3>Tired Tiger</h3>
+          <p>Started conversation 07.07.19</p>
+        </div>
+        <div class="home-card-buttons">
+          <button>Continue</button>
+          <button>End</button>
+        </div>
+      </div>
+      <div class="home-user-card">
+        <div class="user-card-top">
+          <i class="fas fa-hippo fa-3x hippo"></i>
+        </div>
+        <div class="home-card-content">
+          <h3>Tired Tiger</h3>
+          <p>Started conversation 07.07.19</p>
+        </div>
+        <div class="home-card-buttons">
+          <button>Continue</button>
+          <button>End</button>
+        </div>
+      </div>
+      <div class="home-user-card">
+        <div class="user-card-top">
+          <i class="fas fa-dragon fa-3x dragon"></i>
+        </div>
+        <div class="home-card-content">
+          <h3>Tired Tiger</h3>
+          <p>Started conversation 07.07.19</p>
+        </div>
+        <div class="home-card-buttons">
+          <button>Continue</button>
+          <button>End</button>
+        </div>
+      </div>
+    </div>
+    <i class="fas fa-caret-right fa-5x"></i>
+  </div>
+</div>
 
 
 
