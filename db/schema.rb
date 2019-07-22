@@ -39,21 +39,6 @@ ActiveRecord::Schema.define(version: 2019_07_22_122457) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
-  create_table "questions", force: :cascade do |t|
-    t.string "answer"
-    t.bigint "survey_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["survey_id"], name: "index_questions_on_survey_id"
-  end
-
-  create_table "surveys", force: :cascade do |t|
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_surveys_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -69,6 +54,4 @@ ActiveRecord::Schema.define(version: 2019_07_22_122457) do
   add_foreign_key "chatrooms", "matches"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
-  add_foreign_key "questions", "surveys"
-  add_foreign_key "surveys", "users"
 end
