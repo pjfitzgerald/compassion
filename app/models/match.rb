@@ -1,4 +1,4 @@
 class Match < ApplicationRecord
   belongs_to :user
-  belongs_to :match, class_name: "User"
+  belongs_to :partner, class_name: "User"
 end
