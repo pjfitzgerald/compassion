@@ -5,9 +5,26 @@
   height: 100vh;
 }
 
+.back-btn {
+  position: absolute;
+  margin: 24px;
+  top: 0;
+  left: 45%;
+}
+
+.back-btn a {
+  color: #8c968d;
+  background: transparent;
+  border: none;
+}
+
+.back-btn a:hover {
+  color: black;
+}
+
 
 .login-container img {
-  height: 100%;
+  height: 100vh;
   width: 45%;
 }
 
@@ -131,12 +148,22 @@ abbr[title="required"] {
   color: #4b524b;
 }
 
+.signup-logo {
+  position: absolute;
+  margin: 16px;
+  top: 0;
+  left: 45%;
+}
 
+.signup-logo img {
+  margin: auto;
+  height: 50px;
+  width: 50px;
+}
 
-
-
-
-
+.signup-logo img:hover {
+  filter: drop-shadow(16px 16px 20px blue) invert(50%);
+}
 
 
 
