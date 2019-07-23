@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :users do
     resources :matches do
-      resources :chatrooms, only: [:show]
+      resources :chatrooms, only: [:show], as: :chatroom # not working?
     end
   end
   # add journal here?
