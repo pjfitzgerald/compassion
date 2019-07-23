@@ -51,6 +51,7 @@ matches = Match.all
 matches.each do |match|
   test_messages.each do |message|
     Message.create!(user: match.user, chatroom: match.chatroom, content: message)
+    Message.create!(user: match.partner, chatroom: match.chatroom, content: message)
   end
 end
 
