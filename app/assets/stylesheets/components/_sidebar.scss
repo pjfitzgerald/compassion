@@ -1,0 +1,186 @@
+  /* —————————————————————————————————————
+  —————————— SIDEBAR NAVIGATION ——————————
+  ———————————————————————————————————————— */
+
+  /* —————————— CONTAINER —————————— */
+
+  .navigation-container {
+    height: 100vh;
+    width: 108px;
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    background: $primary-color;
+    transition: .5s;
+  }
+
+  /* —————————— BUTTON EXPAND —————————— */
+
+  .button-expand-large {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin: auto;
+    height: 40px;
+    width: 40px;
+    top: 2.5vh;
+    right: 0;
+    left: 0;
+    background: $primary-color;
+    border: 3px solid white;
+    border-radius: 100%;
+    box-shadow: 0px 2px 3px rgba(0,0,0,.2);
+    cursor: pointer;
+    transition: 0.25s;
+  }
+
+  .button-expand-large:hover {
+    box-shadow: 0px 2px 3px rgba(0,0,0,0);
+  }
+
+  .fa-plus {
+    color: $white !important;
+    font-size: 1.25em;
+  }
+
+  /* —————————— AVATAR —————————— */
+
+  .avatar-medium-user {
+    height: 80px;
+    width: 80px;
+    margin-top: 12vh;
+    border-radius: 100%;
+    padding: 0px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    transition: .5s;
+  }
+
+  .avatar-medium-user img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* —————————— ICONS —————————— */
+
+  .sidebar-icons {
+    min-height: 70px;
+    max-height: 15vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .5s;
+  }
+
+  .sidebar-icons:first-child {
+    margin-top: 15vh;
+  }
+
+  .active, .sidebar-icons:hover {
+    background: $primary-color-dark;
+  }
+
+  .sidebar-icons .fa-home,
+  .sidebar-icons .fa-comment,
+  .sidebar-icons .fa-comments,
+  .sidebar-icons .fa-book,
+  .sidebar-icons .fa-cog {
+    font-size: 2.25em;
+    color: white;
+    transition: .25s;
+  }
+
+  .sidebar-icons .fa-home:hover,
+  .sidebar-icons .fa-comment:hover,
+  .sidebar-icons .fa-comments:hover,
+  .sidebar-icons .fa-book:hover,
+  .sidebar-icons .fa-cog:hover {
+    font-size: 2.3em;
+  }
+
+  /* —————————— NEW CHAT —————————— */
+
+  .icon-new-chat-white .fa-comment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icon-new-chat-white .fa-plus {
+    font-size: .4em;
+    position: absolute;
+    margin-top: -1px;
+  }
+
+  /* —————————— SETTINGS —————————— */
+
+  .icon-settings-white {
+    position: absolute;
+    margin-top: 5vh;
+    bottom: 0;
+  }
+
+  /* —————————— USERNAME —————————— */
+
+  .username {
+    color: $white;
+    text-align: center;
+    margin-top: 20px;
+    transition: .25s;
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+
+  /* —————————— SIDEBAR-TEXT —————————— */
+
+  .sidebar-text {
+    display: none;
+  }
+
+  .sidebar-icons h4 {
+    position: absolute;
+    color: white;
+    font-size: 1.3em;
+    left: 80px;
+  }
+
+  /* —————————— ONCLICK —————————— */
+
+  .sidebar-minify-expand {
+    width: 200px;
+    transition: .5s;
+  }
+
+  .avatar-scale {
+    transform: scale(1.5);
+    transition: .5s;
+  }
+
+  .button-rotate {
+    transform: rotate(45deg);
+  }
+
+  .username-hidden {
+    opacity: 0;
+    transition: opacity .25s;
+  }
+
+  .icon-move-left {
+    margin-left: -120px;
+    transition: .5s;
+  }
+
+  .show {
+    display: block;
+  }
+
+  .body-move-right {
+    margin-left: 250px !important;
+  }
