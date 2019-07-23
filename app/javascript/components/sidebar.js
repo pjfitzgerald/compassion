@@ -23,7 +23,7 @@ function expandOrMinify() {
     } else {
       setTimeout(function timer(){
         sidebarText[i].classList.toggle("show");
-      }, 200);
+      }, 100); // CHANGE THIS FOR TIMER-DELAY
     };
   };
 
