@@ -4,6 +4,5 @@ Rails.application.routes.draw do
   resources :users do
     resources :chatrooms, only: [:show]
   end
-
   # add journal here?
 end
