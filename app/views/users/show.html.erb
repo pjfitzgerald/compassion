@@ -1,118 +1,68 @@
 <style>
 
-  /* —————————————————————————————————————
-  —————————— SIDEBAR NAVIGATION ——————————
-  ———————————————————————————————————————— */
-
-  /* —————————— CONTAINER —————————— */
-
-  .navigation-container {
-    height: 100vh;
-    width: 108px;
-    position: fixed;
-    padding: 0;
-    margin: 0;
-    top: 0;
-    background: #93D295; /* CHANGE TO "PRIMARY" */
-  }
-
-  /* —————————— BUTTON EXPAND —————————— */
-
-  .button-expand-large {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    margin: auto;
-    height: 40px;
-    width: 40px;
-    top: 20px;
-    right: 0;
-    left: 0;
-    background: #93D295; /* CHANGE TO "PRIMARY" */
-    border: 3px solid white;
-    border-radius: 100%;
-    box-shadow: 0px 2px 3px rgba(0,0,0,.2);
-    cursor: pointer;
-    transition: 0.25s;
-  }
-
-  .button-expand-large:hover {
-    box-shadow: 0px 2px 3px rgba(0,0,0,0);
-  }
-
-  .fa-plus {
-    color: white;
-    font-size: 1.25em;
-  }
-
-  /* —————————— AVATAR —————————— */
-
-  .avatar-medium {
-    background: url(../app/assets/images/avatar-medium-koala.png) no-repeat;
-    background-size: cover;
-    height: 50px;
-    width: 50px;
-    border: 1px solid red;
-  }
-
   /* —————————————————————————————————
   —————————— DASHBOARD BODY ——————————
   ———————————————————————————————————— */
 
   .dashboard-body {
     position: relative;
-    margin-left: 150px;
+    margin-left: 108px;
     width: auto;
     overflow: auto;
     z-index: 1;
+    transition: .5s;
   }
+
+  /* —————————————————————————————————
+  —————————————— TOPBAR ——————————————
+  ———————————————————————————————————— */
+
+  .topbar {
+    width: 100%;
+    height: 125px;
+    text-align: center;
+    background: white;
+    box-shadow: 0px 2px 3px rgba(0,0,0,.1);
+    overflow: hidden;
+  }
+
+  .topbar h1 {
+    color: #222;
+    padding-top: 20px;
+    font-weight: 700;
+  }
+
+  .topbar-info {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-left: 30px;
+  }
+
+  .topbar-info p {
+    margin-top: 10px;
+    color: #222;
+  }
+
 
 </style>
 
+<script></script>
+
 <div class="dashboard-container">
 
-  <div class="navigation-container">
-    <div class="button-expand-large">
-      <i class="fas fa-plus"></i>
-    </div>
-    <div class="avatar-medium">
-      <img src="" alt="">
-    </div>
-    <div class="icon-home-white"></div>
-    <div class="icon-new-chat-white"></div>
-    <div class="icon-ongoing-conversation-white"></div>
-    <div class="icon-journal-white"></div>
-    <div class="icon-settings-white"></div>
-  </div> <!-- End of .navigation-closed-container -->
+  <!-- SIDEBAR: app/views/users/_sidebar.html.erb -->
+  <%= render "sidebar" %>
 
   <!-- BODY -->
   <div class="dashboard-body">
 
-    <!-- TOPBAR -->
-    <div class="topbar">
-      <h1>Kind Koala</h1>
-      <ul>
-        <li><strong>13</strong> ongoing conversations</li>
-        <li><strong>Not</strong> answered todays questions</li>
-        <li><strong>2</strong> days since last journal entry</li>
-      </ul>
-    </div> <!-- End of .topbar -->
+    <!-- TOPBAR: app/views/users/topbar.html.erb -->
+    <%= render "topbar" %>
 
-    <!-- QUESTION-HEADER -->
-    <div class="question-header-container">
-      <div class="question-box">
-        <div class="icon-back"></div>
-        <div class="icon-info"></div>
-        <h1>What is your favourite season of the year?</h1>
-        <h4>Question 3/3</h4>
-        <form action="">
-          <input type="text" placeholder="Write your answer here...">
-          <input type="submit">
-        </form>
-        <button>Start new chat</button>
-      </div>
-    </div> <!-- End of .question-header-container -->
+    <!-- QUESTION-HEADER: app/views/users/questionbox.html.erb -->
+    <%= render "questionbox" %>
 
     <!-- ONGOING CONVERSATIONS -->
     <div class="ongoing-container">
