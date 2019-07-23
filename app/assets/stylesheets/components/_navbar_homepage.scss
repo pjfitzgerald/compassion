@@ -21,8 +21,8 @@
   font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
-.navbar-logo a:hover h3 {
-  color: #D29393;
+.navbar-logo a:hover h3, .navbar-logo a:hover img {
+  filter: hue-rotate(45deg);
 }
 
 .nav-item .nav-link{
