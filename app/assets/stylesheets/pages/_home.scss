@@ -1,18 +1,24 @@
 // Specific CSS for your home-page
+.home-container{
+  position: relative;
+  min-height:  100vh;
+}
+
 .landing {
   display: flex;
   color: white;
   width: 100%;
   height: 80vh;
   background-image: url("https://images.unsplash.com/photo-1528872042734-8f50f9d3c59b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+  background-size: cover;
   padding: 100px;
 }
 
-.landing h2, .landing-about h2 {
+.landing h2, .landing-about h2,  {
   font-family: 'Lato', sans-serif;
 }
 
-.landing p, .landing-about p {
+.landing p, .landing-about p,  {
   font-family: 'Fira Sans', sans-serif;
 }
 
@@ -107,6 +113,7 @@
   flex-direction: column;
   display: flex;
   padding: 60px;
+  margin-top: 60px;
 }
 
 .question-about button {
@@ -129,12 +136,13 @@
   flex-direction: column;
   width: 50vw;
   margin-left: 80px;
-  height: 50vh;
+  height: 40vh;
   padding: 80px;
   text-align: center;
   align-items: center;
   position: relative;
   border-radius: 16px;
+  margin-top: 50px;
 }
 
 .question-text {
@@ -152,7 +160,7 @@
   justify-content: space-between;
   top: 4px;
   left: 4px;
-  padding: 3px 9px 3px 3px;
+  padding: 33px 39px 33px 33px;
 }
 
 .question-card i, .question-card p {
@@ -184,7 +192,7 @@
 
 .homepage-users {
   display: flex;
-  background: red;
+  background: white;
   height: 80vh;
   justify-content: center;
   align-items: center;
@@ -211,37 +219,188 @@
   display: flex;
 }
 
-.kiwi {
+.kiwi, .hippo, .dragon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100px;
   border-radius: 50%;
   border: 2px white solid;
+  box-shadow: 1px 1px 3px rgba(0,0,0,.4);
   width: 100px;
+}
+
+.kiwi {
   background: rgb(35, 153, 143);
 }
 
 .hippo {
-  height: 100px;
-  border-radius: 50%;
-  border: 2px white solid;
-  width: 100px;
   background: rgb(230, 155, 25);
 }
 
 .dragon {
-  height: 100px;
-  border-radius: 50%;
-  border: 2px white solid;
-  width: 100px;
   background: rgb(45, 156, 235);
 }
 
 .user-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
   background: #93D295;
-  width: 100%;
+  width: 17vw;
+  height: 16vh;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
 
+.caret {
+  color: #7AB97C;
+  align-self: center;
+}
+
+.home-card-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 17vw;
+  height: 8vh;
+  border-left: 2px solid #93D295;
+  border-bottom: 2px solid #93D295;
+  border-right: 2px solid #93D295;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.home-card-content {
+  display: flex;
+  text-align: left;
+  line-height: 10px;
+  flex-direction: column;
+  width: 17vw;
+  padding: 25px 7px 10px;
+  border: 2px solid #93D295;
+}
+
+.home-card-buttons button {
+  color: white;
+  border: none;
+  border-radius: 5px;
+  height: 4vh;
+  width: 6vw;
+  box-shadow: 1px 1px 3px rgba(0,0,0,.2);
+}
+
+.continue {
+  background: #93D295;
+}
+
+.end {
+  background: #D29393;
+}
+
+.home-card-content p {
+  color: #939393;
 }
 
 
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: transparent;
+  border: 1.5px solid #93D295;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.dot:hover {
+  background-color: #93D295;
+}
+
+.caret:hover {
+  color: rgba(26, 66, 21, .8);
+}
+
+.banner {
+  height: 80vh;
+  width: 100%;
+}
+
+
+.footer, .footer-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+.footer-text {
+  display: flex;
+  color: white;
+  justify-content: space-around;
+  padding-bottom: 80px;
+}
+
+.footer-right {
+  display: flex;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 12px;
+  width: 33%;
+}
+
+.footer-left-tag {
+  line-height: 3px;
+  margin-top: 10px;
+}
+
+
+.footer-middle {
+  display: flex;
+  width: 33%;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 10vw;
+}
+
+.footer-middle-icons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-middle-icons i {
+  margin: 10px;
+}
+
+
+.footer-right {
+  display: flex;
+  justify-content: space-around;
+  padding-left: 50px;
+  padding-right: 50px;
+  width: 33%;
+}
+
+.footer-right h3 {
+  display: flex;
+}
+
+li span {
+  position: relative;
+  left: -5px;
+}
 
 
 
