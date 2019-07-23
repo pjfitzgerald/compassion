@@ -4,9 +4,5 @@ Rails.application.routes.draw do
   resources :users do
     resources :chatrooms, only: [:show]
   end
-
-  namespace :user do
-      root :to => "pages#survey"
-  end
   # add journal here?
 end
