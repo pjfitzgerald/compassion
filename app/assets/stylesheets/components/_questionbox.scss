@@ -1,0 +1,95 @@
+/* —————————————————————————————————
+  —————————— QUESTION HEADER —————————
+  ———————————————————————————————————— */
+
+  .question-header-container {
+    width: 100%;
+    height: 489px;
+    background: $primary-color;
+    background: radial-gradient(#9fd4a0, #7db37f);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .question-box {
+    width: 65%;
+    height: 329px;
+    background: rgba(80, 150, 80, .5);
+    border-radius: 30px;
+    text-align: center;
+    color: white;
+  }
+
+  .question-box-icons {
+    position: absolute;
+    display: flex;
+    font-size: 1.75em;
+    padding: 15px;
+    justify-content: space-between;
+    width: inherit;
+  }
+
+  .question-box-icons i {
+    cursor: pointer;
+  }
+
+  .question-box h1 {
+    padding: 70px 30px 0px 30px;
+    font-size: calc(20px + .5vw);
+  }
+
+  .question-box h4 {
+    padding-top: 10px;
+    font-size: calc(12px + .5vw);
+    font-weight: 700;
+  }
+
+  .question-box form {
+    padding-top: 2vw;
+    display: flex;
+    justify-content: center;
+  }
+
+  .question-box form input:first-child {
+    width: 60%;
+    height: 40px;
+    border-radius: 15px 0px 0px 15px;
+    border: 1px solid white;
+    background: rgba(80, 150, 80, .5);
+    outline: none;
+    padding: 15px;
+    color: white;
+  }
+
+  .question-box form input::placeholder {
+    color: white;
+  }
+
+  .question-box form button {
+    width: 30px;
+    height: 40px;
+    border-radius: 0px 15px 15px 0px;
+    border: 1px solid white;
+    background: white;
+    color: #509650;
+    font-size: 2em;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .button-primary {
+    width: 190px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(80, 150, 80, .1);
+    border: 1px solid white;
+    color: white;
+    margin-top: 2vw;
+    transition: .25s;
+  }
+
+  .button-primary:hover {
+    background: rgba(80, 150, 80, .5);
+  }

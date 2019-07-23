@@ -6,50 +6,63 @@
 
   .dashboard-body {
     position: relative;
-    margin-left: 150px;
+    margin-left: 108px;
     width: auto;
     overflow: auto;
     z-index: 1;
-    transition: 1s;
+    transition: .5s;
   }
+
+  /* —————————————————————————————————
+  —————————————— TOPBAR ——————————————
+  ———————————————————————————————————— */
+
+  .topbar {
+    width: 100%;
+    height: 125px;
+    text-align: center;
+    background: white;
+    box-shadow: 0px 2px 3px rgba(0,0,0,.1);
+    overflow: hidden;
+  }
+
+  .topbar h1 {
+    color: #222;
+    padding-top: 20px;
+    font-weight: 700;
+  }
+
+  .topbar-info {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-left: 30px;
+  }
+
+  .topbar-info p {
+    margin-top: 10px;
+    color: #222;
+  }
+
 
 </style>
 
-<script>
-
-</script>
+<script></script>
 
 <div class="dashboard-container">
+
   <!-- SIDEBAR: app/views/users/_sidebar.html.erb -->
   <%= render "sidebar" %>
 
   <!-- BODY -->
   <div class="dashboard-body">
 
-    <!-- TOPBAR -->
-    <div class="topbar">
-      <h1>Kind Koala</h1>
-      <ul>
-        <li><strong>13</strong> ongoing conversations</li>
-        <li><strong>Not</strong> answered todays questions</li>
-        <li><strong>2</strong> days since last journal entry</li>
-      </ul>
-    </div> <!-- End of .topbar -->
+    <!-- TOPBAR: app/views/users/topbar.html.erb -->
+    <%= render "topbar" %>
 
-    <!-- QUESTION-HEADER -->
-    <div class="question-header-container">
-      <div class="question-box">
-        <div class="icon-back"></div>
-        <div class="icon-info"></div>
-        <h1>What is your favourite season of the year?</h1>
-        <h4>Question 3/3</h4>
-        <form action="">
-          <input type="text" placeholder="Write your answer here...">
-          <input type="submit">
-        </form>
-        <button>Start new chat</button>
-      </div>
-    </div> <!-- End of .question-header-container -->
+    <!-- QUESTION-HEADER: app/views/users/questionbox.html.erb -->
+    <%= render "questionbox" %>
 
     <!-- ONGOING CONVERSATIONS -->
     <div class="ongoing-container">
