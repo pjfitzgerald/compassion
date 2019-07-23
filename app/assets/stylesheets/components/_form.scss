@@ -182,16 +182,24 @@ abbr[title="required"] {
   box-shadow: 0px 2px 3px rgba(0,0,0,.2);
 }
 
+.copyright-tag {
+  position: absolute;
+  bottom: 16px;
+  color: #939393;
+  right: 19%;
+}
 
+.login-form a, .signup-form a, .forgot-form a {
+  color: #2FC7FF;
+}
 
+.form-actions input {
+  color: white;
+}
 
-
-
-
-
-
-
-
+.forgot-form .email label {
+  font-size: 24px;
+}
 
 
 
