@@ -7,8 +7,12 @@
       <p>Here you can meet other people and talk about your everyday life. You will anonymously be able to connect with people all around the world and talk about whatever you like.</p>
       <br>
       <div class="login-singup">
-        <button class="login"><%= link_to "Login", new_user_session_path %></button>
-        <button class="signup"><%= link_to "Signup", new_user_registration_path %></button>
+        <%= link_to new_user_session_path do %>
+          <button class="login">Login</button>
+        <% end %>
+        <%= link_to new_user_registration_path do %>
+          <button class="signup">Signup</button>
+        <% end %>
       </div>
     </div>
   </div>
@@ -46,7 +50,9 @@
       <h3>Get the Conversation Going</h3>
       <br>
       <p>We’ll help you get the conversation going by asking three questions each day. These answers will serve as the initial… lorem ipsum</p>
-      <button class="landing-signup">Signup</button>
+      <%= link_to new_user_registration_path do %>
+        <button class="landing-signup">Signup</button>
+      <% end %>
     </div>
     <div class="question-card">
       <span class="question-icon">
