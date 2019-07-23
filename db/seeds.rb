@@ -43,12 +43,12 @@ matched_users = User.limit(2)
 Match.create!(user: matched_users[0], partner: matched_users[1])
 Chatroom.create!(match: Match.first)
 
-# matches = Match.all
-# matches.each do |match|
-#   test_messages.each do |message|
-#     Message.create!(user: match.user, chatroom: Chatroom.find_by(match_id: match.id), content: message)
-#   end
-# end
+matches = Match.all
+matches.each do |match|
+  test_messages.each do |message|
+    Message.create!(user: match.user, chatroom: match.chatroom, content: message)
+  end
+end
 
 
 
