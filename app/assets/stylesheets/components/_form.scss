@@ -23,17 +23,17 @@
 }
 
 
-.login-container img {
+.login-container img, .signup-container img, .forgot-container img {
   height: 100vh;
   width: 45%;
 }
 
-.login-container, .sign-up-container {
+.login-container, .sign-up-container, .forgot-container {
   display: flex;
   height: 100%;
 }
 
-.login-form form {
+.login-form form, .forgot-form form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,7 +41,7 @@
 }
 
 
-.login-form {
+.login-form, .forgot-form {
   display: flex;
   height: 100vh;
   width: 55%;
@@ -53,13 +53,13 @@
   background: white;
 }
 
-.login-container h2, .signup-container h2 {
+.login-container h2, .signup-container h2, .forgot-container h2 {
   font-family: 'Lato', sans-serif;
   display: flex;
   justify-content: center;
 }
 
-.login-container p, .signup-container p {
+.login-container p, .signup-container p, .forgot-container p {
   color: #93D295;
 }
 
@@ -75,9 +75,16 @@
   box-shadow: 0px 2px 3px rgba(0,0,0,.2);
 }
 
-.login-container a {
+.login-container a, .forgot-container a {
   line-height: 5px;
 }
+
+.forgot-form .email:not(input) {
+  padding: 30px;
+  color: #93D295;
+}
+
+
 
 
 .login-form .email, .login-form .password {
@@ -99,10 +106,7 @@ abbr[title="required"] {
   box-shadow: 1px 1px 1px rgba(0,0,0,.1);
 }
 
-.signup-container img {
-  height: 100vh;
-  width: 45%;
-}
+
 
 .signup-container {
   display: flex;
@@ -165,6 +169,18 @@ abbr[title="required"] {
   filter: drop-shadow(16px 16px 20px blue) invert(50%);
 }
 
+.forgot-btn {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  height: 40px;
+  width: 300px;
+  background: #93D295;
+  border-radius: 8px;
+  box-shadow: 0px 2px 3px rgba(0,0,0,.2);
+}
 
 
 
