@@ -8,6 +8,31 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-logo a {
+  display: flex;
+  align-items: center;
+  width: 70px;
+  margin: 10px;
+  text-decoration:none;
+}
+
+.navbar-logo h3 {
+  color: #93D295;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.navbar-logo a:hover h3 {
+  color: #D29393;
+}
+
+.nav-item .nav-link{
+  background: white;
+}
+
+.nav-link .active {
+  color: #93D295;
+}
+
+.dropdown-item {
+  color: #93D295;
 }
