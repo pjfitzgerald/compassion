@@ -1,64 +1,164 @@
-<div class="landing">
-  <div class="welcome-card">
-    <h2>Welcome to Compassion</h2>
-    <br>
-    <p>Here you can meet other people and talk about your everyday life. You will anonymously be able to connect with people all around the world and talk about whatever you like.</p>
-    <br>
-    <div class="login-singup">
-      <button class="login">Login</button>
-      <button class="signup">Signup</button>
+<div class="home-container">
+  <div class="landing">
+    <div class="welcome-card">
+      <h2>Welcome to Compassion</h2>
+      <br>
+      <p>Here you can meet other people and talk about your everyday life. You will anonymously be able to connect with people all around the world and talk about whatever you like.</p>
+      <br>
+      <div class="login-singup">
+        <button class="login">Login</button>
+        <button class="signup">Signup</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="landing-about">
+    <div class="about-top">
+      <h2>What we offer</h2>
+      <p>Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.</p>
+    </div>
+    <div class="about-cards">
+      <div class="about-card">
+        <i class="far fa-comments fa-3x"></i>
+        <br>
+        <h4>Conversate</h4>
+        <p>By the same illusion which lifts the horizon of the sea to the level of the spectator on a hillside.</p>
+      </div>
+      <div class="about-card">
+        <i class="far fa-comment-alt fa-3x"></i>
+        <br>
+        <h4>Jump right back in</h4>
+        <p>By the same illusion which lifts the horizon of the sea to the level of the spectator on a hillside.</p>
+      </div>
+      <div class="about-card">
+        <i class="fas fa-book fa-3x"></i>
+        <br>
+        <h4>Keep a journal</h4>
+        <p>By the same illusion which lifts the horizon of the sea to the level of the spectator on a hillside.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="landing-questions">
+    <div class="question-about">
+      <h3>Get the Conversation Going</h3>
+      <br>
+      <p>We’ll help you get the conversation going by asking three questions each day. These answers will serve as the initial… lorem ipsum</p>
+      <button class="landing-signup">Signup</button>
+    </div>
+    <div class="question-card">
+      <span class="question-icon">
+        <i class="fas fa-reply fa-lg"></i>
+        <i class="far fa-question-circle fa-lg"></i>
+      </span>
+      <h3>What is your favorite season of the year?</h3>
+      <p>Question 3/3</p>
+      <%= render 'form' %>
+      <br>
+      <button disabled class="home-newchat">Start new chat</button>
+    </div>
+  </div>
+
+  <div class="homepage-users">
+    <div class="home-user-top">
+      <h4>Jump right back in where you left off!</h4>
+    </div>
+    <br><br>
+    <div class="home-user-bottom">
+      <i class="fas fa-caret-left fa-5x caret"></i>
+      <div class="home-user-cards">
+        <div class="home-user-card">
+          <div class="user-card-top">
+            <i class="fas fa-kiwi-bird fa-3x kiwi"></i>
+          </div>
+          <div class="home-card-content">
+            <h3><b>Tired Tiger</b></h3>
+            <p><small>Started conversation 07.07.19</small></p>
+          </div>
+          <div class="home-card-buttons">
+            <button class="continue">Continue</button>
+            <button class="end">End</button>
+          </div>
+        </div>
+        <div class="home-user-card">
+          <div class="user-card-top">
+            <i class="fas fa-hippo fa-3x hippo"></i>
+          </div>
+          <div class="home-card-content">
+            <h3><b>Tired Tiger</b></h3>
+            <p><small>Started conversation 07.07.19</small></p>
+          </div>
+          <div class="home-card-buttons">
+            <button class="continue">Continue</button>
+            <button class="end">End</button>
+          </div>
+        </div>
+        <div class="home-user-card">
+          <div class="user-card-top">
+            <i class="fas fa-dragon fa-3x dragon"></i>
+          </div>
+          <div class="home-card-content">
+            <h3><b>Tired Tiger</b></h3>
+            <p><small>Started conversation 07.07.19</small></p>
+          </div>
+          <div class="home-card-buttons">
+            <button class="continue">Continue</button>
+            <button class="end">End</button>
+          </div>
+        </div>
+      </div>
+      <i class="fas fa-caret-right fa-5x caret"></i>
+    </div>
+    <br><br>
+    <div style="text-align:center">
+      <span class="dot" onclick=""></span>
+      <span class="dot" onclick=""></span>
+      <span class="dot" onclick=""></span>
+    </div>
+  </div>
+  <div class="banner">
+    <h4>Some banner for the journal here</h4>
+    <div class="footer">
+      <svg xmlns="http://www.w3.org/2000/svg" width="2500" height="300" viewBox="0 0 2000 311.93" preserveAspectRatio="none">
+        <path id="Path_170" data-name="Path 170" d="M0,14.886S148.507-29.34,268.066-29.429c141.18.914,299.888,38.8,400.014,61.3,116.772,26.239,308.485,7.524,406.134-27.9C1256.3-42.464,1366-4.8,1366-4.8V282.5H0Z" transform="translate(0 29.429)" fill="#93d295"/>
+      </svg>
+    <div class="footer-text">
+      <div class="footer-left">
+        <h3>Compassion</h3>
+        <div class="footer-left-tag">
+          <p><small>We can all help.</small></p>
+          <p><small>Talk, experience,share.</small></p>
+        </div>
+      </div>
+      <div class="footer-middle">
+        <h3>Follow</h3>
+        <div class="footer-middle-icons">
+          <i class="fab fa-instagram fa-3x"></i>
+          <i class="fab fa-facebook-square fa-3x"></i>
+          <i class="fab fa-twitter fa-3x"></i>
+        </div>
+      </div>
+      <div class="footer-right">
+        <div class="Legal">
+          <h3>Legal</h3>
+          <ul>
+            <li><span><small>Terms</small></span></li>
+            <li><span><small>Privacy</small></span></li>
+          </ul>
+        </div>
+        <div class="Project">
+          <h3>Project</h3>
+          <ul>
+            <li><span><small>Designguide</small></span></li>
+            <li><span><small>Components</small></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
     </div>
   </div>
 </div>
-
-
-<div class="landing-about">
-  <div class="about-top">
-    <h2>What we offer</h2>
-    <p>Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.</p>
-  </div>
-  <div class="about-cards">
-    <div class="about-card">
-      <i class="far fa-comments fa-3x"></i>
-      <br>
-      <h4>Conversate</h4>
-      <p>By the same illusion which lifts the horizon of the sea to the level of the spectator on a hillside.</p>
-    </div>
-    <div class="about-card">
-      <i class="far fa-comment-alt fa-3x"></i>
-      <br>
-      <h4>Jump right back in</h4>
-      <p>By the same illusion which lifts the horizon of the sea to the level of the spectator on a hillside.</p>
-    </div>
-    <div class="about-card">
-      <i class="fas fa-book fa-3x"></i>
-      <br>
-      <h4>Keep a journal</h4>
-      <p>By the same illusion which lifts the horizon of the sea to the level of the spectator on a hillside.</p>
-    </div>
-  </div>
-</div>
-
-<div class="landing-questions">
-  <div class="question-about">
-    <h3>Get the Conversation Going</h3>
-    <p>We’ll help you get the conversation going by asking three questions each day. These answers will serve as the initial… lorem ipsum</p>
-    <button class="landing-signup">Signup</button>
-  </div>
-  <div class="question-card">
-    <div class="curvedarrow"></div>
-    <h3>What is your favorite season of the year?</h3>
-    <p>Question 3/3</p>
-    <%= render 'form' %>
-    <button>Start new chat</button>
-  </div>
-</div>
-
-
-
-
-
-
 
 
 
