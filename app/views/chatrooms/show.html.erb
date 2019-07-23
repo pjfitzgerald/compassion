@@ -1,11 +1,12 @@
 
 
-<% if @message.user_id == current_user %>
-  <div class="chat-messagebox chat-user">
-    
-  </div>
-<% else %>
-  <div class="chat-messagebox chat-partner">
-    
-  </div>
+
+<% content_for :after_js do %>
+  <script>
+    App["chatroom_"<%= @chatroom.id %>] = App.cable.subscriptions.create({ channel: 'ChatroomsChannel', chatroom_id: <%= @chatroom.id %> }, {
+      received: (data) => {
+         console.log(data);
+      }
+    })
+  </script>
 <% end %>
