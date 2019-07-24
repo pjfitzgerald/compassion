@@ -7,13 +7,15 @@ import { scrollLastMessageIntoView } from "../components/scroll";
 
 
 
-
+scrollLastMessageIntoView();
 
 
 let button = document.querySelector(".button-expand-large");
-button.addEventListener("click", () => {
-  expandOrMinify();
-})
+if (button) {
+  button.addEventListener("click", () => {
+    expandOrMinify();
+  })  
+}
 
 
 
