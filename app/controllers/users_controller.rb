@@ -8,8 +8,8 @@ class UsersController < ApplicationController
     filepath = File.join(Rails.root, 'config', 'questions.csv')
     @questions = []
     CSV.foreach(filepath) do |row|
-      unless row.empty?
-        unless row[1].nil?
+      unless row[1].nil?
+        unless row[1].split("").count > 50
           @questions << row[1] unless row[1].empty?
         end
       end
