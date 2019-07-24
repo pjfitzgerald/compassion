@@ -1,11 +1,12 @@
+require 'open-uri'
+require 'nokogiri'
+
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :new, :update]
   before_action :authenticate_user!, only: [:update]
 
   def show
-    @questions = ["What is your favorite sport?", "What is your favorite season?",
-                  "What is your favorite dish?", "What is your favorite animal?",
-                  "What is your favorite activity?"]
+
   end
 
   # def update
