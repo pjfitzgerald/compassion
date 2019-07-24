@@ -32,7 +32,29 @@
     background: $secondary-color-dark;
   }
 
+  /* ————— DEFAULT TRANSPARENT ————— */
+
+  .button-default-transparent {
+    width: 150px;
+    height: 40px;
+    background: rgba(0,0,0,0);
+    color: white;
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid white;
+    transition: background .25s;
+  }
+
+  .button-default-transparent:hover {
+    background: rgba(0,0,0,.1);
+  }
+
+
+
+  /* ————— RULES ————— */
+
   .button-primary:focus,
-  .button-secondary:focus {
+  .button-secondary:focus,
+  .button-default-transparent:focus {
     outline: none;
   }
