@@ -3,10 +3,18 @@
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
       <div class="chat-header">
-        <% if current_user.id == @chatroom.match.user.id %>
-          <h4>Your chat with <%= @chatroom.match.partner.username.capitalize %></h4>
+        <% if current_user == @chatrooms.match.user %>
+          <% if @chatrooms.match.partner.username.nil? %>
+            <h4>Your chat with <%= @chatrooms.match.partner.email %></h4>
+          <% else %>
+            <h4>Your chat with <%= @chatrooms.match.partner.username.capitalize %></h4>
+          <% end %>
         <% else %>
-          <h4>Your chat with <%= @chatroom.match.user.username.capitalize %></h4>
+          <% if @chatrooms.match.partner.username.nil? %>
+            <h4>Your chat with <%= @chatrooms.match.user.email %></h4>
+          <% else %>
+            <h4>Your chat with <%= @chatrooms.match.user.username.capitalize %></h4>
+          <% end %>
         <% end %>
       </div>
       <div class="messages">
