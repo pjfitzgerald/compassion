@@ -1,8 +1,19 @@
+require 'csv'
+
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :new, :update]
   before_action :authenticate_user!, only: [:update]
 
   def show
+    filepath = File.join(Rails.root, 'config', 'questions.csv')
+    @questions = []
+    CSV.foreach(filepath) do |row|
+      unless row.empty?
+        unless row[1].nil?
+          @questions << row[1] unless row[1].empty?
+        end
+      end
+    end
   end
 
   # def update
