@@ -16,6 +16,10 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+# FOR MODAL
+gem 'bootstrap'
+gem 'popper_js'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
