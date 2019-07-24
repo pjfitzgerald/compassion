@@ -1,51 +1,5 @@
 <style>
 
-  /* —————————————————————————————————
-  —————————— DASHBOARD BODY ——————————
-  ———————————————————————————————————— */
-
-  .dashboard-body {
-    position: relative;
-    margin-left: 108px;
-    width: auto;
-    overflow: auto;
-    z-index: 1;
-    transition: .25s;
-  }
-
-  /* —————————————————————————————————
-  —————————————— TOPBAR ——————————————
-  ———————————————————————————————————— */
-
-  .topbar {
-    width: 100%;
-    height: 125px;
-    text-align: center;
-    background: white;
-    box-shadow: 0px 2px 3px rgba(0,0,0,.1);
-    overflow: hidden;
-  }
-
-  .topbar h1 {
-    color: #222;
-    padding-top: 20px;
-    font-weight: 700;
-  }
-
-  .topbar-info {
-    display: flex;
-    justify-content: space-around;
-    flex-flow: row wrap;
-    align-items: center;
-    margin-left: 30px;
-  }
-
-  .topbar-info p {
-    margin-top: 10px;
-    color: #222;
-  }
-
-
 </style>
 
 <script></script>
@@ -57,64 +11,12 @@
 
   <!-- BODY -->
   <div class="dashboard-body">
-
-    <!-- TOPBAR: app/views/users/topbar.html.erb -->
+    <!-- TOPBAR: app/views/users/_topbar.html.erb -->
     <%= render "topbar" %>
-
-    <!-- QUESTION-HEADER: app/views/users/questionbox.html.erb -->
+    <!-- QUESTION-HEADER: app/views/users/_questionbox.html.erb -->
     <%= render "questionbox" %>
-
-    <!-- ONGOING CONVERSATIONS -->
-    <div class="ongoing-container">
-      <h1>Ongoing conversations</h1>
-      <input type="text" class="search">
-      <div class="ongoing-slider">
-        <div class="icon-arrow"></div>
-        <!-- Card #1 -->
-        <div class="ongoing-card-1">
-          <div class="ongoing-card-top">
-            <div class="avatar-large"></div>
-          </div>
-          <div class="ongoing-card-middle">
-            <h2>Tired Tiger</h2>
-            <p>Started conversation 07.07.2019</p>
-          </div>
-          <div class="ongoing-card-bottom">
-            <button class="button-primary">Continue</button>
-            <button class="button-secondary">End</button>
-          </div>
-        </div>
-        <!-- Card #2 -->
-        <div class="ongoing-card-2">
-          <div class="ongoing-card-top">
-            <div class="avatar-large"></div>
-          </div>
-          <div class="ongoing-card-middle">
-            <h2>Lazy Lion</h2>
-            <p>Started conversation 07.07.2019</p>
-          </div>
-          <div class="ongoing-card-bottom">
-            <button class="button-primary">Continue</button>
-            <button class="button-secondary">End</button>
-          </div>
-        </div>
-        <!-- Card #3 -->
-        <div class="ongoing-card-3">
-          <div class="ongoing-card-top">
-            <div class="avatar-large"></div>
-          </div>
-          <div class="ongoing-card-middle">
-            <h2>Polite Panda</h2>
-            <p>Started conversation 07.07.2019</p>
-          </div>
-          <div class="ongoing-card-bottom">
-            <button class="button-primary">Continue</button>
-            <button class="button-secondary">End</button>
-          </div>
-        </div>
-        <div class="icon-arrow"></div>
-      </div>
-    </div> <!-- End of .ongoing-container -->
+    <!-- ONGOING: app/views/users/_ongoing.html.erb -->
+    <%= render "ongoing" %>
 
     <!-- JOURNAL -->
     <div class="journal-container">
