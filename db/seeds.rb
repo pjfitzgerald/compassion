@@ -18,19 +18,23 @@ puts "Creating new database"
 users = [
   {
     email: "batman@batman.com",
-    password: "batman"
+    password: "batman",
+    username: "batman"
   },
   {
     email: "superman@superman.com",
-    password: "superman"
+    password: "superman",
+    username: "superman"
   },
   {
     email: "spiderman@spiderman.com",
-    password: "spiderman"
+    password: "spiderman",
+    username: "spiderman"
   },
   {
     email: "ironman@ironman.com",
-    password: "ironman"
+    password: "ironman",
+    username: "ironman"
   }]
 
 test_messages = ["testing 1234", "nice to meet you", "what was the best thing that happened today for you?" "hello", "how are you feeling?", "thanks for your help"]
@@ -47,6 +51,7 @@ matches = Match.all
 matches.each do |match|
   test_messages.each do |message|
     Message.create!(user: match.user, chatroom: match.chatroom, content: message)
+    Message.create!(user: match.partner, chatroom: match.chatroom, content: message)
   end
 end
 

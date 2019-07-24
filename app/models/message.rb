@@ -2,7 +2,7 @@ class Message < ApplicationRecord
   belongs_to :user
   belongs_to :chatroom
   validates :content, presence: true
-  # after_create :broadcast_message
+  after_create :broadcast_message
 
   def broadcast_message
     ActionCable.server.broadcast("chatroom_#{chatroom.id}", {

@@ -1,12 +1,37 @@
 
-
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div class="chat-header"><h4>#<%= @chatroom.match.partner %></h4></div>
+      <div class="messages">
+        <% @messages.each do |message| %>
+          <%= render "messages/message", message: message, user_is_messages_author: message.user == current_user %>
+        <% end %>
+      </div>
+      <div id="create-message">
+        <%= simple_form_for [ @chatroom, Message.new ], remote: true, html: {autocomplete: "off" } do |f| %>
+          <%= f.input :content, label: false %>
+          <%= f.submit :submit, value: 'Send'%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
 <% content_for :after_js do %>
   <script>
-    App["chatroom_"<%= @chatroom.id %>] = App.cable.subscriptions.create({ channel: 'ChatroomsChannel', chatroom_id: <%= @chatroom.id %> }, {
+    scrollLastMessageIntoView();
+    App[`chatroom_<%= @chatroom.id %>`] = App.cable.subscriptions.create({ channel: 'ChatroomsChannel', chatroom_id: <%= @chatroom.id %> },
+    {
       received: (data) => {
          console.log(data);
+         if (data.current_user_id !== <%= current_user.id %>) {
+            const messagesContainer = document.querySelector('.messages');
+            messsagesContainer.insertAdjacentHTML('beforeend', data.message_partial);
+            scrollLastMessageIntoView();
+         }
+        }
       }
-    })
+    )
   </script>
 <% end %>
