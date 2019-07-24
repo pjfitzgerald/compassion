@@ -10,8 +10,8 @@ class UsersController < ApplicationController
     CSV.foreach(filepath) do |row|
       unless row.empty?
         unless row[1].nil?
-        @questions << row[1] unless row[1].empty?
-      end
+          @questions << row[1] unless row[1].empty?
+        end
       end
     end
   end
