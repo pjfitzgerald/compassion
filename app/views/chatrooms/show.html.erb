@@ -2,7 +2,13 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
-      <div class="chat-header"><h4>#<%= @chatroom.match.partner %></h4></div>
+      <div class="chat-header">
+        <% if current_user.id == @chatroom.match.user.id %>
+          <h4>Your chat with <%= @chatroom.match.partner.username.capitalize %></h4>
+        <% else %>
+          <h4>Your chat with <%= @chatroom.match.user.username.capitalize %></h4>
+        <% end %>
+      </div>
       <div class="messages">
         <% @messages.each do |message| %>
           <%= render "messages/message", message: message, user_is_messages_author: message.user == current_user %>
