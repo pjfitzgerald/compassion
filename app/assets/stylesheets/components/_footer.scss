@@ -1,0 +1,78 @@
+.footer-container {
+  bottom: 0;
+  overflow: hidden;
+  height: 300px;
+  background: url("BG_footer.png") no-repeat;
+  background-size: 100% 110%;
+  background-position: top;
+
+  animation: waves 10s infinite ease-in-out forwards;
+}
+
+@-webkit-keyframes waves {
+  0% {background-size: 100% 110%}
+  50% {background-size: 120% 100%}
+  100% {background-size: 100% 110%}
+}
+
+@keyframes waves {
+  0% {background-size: 100% 110%}
+  50% {background-size: 120% 100%}
+  100% {background-size: 100% 110%}
+}
+
+.footer-content {
+  padding-top: 130px;
+  position: absolute;
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: top;
+}
+
+.footer-content h3 {
+  font-size: calc(16px + .8vw);
+}
+
+.footer-left-container,
+.footer-middle-left-container,
+.footer-middle-right-container,
+.footer-right-container {
+  margin: 0px 2vw;
+}
+
+.footer-left-container p,
+.footer-middle-icons i,
+.footer-middle-right-container ul,
+.footer-right-container ul {
+  padding-top: 10px;
+}
+
+// LEFT-MIDDLE-CONTAINER
+
+.footer-middle-icons i {
+  color: white;
+  font-size: calc(2.5em + .5vw);
+  padding-right: 3vw;
+  transition: color .15s;
+  &:hover {
+    color: $secondary-color;
+  }
+}
+
+// RIGHT-MIDDLE-CONTAINER
+
+.footer-middle-right-container ul,
+.footer-right-container ul {
+  padding-left: 12px;
+}
+
+.footer-middle-right-container a,
+.footer-right-container a {
+  color: white;
+  &:hover {
+    color: $secondary-color;
+    text-decoration: underline;
+  }
+}

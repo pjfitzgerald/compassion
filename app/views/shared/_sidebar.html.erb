@@ -9,24 +9,38 @@
     <h4>Kind Koala</h4>
   </div>
   <div class="icons">
+
+    <!-- HOME -->
+    <%= link_to @user do %>
     <div class="icon-home-white sidebar-icons active">
       <i class="icon fas fa-home"></i>
       <h4 class="sidebar-text">Home</h4>
     </div>
+    <% end %>
+
+    <!-- NEW CHAT -->
+    <%= link_to @user do %>
     <div class="icon-new-chat-white sidebar-icons">
       <i class="icon far fa-comment">
         <i class="fas fa-plus"></i>
       </i>
       <h4 class="sidebar-text">New chat</h4>
     </div>
+    <% end %>
+
+    <!-- ONGOING CHATS -->
     <div class="icon-ongoing-conversation-white sidebar-icons">
       <i class="icon far fa-comments"></i>
       <h4 class="sidebar-text">Ongoing</h4>
     </div>
+
+    <!-- JOURNAL -->
     <div class="icon-journal-white sidebar-icons">
       <i class="icon fas fa-book"></i>
       <h4 class="sidebar-text">Journal</h4>
     </div>
+
+    <!-- SETTINGS -->
     <div class="icon-settings-white sidebar-icons">
       <i class="icon fas fa-cog"></i>
       <h4 class="sidebar-text">Settings</h4>
