@@ -48,10 +48,12 @@
   /* —————————— AVATAR —————————— */
 
   .avatar-medium-user {
-    height: 80px;
-    width: 80px;
+    height: 70px;
+    width: 70px;
     margin-top: 12vh;
+    margin-bottom: 10px;
     border-radius: 100%;
+    border: 3px solid white;
     padding: 0px;
     display: block;
     margin-left: auto;
@@ -132,7 +134,7 @@
     color: $white;
     text-align: center;
     margin-top: 20px;
-    transition: .25s;
+    transition: 0s;
     position: absolute;
     left: 0;
     right: 0;

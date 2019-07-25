@@ -27,7 +27,7 @@ function expandOrMinify() {
     };
   };
 
-  var dashboardBodyMove = document.querySelector(".dashboard-body");
+  var dashboardBodyMove = document.querySelector(".bodies"); // .dashboard-body
   dashboardBodyMove.classList.toggle("body-move-right");
 };
 
