@@ -19,28 +19,28 @@ users = [
   {
     email: "batman@batman.com",
     password: "batman",
-    username: "batman"
+    username: "Polite Panda"
   },
   {
     email: "superman@superman.com",
     password: "superman",
-    username: "superman"
+    username: "Bored Bear"
   },
   {
     email: "spiderman@spiderman.com",
     password: "spiderman",
-    username: "spiderman"
+    username: "Kind Koala"
   },
   {
     email: "ironman@ironman.com",
     password: "ironman",
-    username: "ironman"
+    username: "Tired Tiger"
   }]
 
 test_messages = ["testing 1234", "nice to meet you", "what was the best thing that happened today for you?" "hello", "how are you feeling?", "thanks for your help"]
 
 users.each do |user|
-  user = User.create!(email: user[:email], password: user[:password])
+  user = User.create!(email: user[:email], password: user[:password], username: user[:username])
 end
 
 matched_users = User.limit(2)

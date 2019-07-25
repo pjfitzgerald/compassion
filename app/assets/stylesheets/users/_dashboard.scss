@@ -11,6 +11,10 @@
     transition: .25s;
   }
 
+  a:hover {
+    text-decoration: none;
+  }
+
   /* —————————————————————————————————
   —————————————— TOPBAR ——————————————
   ———————————————————————————————————— */
@@ -48,7 +52,6 @@
   ———————————————————————————————————— */
 
   .ongoing-container {
-    height: 800px;
     width: 100%;
     text-align: center;
   }
@@ -67,4 +70,17 @@
 
   .ongoing-slider .ongoing-card {
     margin: 0px 1vw;
+  }
+
+  /* —————————————————————————————————
+  —————————— TEXT-CONTAINER ——————————
+  ———————————(Above footer)——————————— */
+
+  .text-container {
+    padding: 100px;
+    text-align: center;
+  }
+
+  .text-container p {
+    margin: 30px;
   }
