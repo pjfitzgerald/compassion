@@ -1,6 +1,36 @@
-<div class="survey-form">
-  <h1>Survey Here</h1>
-  <%= simple_form_for @user do |f| %>
-    <%= f.input :username,collection: ["hello", "hi", "hey"] %>
-  <% end %>
+<div class="survey-container">
+  <img src="https://res.cloudinary.com/db3hrutzq/image/upload/v1563898761/Compassion%20images/Rhino_cn0xve.png" alt="n/a">
+  <div class="back-btn">
+    <%= link_to root_path do %>
+      <i class="fas fa-arrow-left">  Back to Homepage</i>
+    <% end %>
+  </div>
+  <div class="survey-form">
+    <h4>Answer these quick questions, so you can be matched right away!</h4>
+    <p> (1 - never, 2 - not likely, 3 - somewhat likely, 4 - very likely, 5 - Gimme Now) </p>
+    <%= simple_form_for @user do |f| %>
+      <div class="ans-one">
+        <%= f.input :answer_one, as: :radio_buttons, collection: ["n/a", 1, 2, 3, 4, 5], checked: "n/a", label: "1. How likely are you to eat a banana?" %>
+      </div>
+      <div class="ans-two">
+        <%= f.input :answer_two, as: :radio_buttons, collection: ["n/a", 1, 2, 3, 4, 5], checked: "n/a", label: "2. How likely are you to eat an apple?" %>
+      </div>
+      <div class="ans-three">
+        <%= f.input :answer_three, as: :radio_buttons, collection: ["n/a", 1, 2, 3, 4, 5], checked: "n/a", label: "3. How likely are you to eat a kiwi?" %>
+      </div>
+      <div class="ans-four">
+        <%= f.input :answer_four, as: :radio_buttons, collection: ["n/a", 1, 2, 3, 4, 5], checked: "n/a", label: "4. How likely are you to eat a pear?" %>
+      </div>
+      <div class="ans-five">
+        <%= f.input :answer_five, as: :radio_buttons, collection: ["n/a", 1, 2, 3, 4, 5], checked: "n/a", label: "5. How likely are you to eat an orange?" %>
+      </div>
+      <%= f.input :answered, as: :hidden, value: true %>
+      <div class="survey-submit">
+        <%= f.submit :submit %>
+      </div>
+    <% end %>
+    <div class="survey-skip">
+      <%= link_to "skip for now", user_path(@user) %>
+    </div>
+  </div>
 </div>
