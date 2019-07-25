@@ -1,9 +1,9 @@
 
-<%= render "users/sidebar" %>
-
-<div class="container">
-  <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
+<div class="chatroom d-flex justify-content-between">
+  <%= render "shared/sidebar" %>
+  <div class="chat-container">
+    
+    <div class="chat-body bodies">
       <div class="chat-header">
         <% if current_user == @chatrooms.match.user %>
           <% if @chatrooms.match.partner.username.nil? %>
@@ -31,7 +31,6 @@
         <% end %>
       </div>
     </div>
-  </div>
 </div>
 
 <% content_for :after_js do %>
@@ -52,3 +51,4 @@
       )
     </script>
 <% end %>
+
