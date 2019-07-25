@@ -22,9 +22,9 @@ class UsersController < ApplicationController
     @user.update(answer_one: params[:user][:answer_one], answer_two: params[:user][:answer_two],
                  answer_three: params[:user][:answer_three], answer_four: params[:user][:answer_four],
                  answer_five: params[:user][:answer_five])
-    if @user.answer_one == 0 || @user.answer_two == 0 ||
-       @user.answer_three == 0 || @user.answer_four == 0 ||
-       @user.answer_five == 0
+    if @user.answer_one.zero? || @user.answer_two.zero? ||
+       @user.answer_three.zero? || @user.answer_four.zero? ||
+       @user.answer_five.zero?
       @user.update(answered: false)
     else
       @user.update(answered: true)
