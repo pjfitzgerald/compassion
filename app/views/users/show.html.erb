@@ -1,5 +1,4 @@
 <style>
-
 </style>
 
 <script></script>
@@ -7,88 +6,26 @@
 <div class="dashboard-container">
 
   <!-- SIDEBAR: app/views/users/_sidebar.html.erb -->
-  <%= render "sidebar" %>
+  <%= render "shared/sidebar" %>
 
   <!-- BODY -->
-  <div class="dashboard-body">
+  <div class="dashboard-body bodies">
     <!-- TOPBAR: app/views/users/_topbar.html.erb -->
     <%= render "topbar" %>
     <!-- QUESTION-HEADER: app/views/users/_questionbox.html.erb -->
     <%= render "questionbox" %>
     <!-- ONGOING: app/views/users/_ongoing.html.erb -->
     <%= render "ongoing" %>
-
-    <!-- JOURNAL -->
-    <div class="journal-container">
-      <!-- NEW ENTRY -->
-      <div class="new-journal-entry">
-        <div class="new-journal-entry-top">
-          <h1>Todays journal entry</h1>
-          <p>07.07.2019</p>
-        </div>
-        <div class="new-journal-entry-bottom">
-          <form action="">
-            <input type="text" class="label" placeholder="Title">
-            <input type="text" class="text-area" placeholder="Your text goes here">
-            <input type="text" class="add-photo">
-            <input type="submit">
-          </form>
-        </div>
-      </div>
-      <!-- LATEST ENTRIES -->
-      <div class="latest-journal-entries">
-        <div class="latest-journal-entries-first">
-          <h2>Bad Tinderdate</h2>
-          <h4>07.07.2019</h4>
-          <p>Last night I went out on a Tinderdate. It sucked horrendously because …</p>
-          <button class="secondary">Read</button>
-        </div>
-        <div class="latest-journal-entries-second">
-          <h2>Good Sunday</h2>
-          <h4>06.06.2019</h4>
-          <p>I woke up this Sunday feeling great. I made myself a big breakfast, wen …</p>
-          <button class="secondary">Read</button>
-        </div>
-        <div class="latest-journal-entries-third">
-          <h2>Social Media hysteria</h2>
-          <h4>05.05.2019</h4>
-          <p>What’s up with social media being the most important aspect of ever …</p>
-          <button class="secondary">Read</button>
-        </div>
-      </div>
-    </div> <!-- End of .journal-container -->
+    <!-- JOURNAL: app/views/users/_journal.html.erb -->
+    <%= render "journal" %>
 
     <div class="text-container">
       <h1>Talk to someone</h1>
-      <p>There are currently 437 people online. I bet they all would like to talk to you! Start a new chat and see what a new conversation can bring you.</p>
-      <button class="primary">Start new chat</button>
+      <p>There are currently <strong>437</strong> people online. I bet they all would like to talk to you!<br>Start a new chat and see what a new conversation can bring you.</p>
+      <button class="button-primary">Start new chat</button>
     </div> <!-- End of .text-container -->
 
-    <div class="footer-container">
-      <div class="logo">
-        <div class="logo-emblem-white"></div>
-        <h2>Compassion</h2>
-        <p>We can all help.</p>
-        <p>Talk. Experience. Share.</p>
-      </div>
-      <div class="follow">
-        <div class="icon-facebook"></div>
-        <div class="icon-instagram"></div>
-        <div class="icon-twitter"></div>
-      </div>
-      <div class="legal">
-        <ul>
-          <li>Terms</li>
-          <li>Privacy</li>
-        </ul>
-      </div>
-      <div class="project">
-        <ul>
-          <li>Designguide</li>
-          <li>Components</li>
-        </ul>
-      </div>
-    </div>
+    <%= render "shared/footer" %>
 
   </div> <!-- End of .dashboard-body -->
 

@@ -18,6 +18,10 @@ gem 'webpacker'
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
 
+# FOR MODAL
+gem 'bootstrap'
+gem 'popper_js'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
