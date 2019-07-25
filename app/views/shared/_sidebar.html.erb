@@ -3,10 +3,10 @@
     <i class="fas fa-plus"></i>
   </div>
   <div class="avatar-medium-user">
-    <%= image_tag("avatar_medium_koala") %>
+    <%= image_tag("avatars/#{@user.username.split(" ").last.downcase}") %>
   </div>
   <div class="username username-hidden">
-    <h4>Kind Koala</h4>
+    <h4><%= @user.username %></h4>
   </div>
   <div class="icons">
 
