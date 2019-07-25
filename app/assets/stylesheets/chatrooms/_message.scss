@@ -3,7 +3,7 @@
   color: #868686;
   background-color: #ffffff;
   padding: 20px;
-  border: 1px solid #ececec;
+  border: 3px solid #ececec;
   border-top: none;
   border-bottom-width: 0;
   max-height: calc(100vh - 70px - 45px - 61px - 30px);
@@ -16,7 +16,8 @@
   &.right {
     flex-direction: row-reverse;
     .message-content {
-      background-color: #F2F9FC;
+      background-color: #93D295;
+      color: white;
     }
   }
 }
@@ -53,7 +54,7 @@ input.form-control {
   }
 }
 .chat-header {
-  background-color: #4F2F4C;
+  background-color: #93D295;
   color: white;
   padding: 10px 20px;
   margin-top: 10px;
