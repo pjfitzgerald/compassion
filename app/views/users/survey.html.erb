@@ -24,13 +24,13 @@
       <div class="ans-five">
         <%= f.input :answer_five, as: :radio_buttons, collection: ["n/a", 1, 2, 3, 4, 5], checked: "n/a", label: "5. How likely are you to eat an orange?" %>
       </div>
-      <%= f.input :answered, as: :hidden, value: true %>
+      <%= f.hidden_field :survey, value: true %>
       <div class="survey-submit">
         <%= f.submit :submit %>
       </div>
     <% end %>
     <div class="survey-skip">
-      <%= link_to "skip for now", user_path(@user) %>
+      <%= link_to "skip for now", profile_choose_path %>
     </div>
   </div>
 </div>
