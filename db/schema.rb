@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2019_07_24_172524) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatar"
-    t.boolean "answered", default: false
+    t.boolean "answered"
     t.string "age_range"
     t.string "gender"
     t.string "username"
