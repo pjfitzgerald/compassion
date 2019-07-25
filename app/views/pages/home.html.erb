@@ -6,14 +6,16 @@
       <br>
       <p>Here you can meet other people and talk about your everyday life. You will anonymously be able to connect with people all around the world and talk about whatever you like.</p>
       <br>
-      <div class="login-singup">
-        <%= link_to new_user_session_path do %>
-          <button class="login">Login</button>
-        <% end %>
-        <%= link_to new_user_registration_path do %>
-          <button class="signup">Signup</button>
-        <% end %>
-      </div>
+      <% unless current_user %>
+        <div class="login-singup">
+          <%= link_to new_user_session_path do %>
+            <button class="login">Login</button>
+          <% end %>
+          <%= link_to new_user_registration_path do %>
+            <button class="signup">Signup</button>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 
