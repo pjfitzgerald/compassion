@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_24_172524) do
+ActiveRecord::Schema.define(version: 2019_07_25_131221) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,17 @@ ActiveRecord::Schema.define(version: 2019_07_24_172524) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "profiles", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "animal"
+    t.string "adjective"
+    t.string "description"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -48,15 +59,15 @@ ActiveRecord::Schema.define(version: 2019_07_24_172524) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatar"
-    t.boolean "answered"
+    t.boolean "answered", default: false
     t.string "age_range"
     t.string "gender"
     t.string "username"
-    t.integer "answer_one", default: 0
-    t.integer "answer_two", default: 0
-    t.integer "answer_three", default: 0
-    t.integer "answer_four", default: 0
-    t.integer "answer_five", default: 0
+    t.integer "answer_one", default: 0, null: false
+    t.integer "answer_two", default: 0, null: false
+    t.integer "answer_three", default: 0, null: false
+    t.integer "answer_four", default: 0, null: false
+    t.integer "answer_five", default: 0, null: false
     t.string "category", default: "0", null: false
     t.string "d_answer_one", default: ""
     t.string "d_answer_two", default: ""
@@ -68,4 +79,5 @@ ActiveRecord::Schema.define(version: 2019_07_24_172524) do
   add_foreign_key "chatrooms", "matches"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
+  add_foreign_key "profiles", "users"
 end
