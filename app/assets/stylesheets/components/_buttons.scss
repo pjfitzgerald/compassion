@@ -32,6 +32,23 @@
     background: $secondary-color-dark;
   }
 
+  /* ————— SECONDARY-BORDERED ————— */
+
+  .button-secondary-bordered {
+    width: 150px;
+    height: 40px;
+    background: $secondary-color;
+    color: white;
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid white;
+    transition: background .25s;
+  }
+
+  .button-secondary-bordered:hover {
+    background: $secondary-color-dark;
+  }
+
   /* ————— DEFAULT TRANSPARENT ————— */
 
   .button-default-transparent {
@@ -55,6 +72,7 @@
 
   .button-primary:focus,
   .button-secondary:focus,
+  .button-secondary-bordered:focus,
   .button-default-transparent:focus {
     outline: none;
   }
