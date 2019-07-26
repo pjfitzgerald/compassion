@@ -1,7 +1,9 @@
 require 'csv'
 
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :new]
+
+  before_action :set_user, only: [:show, :new, :new_match]
+
   before_action :authenticate_user!, only: [:update]
 
   def show
@@ -15,6 +17,23 @@ class UsersController < ApplicationController
       end
     end
     @questions = questions_list[3, 5]
+  end
+
+  def searching
+    @user.update(searching: true)
+  end
+
+  def new_match
+    @category = @user.category
+    @users = User.where(category: @category).where(searching: true) - [@user] - @user.matches.map { |match| match.partner }
+    @other_user = @users.sample
+    @match = Match.new(user: @user, partner: @other_user)
+    if @match.save
+      @chatroom = Chatroom.create(match: @match)
+      redirect_to chatroom_path(@chatroom)
+    else
+      redirect_to user_path(@user), alert: "unable to find match at this time"
+    end
   end
 
   def update

@@ -12,6 +12,26 @@ class ChatroomsController < ApplicationController
   end
 
   def create
-
+    current_user.searching = true
+    unless User.find_by(category: current_user.category).count > 1
+      # JS searching animation on dashboard
+      redirect_to user_path(current_user.id)
+    else
+      @other_users = User.where(category: current_user.category, searching: true)
+      @other_user = @other_users.first_except(current_user)
+      @chatroom = Chatroom.new(match_id: @match.id)
+      if current_user.id > @other_user.id
+        @match.user_id = current_user.id
+        @match.partner_id = @other_user.id
+        current_user.searching = false
+        @other_user.searching = false
+      else
+        @match.user_id = @other_user.id
+        @match.partner_id = current_user.id
+        current_user.searching = false
+        @other_user.searching = false
+      end
+      redirect_to chatroom_path(@chatroom.id)
+    end
   end
 end
