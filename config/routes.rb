@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   end
   get "customize_user", to: "profiles#new", as: :profile_choose
   
-  resources :matches
+  get "new_chat", to: "users#new_match", as: :new_chat
 end
