@@ -104,6 +104,14 @@
       <% end %>
     </div>
   </div>
+  <% if current_user.profiles.last.present? %>
+    <div class="profile-back-btn">
+      <%= link_to user_path(current_user) do %>
+        <i class="fas fa-arrow-left">  Back</i>
+      <% end %>
+    </div>
+  <% else %>
+  <% end %>
 </div>
 
 
