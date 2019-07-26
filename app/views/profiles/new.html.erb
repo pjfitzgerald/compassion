@@ -82,7 +82,7 @@
   <div class="profile-body">
     <div class="profile-image">
       <% imageName = @profile.animal %>
-      <%= image_tag("avatars/#{imageName.downcase}") %>
+      <%= image_tag("avatars/#{imageName.downcase}.png") %>
     </div>
     <div class="profile-text">
       <h3><%= @profile.adjective.capitalize %> <%= @profile.animal %></h3>
