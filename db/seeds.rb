@@ -13,50 +13,53 @@ User.destroy_all
 Match.destroy_all
 Chatroom.destroy_all
 Message.destroy_all
+Profile.destroy_all
 puts "Creating new database"
 
 users = [
   {
     email: "batman@batman.com",
-    password: "batman",
-    username: "Polite Panda"
+    password: "batman"
   },
   {
     email: "superman@superman.com",
-    password: "superman",
-    username: "Bored Bear"
+    password: "superman"
   },
   {
     email: "spiderman@spiderman.com",
-    password: "spiderman",
-    username: "Kind Koala"
+    password: "spiderman"
   },
   {
     email: "ironman@ironman.com",
-    password: "ironman",
-    username: "Tired Tiger"
+    password: "ironman"
   }]
 
 test_messages = ["testing 1234", "nice to meet you", "what was the best thing that happened today for you?" "hello", "how are you feeling?", "thanks for your help"]
+
 
 users.each do |user|
   user = User.create!(email: user[:email], password: user[:password], username: user[:username])
 end
 
-matched_users = User.limit(2)
-Match.create!(user: matched_users[0], partner: matched_users[1])
-Chatroom.create!(match: Match.first)
-
-matches = Match.all
-matches.each do |match|
-  test_messages.each do |message|
-    Message.create!(user: match.user, chatroom: match.chatroom, content: message)
-    Message.create!(user: match.partner, chatroom: match.chatroom, content: message)
-  end
-end
+profile1 = Profile.create(animal: "Panda", adjective: "Polite", user_id: 1)
+profile2 = Profile.create(animal: "Bear", adjective: "Bored", user_id: 2)
+profile3 = Profile.create(animal: "Koala", adjective: "Kind", user_id: 3)
 
 
+# matched_users = User.limit(2)
+# Match.create!(user: matched_users[0], partner: matched_users[1])
+# Chatroom.create!(match: Match.first)
 
+# matches = Match.all
+# matches.each do |match|
+#   test_messages.each do |message|
+#     Message.create!(user: match.user, chatroom: match.chatroom, content: message)
+#     Message.create!(user: match.partner, chatroom: match.chatroom, content: message)
+#   end
+# end
+
+
+puts "Created #{Profile.count} profiles."
 puts "Created #{User.count} users."
 puts "Created #{Match.count} matches."
 puts "Created #{Chatroom.count} chatrooms."
