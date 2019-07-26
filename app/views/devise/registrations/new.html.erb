@@ -23,8 +23,8 @@
         <%= f.input :password_confirmation,
                     required: true,
                     input_html: { autocomplete: "new-password" } %>
-        <%= f.input :age_range, collection: [ "Would rather not say", "13-18", "18-25", "25-35", "35-55", "55+" ], required: true %>
-        <%= f.input :gender, collection: ["Would rather not say", "Male", "Female"], required: true %>
+        <%= f.input :age_range, label: "Age", hint: "optional", collection: [ "12  or  Younger", "13 - 18", "19 - 25", "26 - 35", "36 - 55", "55+" ], required: true %>
+        <%= f.input :gender, hint: "optional", collection: [ "Female", "Male"], required: true %>
       </div>
       <br>
       <div class="form-actions">

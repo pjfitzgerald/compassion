@@ -6,40 +6,33 @@ class UsersController < ApplicationController
 
   def show
     filepath = File.join(Rails.root, 'config', 'questions.csv')
-    @questions = []
+    questions_list = []
     CSV.foreach(filepath) do |row|
       unless row[1].nil?
         unless row[1].split("").count > 50
-          @questions << row[1] unless row[1].empty?
+          questions_list << row[1] unless row[1].empty?
         end
       end
     end
+    @questions = questions_list[3, 5]
   end
 
   def update
     @collection = ["n/a", "1", "2", "3", "4", "5"]
     @user = current_user
-    # if previous page was survey
-    #   save answer params to current_user
-    # => and redirect to customize_user_path
-    # elsif previous page was profile input page
-    # => create a new profile and set current user as profile.user_id
-    # => redirect to user_path (dashboard)
-    # else
-    #   render survey
-
-    # if (@user.answer_one.present? || @user.answer_two.present? ||
-    #    @user.answer_three.present? || @user.answer_four.present? ||
-    #    @user.answer_five.present?)
-
-    # elsif
-
     if params[:user][:survey] == "true"
       @user.update(answer_one: params[:user][:answer_one],
                    answer_two: params[:user][:answer_two],
                    answer_three: params[:user][:answer_three],
                    answer_four: params[:user][:answer_four],
                    answer_five: params[:user][:answer_five])
+      if @user.answer_one.zero? || @user.answer_two.zero? ||
+         @user.answer_three.zero? || @user.answer_four.zero? ||
+         @user.answer_five.zero?
+        @user.update(answered: false)
+      else
+        @user.update(answered: true)
+      end
       if @user.profiles.count.zero?
         redirect_to profile_choose_path
       else
@@ -47,6 +40,15 @@ class UsersController < ApplicationController
       end
     elsif params[:user][:email].present? && params[:user][:password].nil?
       @user.update(email: params[:user][:email])
+      redirect_to user_path(@user)
+    elsif params[:user][:d_answer_one].present?
+      @user.update(d_answer_one: params[:user][:d_answer_one])
+      redirect_to user_path(@user)
+    elsif params[:user][:d_answer_two].present?
+      @user.update(d_answer_two: params[:user][:d_answer_two])
+      redirect_to user_path(@user)
+    elsif params[:user][:d_answer_three].present?
+      @user.update(d_answer_three: params[:user][:d_answer_three])
       redirect_to user_path(@user)
     elsif params[:user][:profileanimal].present?
       if @user.profiles.count >= 1
@@ -80,13 +82,13 @@ class UsersController < ApplicationController
     #     @user.update(answer_one: params[:user][:answer_one], answer_two: params[:user][:answer_two],
     #                  answer_three: params[:user][:answer_three], answer_four: params[:user][:answer_four],
     #                  answer_five: params[:user][:answer_five])
-    #     if @user.answer_one.zero? || @user.answer_two.zero? ||
-    #        @user.answer_three.zero? || @user.answer_four.zero? ||
-    #        @user.answer_five.zero?
-    #       @user.update(answered: false)
-    #     else
-    #       @user.update(answered: true)
-    #     end
+        # if @user.answer_one.zero? || @user.answer_two.zero? ||
+        #    @user.answer_three.zero? || @user.answer_four.zero? ||
+        #    @user.answer_five.zero?
+        #   @user.update(answered: false)
+        # else
+        #   @user.update(answered: true)
+        # end
     #   end
     # end
     # if @user.save
