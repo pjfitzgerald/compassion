@@ -1,55 +1,103 @@
 <div class="navigation-container">
-  <div class="button-expand-large">
-    <i class="fas fa-plus"></i>
-  </div>
-  <div class="avatar-medium-user">
-    <%= image_tag("avatars/#{@user.profiles.last.animal.downcase}.png") %>
-  </div>
-  <div class="username username-hidden">
-    <% name_array = @user.profiles.last.adjective.split(" ") %>
-    <% username_length = @user.profiles.last.animal.length + @user.profiles.last.adjective.length %>
-    <% if username_length > 9 %>
+  <div class="first-layer">
+    <div class="button-expand-large">
+      <i class="fas fa-plus"></i>
+    </div>
+    <div class="avatar-medium-user">
+      <%= image_tag("avatars/#{@user.profiles.last.animal.downcase}.png") %>
+    </div>
+    <div class="username username-hidden">
+      <% name_array = @user.profiles.last.adjective.split(" ") %>
+      <% username_length = @user.profiles.last.animal.length + @user.profiles.last.adjective.length %>
+      <% if username_length > 9 %>
       <h4><%= @user.profiles.last.adjective.capitalize %><br><%= @user.profiles.last.animal %></h4>
-    <% else %>
+      <% else %>
       <h4><%= @user.profiles.last.animal %></h4>
-    <% end %>
-  </div>
-
-  <div class="icons">
-    <!-- HOME -->
-    <%= link_to @user do %>
-    <div class="icon-home-white sidebar-icons active">
-      <i class="icon fas fa-home"></i>
-      <h4 class="sidebar-text">Home</h4>
-    </div>
-    <% end %>
-
-    <!-- NEW CHAT -->
-    <%= link_to @user do %>
-    <div class="icon-new-chat-white sidebar-icons">
-      <i class="icon far fa-comment">
-        <i class="fas fa-plus"></i>
-      </i>
-      <h4 class="sidebar-text">New chat</h4>
-    </div>
-    <% end %>
-
-    <!-- ONGOING CHATS -->
-    <div class="icon-ongoing-conversation-white sidebar-icons">
-      <i class="icon far fa-comments"></i>
-      <h4 class="sidebar-text">Ongoing</h4>
+      <% end %>
     </div>
 
-    <!-- JOURNAL -->
-    <div class="icon-journal-white sidebar-icons">
-      <i class="icon fas fa-book"></i>
-      <h4 class="sidebar-text">Journal</h4>
-    </div>
+    <div class="icons">
+      <!-- HOME -->
+      <%= link_to @user do %>
+      <div class="icon-home-white sidebar-icons">
+        <i class="icon fas fa-home"></i>
+        <h4 class="sidebar-text">Home</h4>
+      </div>
+      <% end %>
 
-    <!-- SETTINGS -->
-    <div class="icon-settings-white sidebar-icons">
-      <i class="icon fas fa-cog"></i>
-      <h4 class="sidebar-text">Settings</h4>
+      <!-- NEW CHAT -->
+      <%= link_to @user do %>
+      <div class="icon-new-chat-white sidebar-icons">
+        <i class="icon far fa-comment">
+          <i class="fas fa-plus"></i>
+        </i>
+        <h4 class="sidebar-text">New chat</h4>
+      </div>
+      <% end %>
+
+      <!-- ONGOING CHATS -->
+      <div class="icon-ongoing-conversation-white sidebar-icons">
+        <i class="icon far fa-comments"></i>
+        <h4 class="sidebar-text">Ongoing</h4>
+      </div>
+
+      <!-- JOURNAL -->
+      <div class="icon-journal-white sidebar-icons">
+        <i class="icon fas fa-book"></i>
+        <h4 class="sidebar-text">Journal</h4>
+      </div>
+
+      <!-- SETTINGS -->
+      <div class="icon-settings-white sidebar-icons">
+        <i class="icon fas fa-cog"></i>
+        <h4 class="sidebar-text">Settings</h4>
+      </div>
+
+    </div><!-- EO .icons -->
+  </div><!-- EO .first-layer -->
+
+  <div class="second-layer">
+    <div class="settings-content-container">
+      <h2>Settings</h2>
+      <div class="settings-inputs">
+        <div class="email-change">
+          <%= simple_form_for @user do |f| %>
+            <%= f.input :email, value: @user.email %>
+            <%= f.submit :submit, value: "Change", class: "button-default-transparent" %>
+          <% end %>
+        </div>
+          <div class="password-change">
+          <%= simple_form_for @user do |f| %>
+            <%= f.input :password %>
+            <%= f.submit :submit, value: "Change", class: "button-default-transparent" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="settings-buttons">
+        <%= link_to profile_choose_path(@user) do %>
+          <button class="button-default-transparent">Edit profile</button>
+        <% end %>
+        <%= link_to survey_path(@user) do %>
+          <button class="button-default-transparent">Edit Survey</button>
+        <% end %>
+      </div>
+      <div class="settings-logout">
+        <%= link_to destroy_user_session_path, method: :delete do%>
+          <button class="button-secondary-bordered settings-logout">Log out</button>
+        <% end %>
+      </div>
     </div>
-  </div>
-</div>
+  </div><!-- EO .second-layer -->
+</div><!-- EO .navigation-container -->
+
+
+<script type="text/javascript">
+
+
+</script>
+
+
+
+
+
+
