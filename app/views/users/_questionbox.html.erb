@@ -1,4 +1,20 @@
 <div class="question-header-container">
+  <% if @user.searching == false %>
+    <%= simple_form_for @user do |f| %>
+      <%= f.hidden_field :searching, value: true %>
+      <%= f.submit :submit, value: "Toggle Search On" %>
+    <% end %>
+  <% else %>
+    <%= simple_form_for @user do |f| %>
+      <%= f.hidden_field :searching, value: false %>
+      <%= f.submit :submit, value: "Toggle Search Off" %>
+    <% end %>
+  <% end %>
+  <% if @user.searching %>
+    <i class="fas fa-toggle-on"></i>
+  <% else %>
+    <i class="fas fa-toggle-off"></i>
+  <% end %>
   <%= link_to "Start new chat", new_chat_path(id: current_user.id) %>
   <div class="question-box">
     <div class="question-box-icons">
@@ -11,16 +27,15 @@
     </div>
     <h1>
       <% if @user.d_answer_one.empty? %>
-        <p>1. <%= @questions[0] %></p>
+        <h3>Question 1/3</h3> <%= @questions[0] %>
       <% elsif @user.d_answer_two.empty? && @user.d_answer_one != "" %>
-        <p>2. <%= @questions[1] %></p>
+        <h3>Question 2/3</h3> <%= @questions[1] %>
       <% elsif @user.d_answer_three.empty? && @user.d_answer_two != "" %>
-        <p>3. <%= @questions[2] %></p>
+        <h3>Question 3/3</h3> <%= @questions[2] %>
       <% else %>
          <h3>Daily Questions Answered 😃</h3>
       <% end %>
     </h1>
-<!--     <h4>Question 3/3</h4> -->
       <%= simple_form_for @user do |f| %>
         <% if @user.d_answer_one == "" %>
           <%= f.input :d_answer_one %>
@@ -29,7 +44,7 @@
         <% elsif @user.d_answer_three == "" && @user.d_answer_two != "" %>
           <%= f.input :d_answer_three %>
         <% else %>
-          <%#= link_to "Start a new Chat", new_chat_path(id: current_user.id) %>
+          <%= link_to "Start a new Chat", new_chat_path(id: current_user.id) %>
         <% end %>
       <% end %>
   </div>
