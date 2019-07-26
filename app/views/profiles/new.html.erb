@@ -1,0 +1,119 @@
+<style>
+  .profile-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(#9fd4a0, #6f9e70);
+  }
+
+  .profile-title {
+    position: absolute;
+    top: 30px;
+    color: white;
+  }
+
+  .profile-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+  }
+
+  .profile-image img {
+    min-width: 250px;
+    width: 20vw;
+    border-radius: 100%;
+    border: 10px solid white;
+  }
+
+  .profile-text {
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  .profile-text h3 {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  .profile-quote {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+  }
+
+  .profile-quote i {
+    color: #D29393;
+    transform: rotate(2deg);
+    padding-right: 10px;
+    font-size: 1.5em;
+  }
+
+  .profile-text p {
+    font-family: sans-serif;
+    font-weight: 100;
+    color: #EEE;
+    font-size: calc(.8em + .5vw);
+  }
+
+  .profile-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .profile-buttons button {
+    margin: 1vw;
+  }
+
+  .profile-buttons button:last-child {
+    border: 2px solid white;
+  }
+
+</style>
+
+<div class="profile-container">
+  <h1 class="profile-title">Choose your profile</h1>
+  <div class="profile-body">
+    <div class="profile-image">
+      <% imageName = @profile.animal %>
+      <%= image_tag("avatars/#{imageName.downcase}.png") %>
+    </div>
+    <div class="profile-text">
+      <h3><%= @profile.adjective.capitalize %> <%= @profile.animal %></h3>
+      <div class="profile-quote">
+        <i class="fas fa-quote-left"></i>
+        <p><em><%= @profile.description.capitalize %></em></p>
+      </div>
+    </div>
+    <div class="profile-buttons">
+      <%= simple_form_for @user do |f| %>
+        <%= f.hidden_field :profileanimal, value: @profile.animal %>
+        <%= f.hidden_field :profileadj, value: @profile.adjective %>
+        <%= f.hidden_field :profiledesc, value: @profile.description %>
+        <%= f.hidden_field :profileimg, value: "avatars/#{@profile.animal.downcase}" %>
+        <%= f.submit :submit, value: "continue", class: "button-default-transparent" %>
+      <% end %>
+      <%= link_to do %>
+      <button class="button-secondary">Refresh</button>
+      <% end %>
+    </div>
+  </div>
+  <% if current_user.profiles.last.present? %>
+    <div class="profile-back-btn">
+      <%= link_to user_path(current_user) do %>
+        <i class="fas fa-arrow-left">  Back</i>
+      <% end %>
+    </div>
+  <% else %>
+  <% end %>
+</div>
+
+
+
+

@@ -3,13 +3,19 @@
     <i class="fas fa-plus"></i>
   </div>
   <div class="avatar-medium-user">
-    <%= image_tag("avatars/#{@user.username.split(" ").last.downcase}") %>
+    <%= image_tag("avatars/#{@user.profiles.last.animal.downcase}.png") %>
   </div>
   <div class="username username-hidden">
-    <h4><%= @user.username %></h4>
+    <% name_array = @user.profiles.last.adjective.split(" ") %>
+    <% username_length = @user.profiles.last.animal.length + @user.profiles.last.adjective.length %>
+    <% if username_length > 9 %>
+      <h4><%= @user.profiles.last.adjective.capitalize %><br><%= @user.profiles.last.animal %></h4>
+    <% else %>
+      <h4><%= @user.profiles.last.animal %></h4>
+    <% end %>
   </div>
-  <div class="icons">
 
+  <div class="icons">
     <!-- HOME -->
     <%= link_to @user do %>
     <div class="icon-home-white sidebar-icons active">
