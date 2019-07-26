@@ -1,7 +1,7 @@
 require 'csv'
 
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :new, :username_pick]
+  before_action :set_user, only: [:show, :new]
   before_action :authenticate_user!, only: [:update]
 
   def show
@@ -45,6 +45,9 @@ class UsersController < ApplicationController
       else
         redirect_to user_path(@user)
       end
+    elsif params[:user][:email].present? && params[:user][:password].nil?
+      @user.update(email: params[:user][:email])
+      redirect_to user_path(@user)
     elsif params[:user][:profileanimal].present?
       if @user.profiles.count >= 1
         @user.profiles.last.destroy

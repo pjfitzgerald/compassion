@@ -1,188 +1,287 @@
-  /* —————————————————————————————————————
-  —————————— SIDEBAR NAVIGATION ——————————
-  ———————————————————————————————————————— */
+/* —————————————————————————————————————
+—————————————— CONTAINER ———————————————
+———————————————————————————————————————— */
 
-  /* —————————— CONTAINER —————————— */
+.navigation-container {
+  height: 100vh;
+  width: 108px;
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background: $primary-color;
+  transition: .25s;
+  display: flex;
+  justify-content: center;
+}
 
-  .navigation-container {
-    height: 100vh;
-    width: 108px;
-    position: fixed;
-    padding: 0;
-    margin: 0;
-    top: 0;
-    background: $primary-color;
-    transition: .25s;
-  }
+.first-layer {
+  margin-left: 0px;
+  width: 100%;
+  justify-content: center;
+}
 
-  /* —————————— BUTTON EXPAND —————————— */
+/* —————————— SIDEBAR - AFTER CLICK —————————— */
 
-  .button-expand-large {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    margin: auto;
-    height: 40px;
-    width: 40px;
-    top: 2.5vh;
-    right: 0;
-    left: 0;
-    background: $primary-color;
-    border: 3px solid white;
-    border-radius: 100%;
-    box-shadow: 0px 2px 3px rgba(0,0,0,.2);
-    cursor: pointer;
-    transition: 0.25s;
-  }
+.sidebar-minify-expand {
+  width: 200px;
+  transition: .25s;
+}
 
-  .button-expand-large:hover {
-    box-shadow: 0px 2px 3px rgba(0,0,0,0);
-  }
+/* —————————— DASHBOARD-BODY - AFTER CLICK —————————— */
 
-  .fa-plus {
-    color: $white !important;
-    font-size: 1.25em;
-  }
+.body-move-right {
+  margin-left: 200px !important;
+}
 
-  /* —————————— AVATAR —————————— */
 
-  .avatar-medium-user {
-    height: 70px;
-    width: 70px;
-    margin-top: 12vh;
-    margin-bottom: 10px;
-    border-radius: 100%;
-    border: 3px solid white;
-    padding: 0px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    cursor: pointer;
-    transition: .25s;
-  }
+/* —————————————————————————————————————
+———————————————— BUTTON ————————————————
+———————————————————————————————————————— */
 
-  .avatar-medium-user img {
-    width: 100%;
-    height: auto;
-  }
+.button-expand-large {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  margin: auto;
+  height: 40px;
+  width: 40px;
+  top: 2.5vh;
+  right: 0;
+  left: 0;
+  background: $primary-color;
+  border: 3px solid white;
+  border-radius: 100%;
+  box-shadow: 0px 2px 3px rgba(0,0,0,.2);
+  cursor: pointer;
+  transition: 0.25s;
+}
 
-  /* —————————— ICONS —————————— */
+.button-expand-large:hover {
+  box-shadow: 0px 2px 3px rgba(0,0,0,0);
+}
 
-  .sidebar-icons {
-    min-height: 70px;
-    max-height: 15vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: .25s;
-  }
+.fa-plus {
+  color: $white !important;
+  font-size: 1.25em;
+}
 
-  .icon-home-white {
-    margin-top: 15vh;
-  }
+/* —————————— BUTTON - AFTER CLICK —————————— */
 
-  .active, .sidebar-icons:hover {
-    background: $primary-color-dark;
-  }
+.button-rotate {
+  transform: rotate(45deg);
+}
 
-  .sidebar-icons .fa-home,
-  .sidebar-icons .fa-comment,
-  .sidebar-icons .fa-comments,
-  .sidebar-icons .fa-book,
-  .sidebar-icons .fa-cog {
-    font-size: 2.25em;
-    color: white;
-    transition: .25s;
-  }
 
-  .sidebar-icons .fa-home:hover,
-  .sidebar-icons .fa-comment:hover,
-  .sidebar-icons .fa-comments:hover,
-  .sidebar-icons .fa-book:hover,
-  .sidebar-icons .fa-cog:hover {
-    font-size: 2.3em;
-  }
+/* —————————————————————————————————————
+——————————————— AVATAR —————————————————
+———————————————————————————————————————— */
 
-  /* —————————— NEW CHAT —————————— */
+.avatar-medium-user {
+  height: 70px;
+  width: 70px;
+  margin-top: 12vh;
+  margin-bottom: 10px;
+  border-radius: 100%;
+  border: 3px solid white;
+  padding: 0px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  transition: .25s;
+}
 
-  .icon-new-chat-white .fa-comment {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.avatar-medium-user img {
+  width: 100%;
+  height: auto;
+}
 
-  .icon-new-chat-white .fa-plus {
-    font-size: .4em;
-    position: absolute;
-    margin-top: -1px;
-  }
+/* —————————— AVATAR - AFTER CLICK —————————— */
 
-  /* —————————— SETTINGS —————————— */
+.avatar-scale {
+  transform: scale(1.5);
+  transition: .25s;
+}
 
-  .icon-settings-white {
-    position: absolute;
-    margin-top: 5vh;
-    bottom: 0;
-  }
 
-  /* —————————— USERNAME —————————— */
+/* —————————————————————————————————————
+———————————————— ICONS —————————————————
+———————————————————————————————————————— */
 
-  .username {
-    color: $white;
-    text-align: center;
-    margin-top: 20px;
-    transition: 0s;
-    position: absolute;
-    left: 0;
-    right: 0;
-  }
+.sidebar-icons {
+  min-height: 70px;
+  max-height: 15vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: .25s;
+}
 
-  /* —————————— SIDEBAR-TEXT —————————— */
+.active, .sidebar-icons:hover {
+  background: $primary-color-dark;
+}
 
-  .sidebar-text {
-    display: none;
-  }
+.sidebar-icons .fa-home,
+.sidebar-icons .fa-comment,
+.sidebar-icons .fa-comments,
+.sidebar-icons .fa-book,
+.sidebar-icons .fa-cog {
+  font-size: 2.25em;
+  color: white;
+  transition: .25s;
+}
 
-  .sidebar-icons h4 {
-    position: absolute;
-    color: white;
-    font-size: 1.3em;
-    left: 80px;
-  }
+.sidebar-icons .fa-home:hover,
+.sidebar-icons .fa-comment:hover,
+.sidebar-icons .fa-comments:hover,
+.sidebar-icons .fa-book:hover,
+.sidebar-icons .fa-cog:hover {
+  font-size: 2.3em;
+}
 
-  /* —————————— ONCLICK —————————— */
+/* —————————— ICONS - AFTER CLICK —————————— */
 
-  .sidebar-minify-expand {
-    width: 200px;
-    transition: .25s;
-  }
+.icon-move-left {
+  margin-left: -120px;
+  transition: .25s;
+}
 
-  .avatar-scale {
-    transform: scale(1.5);
-    transition: .25s;
-  }
 
-  .button-rotate {
-    transform: rotate(45deg);
-  }
+/* —————————————————————————————————————
+————————————————— HOME —————————————————
+———————————————————————————————————————— */
 
-  .username-hidden {
-    opacity: 0;
-    transition: opacity .25s;
-  }
+.icon-home-white {
+  margin-top: 15vh;
+}
 
-  .icon-move-left {
-    margin-left: -120px;
-    transition: .25s;
-  }
 
-  .show {
-    display: block;
-  }
+/* —————————————————————————————————————
+——————————————— NEW CHAT ———————————————
+———————————————————————————————————————— */
 
-  .body-move-right {
-    margin-left: 200px !important;
-  }
+.icon-new-chat-white .fa-comment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-new-chat-white .fa-plus {
+  font-size: .4em;
+  position: absolute;
+  margin-top: -1px;
+}
+
+
+/* —————————————————————————————————————
+——————————————— SETTINGS ———————————————
+———————————————————————————————————————— */
+
+/* —————————— SETTINGS - ICONS —————————— */
+
+.icon-settings-white {
+  position: absolute;
+  margin-top: 5vh;
+  bottom: 0;
+}
+
+/* —————————— SETTINGS - CONTENT —————————— */
+
+.settings-content-container {
+  width: 0px;
+  background: $primary-color-dark;
+  height: 100vh;
+  position: absolute;
+  overflow: hidden;
+  transition: .25s;
+  text-align: center;
+  box-shadow: inset 0px 2px 5px rgba(0,0,0,.2);
+}
+
+.settings-content-container h2 {
+  margin: 20px 50px;
+  color: white;
+}
+
+.settings-buttons {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.settings-buttons button:first-child {
+  margin-bottom: 20px;
+}
+
+.settings-logout {
+  width: 100%;
+  position: absolute;
+  margin: auto;
+  bottom: 2.5vh;
+  left: 0;
+  right: 0;
+}
+
+.settings-inputs {
+  padding: 20px;
+}
+
+.email-change {
+
+}
+
+.password-change {
+  margin: 50px 0px;
+}
+
+/* —————————— SETTINGS - AFTER CLICK —————————— */
+
+.settings-layer-open {
+  width: 300px;
+}
+
+
+/* —————————————————————————————————————
+——————————————— USERNAME ———————————————
+———————————————————————————————————————— */
+
+.username {
+  color: $white;
+  text-align: center;
+  margin-top: 20px;
+  transition: 0s;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+/* —————————— USERNAME - AFTER CLICK —————————— */
+
+.username-hidden {
+  opacity: 0;
+  transition: opacity .25s;
+}
+
+
+/* —————————————————————————————————————
+—————————————— ICON-TEXT ———————————————
+———————————————————————————————————————— */
+
+.sidebar-text {
+  display: none;
+}
+
+.sidebar-icons h4 {
+  position: absolute;
+  color: white;
+  font-size: 1.3em;
+  left: 80px;
+}
+
+
