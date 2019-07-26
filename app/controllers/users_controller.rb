@@ -57,6 +57,9 @@ class UsersController < ApplicationController
       else
         redirect_to user_path(@user)
       end
+    elsif params[:user][:searching].present?
+      @user.update(searching: params[:user][:searching])
+      redirect_to user_path(@user)
     elsif params[:user][:email].present? && params[:user][:password].nil?
       @user.update(email: params[:user][:email])
       redirect_to user_path(@user)
