@@ -1,0 +1,17 @@
+<p>match object: <%= @match %></p>
+<p>other user: <%= @other_user %> <br> category: <%= @other_user.category %></p>
+<p>match - user_id: <%= @match.user_id %></p>
+<br>
+<p>match - user_id category: <%= User.find(@match.user_id).category %></p>
+<p>match - partner_id: <%= @match.partner_id %></p>
+<p>match - partner_id category: <%= User.find(@match.partner_id).category %></p>
+
+
+
+<table>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
