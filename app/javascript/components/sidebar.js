@@ -31,4 +31,18 @@ function expandOrMinify() {
   dashboardBodyMove.classList.toggle("body-move-right");
 };
 
-export { expandOrMinify }
+function expandSettings() {
+  var expandContainer = document.querySelector(".settings-content-container");
+  expandContainer.classList.toggle("settings-layer-open");
+
+  var expandContainer = document.querySelector(".icon-settings-white");
+  expandContainer.classList.toggle("active");
+
+  var expandContainer = document.querySelector(".icon-settings-white i");
+  expandContainer.classList.toggle("button-rotate");
+
+  var expandContainer = document.querySelector(".first-button");
+  expandContainer.classList.toggle("move-in-right-first");
+};
+
+export { expandOrMinify, expandSettings }
