@@ -11,4 +11,6 @@ Rails.application.routes.draw do
     resources :messages, only: [:create]
   end
   get "customize_user", to: "profiles#new", as: :profile_choose
+  
+  resources :matches
 end

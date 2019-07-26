@@ -59,15 +59,15 @@ ActiveRecord::Schema.define(version: 2019_07_25_131221) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatar"
-    t.boolean "answered", default: false
+    t.boolean "answered"
     t.string "age_range"
     t.string "gender"
     t.string "username"
-    t.integer "answer_one", default: 0, null: false
-    t.integer "answer_two", default: 0, null: false
-    t.integer "answer_three", default: 0, null: false
-    t.integer "answer_four", default: 0, null: false
-    t.integer "answer_five", default: 0, null: false
+    t.integer "answer_one", default: 0
+    t.integer "answer_two", default: 0
+    t.integer "answer_three", default: 0
+    t.integer "answer_four", default: 0
+    t.integer "answer_five", default: 0
     t.string "category", default: "0", null: false
     t.string "d_answer_one", default: ""
     t.string "d_answer_two", default: ""
