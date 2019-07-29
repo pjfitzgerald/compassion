@@ -1,21 +1,5 @@
 <div class="question-header-container">
-  <% if @user.searching == false %>
-    <%= simple_form_for @user do |f| %>
-      <%= f.hidden_field :searching, value: true %>
-      <%= f.submit :submit, value: "Toggle Search On" %>
-    <% end %>
-  <% else %>
-    <%= simple_form_for @user do |f| %>
-      <%= f.hidden_field :searching, value: false %>
-      <%= f.submit :submit, value: "Toggle Search Off" %>
-    <% end %>
-  <% end %>
-  <% if @user.searching %>
-    <i class="fas fa-toggle-on"></i>
-  <% else %>
-    <i class="fas fa-toggle-off"></i>
-  <% end %>
-  <%= link_to "Start new chat", new_chat_path(id: current_user.id) %>
+
   <div class="question-box">
     <div class="question-box-icons">
       <div class="icon-back">
