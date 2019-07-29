@@ -1,5 +1,5 @@
 .messages {
-  font-size: 14px;
+  font-size: 16px;
   color: #868686;
   background-color: #ffffff;
   padding: 20px;
@@ -12,10 +12,13 @@
 
 .message {
   display: flex;
+  min-width: 20vw;
+  max-width: 50vw;
   margin-bottom: 10px;
   &.right {
     flex-direction: row-reverse;
     .message-content {
+      text-align: right;
       background-color: #93D295;
       color: white;
     }
