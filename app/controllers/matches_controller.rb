@@ -9,7 +9,7 @@ class MatchesController < ApplicationController
     @chatroom = Chatroom.new(match_id: @match.id)
     current_user.searching = true
     if @other_user = User.find_by(category: current_user.category, searching: true)
-      if @other_user != current_user    
+      if @other_user != current_user
         @other_user = User.find_by(category: current_user.category, searching: true)
       end
     end
@@ -38,5 +38,4 @@ class MatchesController < ApplicationController
   def set_user
     @user = current_user
   end
-
 end

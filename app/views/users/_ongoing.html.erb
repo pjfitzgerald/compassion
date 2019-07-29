@@ -2,8 +2,11 @@
   <h1>Ongoing conversations</h1>
 
   <!-- SEARCH: app/views/shared/_search.html.erb -->
-  <%= render "shared/search" %>
-
+  <% if @user.matches.empty? %>
+    <%= render "shared/empty_ongoing" %>
+  <% else %>
+    <%= render "shared/search" %>
+  <% end %>
   <div class="ongoing-slider">
     <!-- CARD-ONGOING: app/views/shared/_card_ongoing.html.erb -->
     <% @chatrooms.each do |chatroom| %>
