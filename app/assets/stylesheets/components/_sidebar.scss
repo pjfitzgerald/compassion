@@ -178,6 +178,7 @@
   font-size: .4em;
   position: absolute;
   margin-top: -1px;
+  transition: .25s;
 }
 
 /* —————————— NEW CHAT - CONTENT —————————— */
@@ -194,8 +195,39 @@
 }
 
 .new-chat-content-container h2 {
-  margin: 20px 50px;
+  width: 500px;
+  margin: 20px 0px;
   color: white;
+}
+
+.new-chat-content-body {
+  width: 500px;
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-chat-content-body h6 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.new-chat-content-body h6 span {
+  font-weight: bold;
+}
+
+#user_d_answer_one,
+#user_d_answer_two,
+#user_d_answer_three {
+  width: 350px;
+  border-radius: 12px;
+  margin-bottom: 3vh;
+}
+
+.new-chat-content-body button {
+  margin-top: 5vh;
 }
 
 /* —————————— NEW CHAT - AFTER CLICK —————————— */
@@ -203,11 +235,6 @@
 .new-chat-layer-open {
   width: 500px;
 }
-
-/* —————————————————————————————————————
-———————————————— ONGOING ———————————————
-———————————————————————————————————————— */
-
 
 
 /* —————————————————————————————————————
@@ -236,7 +263,8 @@
 }
 
 .settings-content-container h2 {
-  margin: 20px 50px;
+  width: 350px;
+  margin: 20px 0px;
   color: white;
 }
 
@@ -251,30 +279,37 @@
 }
 
 .settings-logout {
-  width: 100%;
-  position: absolute;
   margin: auto;
-  bottom: 2.5vh;
   left: 0;
   right: 0;
+  margin-top: 5vh;
 }
 
 .settings-inputs {
   padding: 20px;
 }
 
-.email-change {
+.email-change #user_email,
+.password-change #user_password {
+  border-radius: 12px;
+  width: 80%;
+}
 
+.email-change input,
+.password-change input {
+  margin: auto;
+  left: 0;
+  right: 0;
 }
 
 .password-change {
-  margin: 50px 0px;
+  margin: 5vh 0px;
 }
 
 /* —————————— SETTINGS - AFTER CLICK —————————— */
 
 .settings-layer-open {
-  width: 300px;
+  width: 350px;
 }
 
 

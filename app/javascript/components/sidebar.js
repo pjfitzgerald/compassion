@@ -38,6 +38,9 @@ function expandNewChat() {
   var expandContainer = document.querySelector(".new-chat-content-container");
   expandContainer.classList.toggle("new-chat-layer-open");
 
+  var rotateButton = document.querySelector(".icon-new-chat-white .fa-plus");
+  rotateButton.classList.toggle("button-rotate");
+
   var expandContainer = document.querySelector(".icon-new-chat-white");
   expandContainer.classList.toggle("active");
 };
@@ -47,18 +50,17 @@ function expandSettings() {
   var expandContainer = document.querySelector(".settings-content-container");
   expandContainer.classList.toggle("settings-layer-open");
 
-  var addActive = document.querySelector(".icon-settings-white");
-  addActive.classList.toggle("active");
-
   var rotateButton = document.querySelector(".icon-settings-white i");
   rotateButton.classList.toggle("button-rotate");
+
+  var toggleActive = document.querySelector(".icon-settings-white");
+  toggleActive.classList.toggle("active");
 };
 
 // TOGGLE ACTIVE
 function toggleActive() {
-  var toggleActive = document.querySelector(".sidebar-icons");
-  toggleActive.classList.toggle("");
+
 };
 
 
-export { expandOrMinify, expandNewChat, expandSettings }
+export { expandOrMinify, expandNewChat, expandSettings, toggleActive }

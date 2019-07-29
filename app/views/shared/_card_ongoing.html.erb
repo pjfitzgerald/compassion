@@ -1,12 +1,11 @@
-<style>
-</style>
-
 <div class="ongoing-card">
+  <%= link_to chatroom_path(chatroom.id) do %>
   <div class="ongoing-card-top">
     <div class="avatar-medium">
       <%= image_tag("avatars/#{chatroom.match.partner.profiles.last.animal.downcase}.png") %>
     </div>
   </div>
+  <% end %>
   <div class="ongoing-card-middle">
     <div class="user-id">
       <p>#<%= chatroom.match.partner.id %></p>
