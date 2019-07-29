@@ -26,20 +26,20 @@
       <% end %>
 
       <!-- NEW CHAT -->
-      <%= link_to @user do %>
       <div class="icon-new-chat-white sidebar-icons">
         <i class="icon far fa-comment">
           <i class="fas fa-plus"></i>
         </i>
         <h4 class="sidebar-text">New chat</h4>
       </div>
-      <% end %>
 
       <!-- ONGOING CHATS -->
+      <%= link_to ongoing_chats_path(@user) do %>
       <div class="icon-ongoing-conversation-white sidebar-icons">
         <i class="icon far fa-comments"></i>
         <h4 class="sidebar-text">Ongoing</h4>
       </div>
+      <% end %>
 
       <!-- JOURNAL -->
       <div class="icon-journal-white sidebar-icons">
@@ -56,38 +56,14 @@
     </div><!-- EO .icons -->
   </div><!-- EO .first-layer -->
 
+  <!-- SECOND-LAYER -->
   <div class="second-layer">
-    <div class="settings-content-container">
-      <h2>Settings</h2>
-      <div class="settings-inputs">
-        <div class="email-change">
-          <%= simple_form_for @user do |f| %>
-            <%= f.input :email, value: @user.email %>
-            <%= f.submit :submit, value: "Change", class: "button-default-transparent" %>
-          <% end %>
-        </div>
-          <div class="password-change">
-          <%= simple_form_for @user do |f| %>
-            <%= f.input :password %>
-            <%= f.submit :submit, value: "Change", class: "button-default-transparent" %>
-          <% end %>
-        </div>
-      </div>
-      <div class="settings-buttons">
-        <%= link_to profile_choose_path(@user) do %>
-          <button class="button-default-transparent">Edit profile</button>
-        <% end %>
-        <%= link_to survey_path(@user) do %>
-          <button class="button-default-transparent">Edit Survey</button>
-        <% end %>
-      </div>
-      <div class="settings-logout">
-        <%= link_to destroy_user_session_path, method: :delete do%>
-          <button class="button-secondary-bordered settings-logout">Log out</button>
-        <% end %>
-      </div>
-    </div>
+    <!-- Content - Ongoing -->
+    <%= render "shared/sidebar_new_chat" %>
+    <!-- Content - Settings -->
+    <%= render "shared/sidebar_settings" %>
   </div><!-- EO .second-layer -->
+
 </div><!-- EO .navigation-container -->
 
 
