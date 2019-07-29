@@ -14,3 +14,13 @@
 .ongoing-cards-body .ongoing-card {
   margin: 50px 20px 100px 0px;
 }
+
+
+// If empty
+
+.ongoing-chats-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
