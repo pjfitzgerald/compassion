@@ -1,4 +1,6 @@
 class ChatroomsController < ApplicationController
+  before_action :set_chatrooms, only: :destroy
+
   def show
     @chatrooms = Chatroom.includes(messages: :user).find(params[:id])
     @chatroom = Chatroom.find(params[:id])
@@ -33,5 +35,20 @@ class ChatroomsController < ApplicationController
       end
       redirect_to chatroom_path(@chatroom.id)
     end
+  end
+
+  def destroy
+    @chatrooms.match.destroy
+    redirect_to current_user
+  end
+
+  private
+
+  def set_chatrooms
+    @chatrooms = Chatroom.find(params[:id].to_i)
+  end
+
+  def chatrooms_params
+    params.require(:chatrooms).permit(:id)
   end
 end

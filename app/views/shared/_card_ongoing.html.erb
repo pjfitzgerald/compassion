@@ -1,15 +1,24 @@
+<style>
+</style>
+
 <div class="ongoing-card">
   <div class="ongoing-card-top">
     <div class="avatar-medium">
-      <%= image_tag("avatar_medium_koala.png") %>
+      <%= image_tag("avatars/#{chatroom.match.partner.profiles.last.animal.downcase}.png") %>
     </div>
   </div>
   <div class="ongoing-card-middle">
-    <h2>Bob Bobcat</h2>
-    <p>Started conversation 07.07.2019</p>
+    <div class="user-id">
+      <p>#<%= chatroom.match.partner.id %></p>
+    </div>
+    <h2>
+      <%= chatroom.match.partner.profiles.last.adjective %>
+      <%= chatroom.match.partner.profiles.last.animal %>
+    </h2>
+    <p>Started conversation <%= chatroom.created_at.strftime("%x") %></p>
   </div>
   <div class="ongoing-card-bottom">
-    <button class="button-primary">Continue</button>
-    <button class="button-secondary">End</button>
+    <%= link_to "Continue", chatroom_path(chatroom.id), class: "button-primary" %>
+    <%= link_to "End", chatroom, class: "button-secondary", method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
 </div>
