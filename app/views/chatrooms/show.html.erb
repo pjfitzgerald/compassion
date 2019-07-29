@@ -1,4 +1,11 @@
 
+
+
+<%# content_for :meta_title, "#{@other_user.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<%# content_for :meta_description, @other_user.description %>
+<%# content_for :meta_image, cl_image_path(@other_user.photo.path) %>
+
+
 <div class="chatroom d-flex justify-content-between">
   <%= render "shared/sidebar" %>
   <div class="chat-container">
