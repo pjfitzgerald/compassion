@@ -6,7 +6,7 @@
         <% if @user.d_answer_one != "" && @user.d_answer_two != "" && @user.d_answer_three != "" %>
           <%= link_to user_path(@user) do %>
             <%= simple_form_for @user do |f| %>
-              <%= f.hidden_field :daily_reset, value: "reset" %>
+              <%= f.hidden_field :daily_reset, value: "reset", input_html: { id: "question-box-input" } %>
               <%= f.button :button do %>
                 <i class="far fa-arrow-alt-circle-left"></i>
               <% end %>
@@ -29,14 +29,13 @@
          <h3>Daily Questions Answered 😃</h3>
       <% end %>
     </h1>
-      <%= simple_form_for @user, input_html: { id: "dashboard-input" } do |f| %>
+      <%= simple_form_for @user, input_html: { id: "daily-question-form" } do |f| %>
         <% if @user.d_answer_one == "" %>
-          <%= f.input :d_answer_one, label: false %>
-          <i class="fas fa-caret-right"></i>
+          <%= f.input :d_answer_one, label: false, input_html: { id: "d-one-input", autocomplete: 'off' } %>
         <% elsif @user.d_answer_two == "" && @user.d_answer_one != "" %>
-          <%= f.input :d_answer_two, label: false %>
+          <%= f.input :d_answer_two, label: false, input_html: { id: "d-two-input", autocomplete: 'off' } %>
         <% elsif @user.d_answer_three == "" && @user.d_answer_two != "" %>
-          <%= f.input :d_answer_three, label: false %>
+          <%= f.input :d_answer_three, label: false, input_html: { id: "d-three-input", autocomplete: 'off' } %>
         <% else %>
           <%= link_to "Start a new Chat", new_chat_path(id: current_user.id) %>
         <% end %>
