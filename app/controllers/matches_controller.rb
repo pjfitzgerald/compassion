@@ -1,5 +1,6 @@
 class MatchesController < ApplicationController
   before_action :set_user
+
   def new
     @match = Match.new
   end
