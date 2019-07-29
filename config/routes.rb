@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resources :messages, only: [:create]
   end
   get "customize_user", to: "profiles#new", as: :profile_choose
-  
+
   get "new_chat", to: "users#new_match", as: :new_chat
+
+  get "ongoing_chats", to: "users#ongoing_chats", as: :ongoing_chats
 end

@@ -3,6 +3,7 @@ require 'csv'
 class UsersController < ApplicationController
 
   before_action :set_user, only: [:show, :new, :new_match]
+  before_action :set_chatrooms, only: [:show, :ongoing_chats]
 
   before_action :authenticate_user!, only: [:update]
 
@@ -21,6 +22,9 @@ class UsersController < ApplicationController
 
   def searching
     @user.update(searching: true)
+  end
+
+  def ongoing_chats
   end
 
   def new_match
@@ -131,6 +135,11 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def set_chatrooms
+    @user = current_user
+    @chatrooms = Chatroom.where(user_id: @user.id).or(Chatroom.where(partner_id: @user_id))
+  end
 
   def set_user
     @user = User.find(params[:id])

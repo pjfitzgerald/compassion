@@ -1,0 +1,30 @@
+<div class="settings-content-container">
+  <h2>Settings</h2>
+  <div class="settings-inputs">
+    <div class="email-change">
+      <%= simple_form_for @user do |f| %>
+      <%= f.input :email, value: @user.email %>
+      <%= f.submit :submit, value: "Change", class: "button-default-transparent" %>
+      <% end %>
+    </div>
+    <div class="password-change">
+      <%= simple_form_for @user do |f| %>
+      <%= f.input :password %>
+      <%= f.submit :submit, value: "Change", class: "button-default-transparent" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="settings-buttons">
+    <%= link_to profile_choose_path(@user) do %>
+    <button class="button-default-transparent">Edit profile</button>
+    <% end %>
+    <%= link_to survey_path(@user) do %>
+    <button class="button-default-transparent">Edit Survey</button>
+    <% end %>
+  </div>
+  <div class="settings-logout">
+    <%= link_to destroy_user_session_path, method: :delete do%>
+    <button class="button-secondary-bordered settings-logout">Log out</button>
+    <% end %>
+  </div>
+</div>
