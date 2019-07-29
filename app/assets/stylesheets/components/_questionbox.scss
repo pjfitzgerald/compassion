@@ -51,7 +51,7 @@
     justify-content: center;
   }
 
-  .question-box form input:first-child {
+  .question-box .form-group input:first-child {
     width: 60%;
     height: 40px;
     border-radius: 15px 0px 0px 15px;
@@ -62,11 +62,11 @@
     color: white;
   }
 
-  .question-box form input::placeholder {
+  .question-box .form-group input::placeholder {
     color: white;
   }
 
-  .question-box form button {
+  .question-box .form-group button {
     width: 30px;
     height: 40px;
     border-radius: 0px 15px 15px 0px;
@@ -95,7 +95,7 @@
   }
 
 
-  .question-box form button {
+  .question-box .form-group button {
     position: absolute;
     background: none;
     border: none;

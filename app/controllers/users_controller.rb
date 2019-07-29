@@ -120,7 +120,7 @@ class UsersController < ApplicationController
     end
     @questions = questions_list[3, 5]
   end
-  
+
   def reset_daily_answers
     @user.update(d_answer_one: "", d_answer_two: "", d_answer_three: "")
     redirect_to user_path(current_user)
@@ -143,9 +143,9 @@ class UsersController < ApplicationController
   end
 
   def set_chatrooms
-    @chatrooms = current_user.matches.map {|match| match.chatroom}
+    @matches = Match.where(user_id: current_user.id).or(Match.where(partner_id: current_user.id))
+    @chatrooms = @matches.map {|match| match.chatroom}
   end
-
 
   def set_user
     @user = User.find(params[:id])
