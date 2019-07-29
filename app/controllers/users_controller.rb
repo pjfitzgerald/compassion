@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   end
 
   def ongoing_chats
+    @user = current_user
   end
 
   def new_match
@@ -130,9 +131,9 @@ class UsersController < ApplicationController
   end
 
   def set_chatrooms
-    @user = current_user
-    @chatrooms = Chatroom.where(user_id: @user.id).or(Chatroom.where(partner_id: @user_id))
+    @chatrooms = current_user.matches.map {|match| match.chatroom}
   end
+
 
   def set_user
     @user = User.find(params[:id])

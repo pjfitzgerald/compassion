@@ -1,24 +1,3 @@
-<style>
-
-  .ongoing-cards-container {
-    padding: 20px;
-    margin-top: 50px;
-    text-align: center;
-  }
-
-  .ongoing-cards-body {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-  }
-
-  .ongoing-cards-body .ongoing-card {
-    margin: 20px 20px 0px 0px;
-  }
-
-</style>
-
 <%= render "shared/sidebar" %>
 
 <div class="dashboard-body bodies">
@@ -28,15 +7,9 @@
     <%= render "shared/search" %>
 
     <div class="ongoing-cards-body">
-      <%= render "shared/card_ongoing" %>
-      <%= render "shared/card_ongoing" %>
-      <%= render "shared/card_ongoing" %>
-      <%= render "shared/card_ongoing" %>
-      <%= render "shared/card_ongoing" %>
-      <%= render "shared/card_ongoing" %>
-      <%= render "shared/card_ongoing" %>
-      <%= render "shared/card_ongoing" %>
-      <%= render "shared/card_ongoing" %>
+      <% @chatrooms.each do |chatroom| %>
+        <%= render "shared/card_ongoing", chatroom: chatroom %>
+      <% end %>
     </div><!-- EO .ongoing-cards-body -->
 
   </div><!-- EO .ongoing-cards-container -->
