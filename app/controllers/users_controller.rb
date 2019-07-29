@@ -130,7 +130,6 @@ class UsersController < ApplicationController
   def set_chatrooms
     @user = current_user
     @chatrooms = Chatroom.where(user_id: @user.id).or(Chatroom.where(partner_id: @user_id))
-
   end
 
   def set_user
