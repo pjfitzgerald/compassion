@@ -1,3 +1,5 @@
+
+// EXPAND/MINIFY MAIN SIDEBAR
 function expandOrMinify() {
   var sidebarMinExp = document.querySelector(".navigation-container");
   sidebarMinExp.classList.toggle("sidebar-minify-expand");
@@ -23,7 +25,7 @@ function expandOrMinify() {
     } else {
       setTimeout(function timer(){
         sidebarText[i].classList.toggle("show");
-      }, 100); // CHANGE THIS FOR TIMER-DELAY
+      }, 100); // Change this for timer-delay
     };
   };
 
@@ -31,18 +33,32 @@ function expandOrMinify() {
   dashboardBodyMove.classList.toggle("body-move-right");
 };
 
+// EXPAND - NEW CHAT
+function expandNewChat() {
+  var expandContainer = document.querySelector(".new-chat-content-container");
+  expandContainer.classList.toggle("new-chat-layer-open");
+
+  var expandContainer = document.querySelector(".icon-new-chat-white");
+  expandContainer.classList.toggle("active");
+};
+
+// EXPAND - SETTINGS
 function expandSettings() {
   var expandContainer = document.querySelector(".settings-content-container");
   expandContainer.classList.toggle("settings-layer-open");
 
-  var expandContainer = document.querySelector(".icon-settings-white");
-  expandContainer.classList.toggle("active");
+  var addActive = document.querySelector(".icon-settings-white");
+  addActive.classList.toggle("active");
 
-  var expandContainer = document.querySelector(".icon-settings-white i");
-  expandContainer.classList.toggle("button-rotate");
-
-  var expandContainer = document.querySelector(".first-button");
-  expandContainer.classList.toggle("move-in-right-first");
+  var rotateButton = document.querySelector(".icon-settings-white i");
+  rotateButton.classList.toggle("button-rotate");
 };
 
-export { expandOrMinify, expandSettings }
+// TOGGLE ACTIVE
+function toggleActive() {
+  var toggleActive = document.querySelector(".sidebar-icons");
+  toggleActive.classList.toggle("");
+};
+
+
+export { expandOrMinify, expandNewChat, expandSettings }
