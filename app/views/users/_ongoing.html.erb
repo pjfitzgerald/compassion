@@ -6,14 +6,8 @@
 
   <div class="ongoing-slider">
     <!-- CARD-ONGOING: app/views/shared/_card_ongoing.html.erb -->
-    <%= render "shared/card_ongoing" %>
-    <%= render "shared/card_ongoing" %>
-    <%= render "shared/card_ongoing" %>
-    <%= render "shared/card_ongoing" %>
-    <%= render "shared/card_ongoing" %>
-    <%= render "shared/card_ongoing" %>
-    <%= render "shared/card_ongoing" %>
-    <%= render "shared/card_ongoing" %>
-    <%= render "shared/card_ongoing" %>
+    <% @chatrooms.each do |chatroom| %>
+        <%= render "shared/card_ongoing", chatroom: chatroom %>
+      <% end %>
   </div>
 </div>
