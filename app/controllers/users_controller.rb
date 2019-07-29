@@ -3,21 +3,11 @@ require 'csv'
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :new, :new_match]
   before_action :set_chatrooms, only: [:show, :ongoing_chats]
+  before_action :set_questions, only: [:show, :ongoing_chats]
 
   before_action :authenticate_user!, only: [:update]
 
   def show
-    @user_count = User.all.count
-    filepath = File.join(Rails.root, 'config', 'questions.csv')
-    questions_list = []
-    CSV.foreach(filepath) do |row|
-      unless row[1].nil?
-        unless row[1].split("").count > 50
-          questions_list << row[1] unless row[1].empty?
-        end
-      end
-    end
-    @questions = questions_list[3, 5]
   end
 
   def searching
@@ -111,6 +101,20 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def set_questions
+    @user_count = User.all.count
+    filepath = File.join(Rails.root, 'config', 'questions.csv')
+    questions_list = []
+    CSV.foreach(filepath) do |row|
+      unless row[1].nil?
+        unless row[1].split("").count > 50
+          questions_list << row[1] unless row[1].empty?
+        end
+      end
+    end
+    @questions = questions_list[3, 5]
+  end
 
   def update_answers
     @user.update(answer_one: params[:user][:answer_one],
