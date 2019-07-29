@@ -11,8 +11,4 @@ class ApplicationController < ActionController::Base
   def default_url_options
     { host: ENV["DOMAIN"] || "localhost:3000" }
   end
-
-  def not_found
-    raise ActionController::RoutingError.new('Not Found')
-  end
 end
