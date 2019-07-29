@@ -125,6 +125,7 @@ class UsersController < ApplicationController
                    description: params[:user][:profiledesc],
                    image: params[:user][:profileimg],
                    user_id: current_user.id)
+  end
 
   def set_chatrooms
     @user = current_user
