@@ -1,4 +1,11 @@
 <div class="message <%= user_is_messages_author ? "right" : "" %>">
   <%#= image_tag message.user.avatar, class: "avatar" %>
-  <div class="message-content"><%= message.content %> <br> <%= message.created_at.strftime("%-I:%M%p").downcase %></div>
+  <div class="message-content">
+    <!-- If the message was created before the current date -->
+    <% if Time.now.strftime("%j").to_i > message.created_at.strftime("%j").to_i %>
+      <%= message.content %> <br> <%= message.created_at.strftime("%A %b %d %-I:%M%p").downcase %>
+    <% else %>
+      <%= message.content %> <br> <%= message.created_at.strftime("%-I:%M%p").downcase %>
+    <% end %>
+  </div>
 </div>
