@@ -33,6 +33,8 @@ class UsersController < ApplicationController
     @other_user = @users.sample
     @match = Match.new(user: @user, partner: @other_user)
     if @match.save
+      @user.update(searching: false)
+      @other_user.update(searching: false)
       @chatroom = Chatroom.create(match: @match)
       redirect_to chatroom_path(@chatroom)
     else
