@@ -1,11 +1,20 @@
 <div class="message <%= user_is_messages_author ? "right" : "" %>">
   <%#= image_tag message.user.avatar, class: "avatar" %>
+  <div class="chat-avatars">
+    <%= image_tag("avatars/#{message.user.profiles.last.animal.downcase}.png") %>
+  </div>
   <div class="message-content">
     <!-- If the message was created before the current date -->
     <% if Time.now.strftime("%j").to_i > message.created_at.strftime("%j").to_i %>
-      <%= message.content %> <br> <%= message.created_at.strftime("%A %b %d %-I:%M%p").downcase %>
+      <%= message.content %>
+      <div style="color: #9C9CAB; line-height: 20px;">
+        <%= message.created_at.strftime("%A %b %d %-I:%M%p").downcase %>
+      </div>
     <% else %>
-      <%= message.content %> <br> <%= message.created_at.strftime("%-I:%M%p").downcase %>
+      <%= message.content %>
+      <div style="color: #9C9CAB; line-height: 20px;">
+        <%= message.created_at.strftime("%-I:%M%p").downcase %>
+      </div>
     <% end %>
   </div>
 </div>
