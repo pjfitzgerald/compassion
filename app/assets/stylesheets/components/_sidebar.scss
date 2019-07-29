@@ -166,6 +166,8 @@
 ——————————————— NEW CHAT ———————————————
 ———————————————————————————————————————— */
 
+/* —————————— NEW CHAT - ICONS —————————— */
+
 .icon-new-chat-white .fa-comment {
   display: flex;
   justify-content: center;
@@ -177,6 +179,35 @@
   position: absolute;
   margin-top: -1px;
 }
+
+/* —————————— NEW CHAT - CONTENT —————————— */
+
+.new-chat-content-container {
+  width: 0px;
+  background: $primary-color-dark;
+  height: 100vh;
+  position: absolute;
+  overflow: hidden;
+  transition: .25s;
+  text-align: center;
+  box-shadow: inset 0px 2px 5px rgba(0,0,0,.2);
+}
+
+.new-chat-content-container h2 {
+  margin: 20px 50px;
+  color: white;
+}
+
+/* —————————— NEW CHAT - AFTER CLICK —————————— */
+
+.new-chat-layer-open {
+  width: 500px;
+}
+
+/* —————————————————————————————————————
+———————————————— ONGOING ———————————————
+———————————————————————————————————————— */
+
 
 
 /* —————————————————————————————————————
