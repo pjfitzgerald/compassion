@@ -34,6 +34,8 @@ class UsersController < ApplicationController
     @other_user = @users.sample
     @match = Match.new(user: @user, partner: @other_user)
     if @match.save
+      @user.update(searching: false)
+      @other_user.update(searching: false)
       @chatroom = Chatroom.create(match: @match)
       redirect_to chatroom_path(@chatroom)
     else
@@ -62,6 +64,9 @@ class UsersController < ApplicationController
       else
         redirect_to user_path(@user)
       end
+    # Resets daily answers
+    elsif params[:user][:daily_reset].present?
+      reset_daily_answers
     # If the user toggles the searching button
     elsif params[:user][:searching].present?
       @user.update(searching: params[:user][:searching])
@@ -111,6 +116,11 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def reset_daily_answers
+    @user.update(d_answer_one: "", d_answer_two: "", d_answer_three: "")
+    redirect_to user_path(current_user)
+  end
 
   def update_answers
     @user.update(answer_one: params[:user][:answer_one],
