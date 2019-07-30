@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :inverse_matches, class_name: "Match", foreign_key: "partner_id"
   has_many :inverse_partners, through: :inverse_matches, source: :user
   has_many :profiles, dependent: :destroy
+  has_one :journal
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
