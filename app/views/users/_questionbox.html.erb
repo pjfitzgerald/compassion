@@ -1,25 +1,18 @@
 <div class="question-header-container">
-  <% if @user.searching == false %>
-    <%= simple_form_for @user do |f| %>
-      <%= f.hidden_field :searching, value: true %>
-      <%= f.submit :submit, value: "Toggle Search On" %>
-    <% end %>
-  <% else %>
-    <%= simple_form_for @user do |f| %>
-      <%= f.hidden_field :searching, value: false %>
-      <%= f.submit :submit, value: "Toggle Search Off" %>
-    <% end %>
-  <% end %>
-  <% if @user.searching %>
-    <i class="fas fa-toggle-on"></i>
-  <% else %>
-    <i class="fas fa-toggle-off"></i>
-  <% end %>
-  <%= link_to "Start new chat", new_chat_path(id: current_user.id) %>
+
   <div class="question-box">
     <div class="question-box-icons">
       <div class="icon-back">
-        <i class="far fa-arrow-alt-circle-left"></i>
+        <% if @user.d_answer_one != "" && @user.d_answer_two != "" && @user.d_answer_three != "" %>
+          <%= link_to user_path(@user) do %>
+            <%= simple_form_for @user do |f| %>
+              <%= f.hidden_field :daily_reset, value: "reset", input_html: { id: "question-box-input" } %>
+              <%= f.button :button do %>
+                <i class="far fa-arrow-alt-circle-left"></i>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
       </div>
       <div class="icon-info">
         <i class="fas fa-info-circle" data-toggle="modal" data-target="#modal-info"></i>
@@ -36,13 +29,13 @@
          <h3>Daily Questions Answered 😃</h3>
       <% end %>
     </h1>
-      <%= simple_form_for @user do |f| %>
+      <%= simple_form_for @user, input_html: { id: "daily-question-form" } do |f| %>
         <% if @user.d_answer_one == "" %>
-          <%= f.input :d_answer_one %>
+          <%= f.input :d_answer_one, label: false, input_html: { id: "d-one-input", autocomplete: 'off' } %>
         <% elsif @user.d_answer_two == "" && @user.d_answer_one != "" %>
-          <%= f.input :d_answer_two %>
+          <%= f.input :d_answer_two, label: false, input_html: { id: "d-two-input", autocomplete: 'off' } %>
         <% elsif @user.d_answer_three == "" && @user.d_answer_two != "" %>
-          <%= f.input :d_answer_three %>
+          <%= f.input :d_answer_three, label: false, input_html: { id: "d-three-input", autocomplete: 'off' } %>
         <% else %>
           <%= link_to "Start a new Chat", new_chat_path(id: current_user.id) %>
         <% end %>

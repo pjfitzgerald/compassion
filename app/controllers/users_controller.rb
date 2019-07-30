@@ -3,21 +3,11 @@ require 'csv'
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :new, :new_match]
   before_action :set_chatrooms, only: [:show, :ongoing_chats]
+  before_action :set_questions, only: [:show, :ongoing_chats]
 
   before_action :authenticate_user!, only: [:update]
 
   def show
-    @user_count = User.all.count
-    filepath = File.join(Rails.root, 'config', 'questions.csv')
-    questions_list = []
-    CSV.foreach(filepath) do |row|
-      unless row[1].nil?
-        unless row[1].split("").count > 50
-          questions_list << row[1] unless row[1].empty?
-        end
-      end
-    end
-    @questions = questions_list[3, 5]
   end
 
   def searching
@@ -34,6 +24,8 @@ class UsersController < ApplicationController
     @other_user = @users.sample
     @match = Match.new(user: @user, partner: @other_user)
     if @match.save
+      @user.update(searching: false)
+      @other_user.update(searching: false)
       @chatroom = Chatroom.create(match: @match)
       redirect_to chatroom_path(@chatroom)
     else
@@ -62,6 +54,9 @@ class UsersController < ApplicationController
       else
         redirect_to user_path(@user)
       end
+    # Resets daily answers
+    elsif params[:user][:daily_reset].present?
+      reset_daily_answers
     # If the user toggles the searching button
     elsif params[:user][:searching].present?
       @user.update(searching: params[:user][:searching])
@@ -112,6 +107,25 @@ class UsersController < ApplicationController
 
   private
 
+  def set_questions
+    @user_count = User.all.count
+    filepath = File.join(Rails.root, 'config', 'questions.csv')
+    questions_list = []
+    CSV.foreach(filepath) do |row|
+      unless row[1].nil?
+        unless row[1].split("").count > 50
+          questions_list << row[1] unless row[1].empty?
+        end
+      end
+    end
+    @questions = questions_list[3, 5]
+  end
+
+  def reset_daily_answers
+    @user.update(d_answer_one: "", d_answer_two: "", d_answer_three: "")
+    redirect_to user_path(current_user)
+  end
+
   def update_answers
     @user.update(answer_one: params[:user][:answer_one],
                  answer_two: params[:user][:answer_two],
@@ -129,9 +143,9 @@ class UsersController < ApplicationController
   end
 
   def set_chatrooms
-    @chatrooms = current_user.matches.map {|match| match.chatroom}
+    @matches = Match.where(user_id: current_user.id).or(Match.where(partner_id: current_user.id))
+    @chatrooms = @matches.map {|match| match.chatroom}
   end
-
 
   def set_user
     @user = User.find(params[:id])

@@ -1,9 +1,9 @@
 .messages {
-  font-size: 14px;
+  font-size: 16px;
   color: #868686;
   background-color: #ffffff;
   padding: 20px;
-  border: 3px solid #ececec;
+  border: 2px solid #ececec;
   border-top: none;
   border-bottom-width: 0;
   max-height: calc(100vh - 70px - 45px - 61px - 30px);
@@ -11,21 +11,31 @@
 }
 
 .message {
+  padding: 4px;
   display: flex;
+  min-width: 20vw;
+  max-width: 40vw;
   margin-bottom: 10px;
   &.right {
     flex-direction: row-reverse;
     .message-content {
-      background-color: #93D295;
-      color: white;
+      text-align: right;
+      line-height: 27.5px;
+      background: #bedff6;
+      border-radius: 15px 0px 15px 15px;
+      color: #222;
+      padding: 5px 20px 5px 20px;
     }
   }
 }
 .message-content {
   background-color: #F7F7F7;
-  border-radius: 3px;
+  line-height: 27.5px;
+  color: #4D4D4D;
+  border-radius: 0px 15px 15px 15px;
   margin: 0 10px;
-  padding: 11px 10px 8px 10px;
+  max-width: 70%;
+  padding: 5px 20px 5px 20px;
 }
 .avatar {
   width: 42px;
@@ -33,27 +43,38 @@
   border-radius: 50%;
 }
 
-#create-message {
-  padding: 10px;
-  background-color: #ffffff;
+.create-message {
+  padding: 20px 10px 10px 10px;
+  border-radius: 0px 0px 10px 10px;
+  background-color: white;
   margin-bottom: 20px;
-  border: 1px solid #ececec;
+  border: 2px solid #ececec;
 }
 .message_content {
   margin-bottom: 0;
 }
-input.form-control {
-  border: 1px solid #ECECEC;
+textarea {
+  padding: 5px;
+  width: 100%;
+  resize: none;
+  border: 3px solid #93D295;
+  height: 50px;
+  border-radius: 10px;
   box-shadow: none;
   font-size: 14px;
   color: #868686;
+  transition: height .25s;
   &:focus {
     outline: none;
-    border: 1px solid blue;
+    color: black;
+    height: 200px;
+    border: 3px solid #93D295;
     box-shadow: none;
   }
 }
 .chat-header {
+  border-radius: 5px 5px 0px 0px;
+  border: 2px solid #ececec;
   background-color: #93D295;
   color: white;
   padding: 10px 20px;
@@ -62,3 +83,27 @@ input.form-control {
     margin: 0;
   }
 }
+
+.chat-avatars img {
+  width: 50px;
+  height: 50px;
+}
+
+.expandedMessageBox {
+  border: 10px solid red;
+  margin-top: -100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
