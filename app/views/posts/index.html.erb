@@ -1,4 +1,20 @@
+<%= render "shared/sidebar" %>
+<div class="journal-container">
+  <% @posts.reverse.each do |post| %>
+    <div class="latest-journal-entries">
+      <h5>
+        <%= post.title %>
+      </h5>
+      <p class="latest-journal-entries-date">
+        <%= post.created_at %>
+      </p>
+      <p class="latest-journal-entries-text">
+        <%= post.content %>
+      </p>
+      <%= link_to journal_post_path(post.journal.id, post.id) do %>
+        <button class="button-secondary">Read</button>
+      <% end %>
+  <% end %>
+</div>
 
-<% @posts.each do |post| %>
-  <%= post.content %>
-<% end %>
+

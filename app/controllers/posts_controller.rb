@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(post_params)
+    @post = Post.find(params[:id])
   end
 
   def new
@@ -15,12 +15,28 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-    if @post.save
-      redirect_to journal_post_path # (/post/show path)
+    if params[:post][:title].empty?
+      flash[:notice] = "Woops! Please add a title!"
+    elsif params[:post][:content].empty?
+      flash[:notice] = "Woops! Please add some text to your journal entry!"
     else
-      render :new
+      @post = Post.new(title: params[:post][:title], content: params[:post][:content], journal: current_user.journal)
+      if @post.save
+        flash[:notice] = "Journal entry created! 😎"
+      else
+        flash[:notice] = "Something went wrong! 🤔"
+      end
     end
+    redirect_to user_path(current_user)
+  end
+
+  def update
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to user_path(current_user)
   end
 
   private
@@ -34,6 +50,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:id)
+    params.require(:post).permit(:content, :title)
   end
 end

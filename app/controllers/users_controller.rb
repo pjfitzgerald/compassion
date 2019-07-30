@@ -8,6 +8,8 @@ class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:update]
 
   def show
+    @journal = current_user.journal
+    @post = Post.new
   end
 
   def searching
@@ -34,6 +36,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    raise
     @collection = ["n/a", "1", "2", "3", "4", "5"]
     @user = current_user
     # If previous page was the survey
