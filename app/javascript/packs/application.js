@@ -1,9 +1,11 @@
 import "bootstrap";
-import { expandOrMinify } from "../components/sidebar";
-import { expandNewChat } from "../components/sidebar";
-import { expandSettings } from "../components/sidebar";
-import { toggleActive } from "../components/sidebar";
-import { moveUpChatbox } from "../components/chatbox";
+import { expandOrMinify, expandNewChat, expandSettings, toggleActive } from "../components/sidebar";
+import { moveUpChatbox, showQuestions } from "../components/chatbox";
+
+
+/* —————————————————————————————— */
+/* ——————————— SIDEBAR —————————— */
+/* —————————————————————————————— */
 
 // MAIN SIDEBAR - EXPAND/MINIFY
 let button = document.querySelector(".button-expand-large");
@@ -37,6 +39,19 @@ if (toggleActiveIcons) {
   })
 };
 
+
+/* —————————————————————————————— */
+/* —————————— CHATROOM —————————— */
+/* —————————————————————————————— */
+
+// EXPAND HEADER
+let headerExpand = document.querySelector('.button-expand-medium');
+if (headerExpand) {
+  headerExpand.addEventListener("click", () => {
+    showQuestions();
+  })
+};
+
 // EXPAND MESSAGE BOX
 let chatTextArea = document.querySelector('#message_content');
 if (chatTextArea) {
@@ -44,4 +59,15 @@ if (chatTextArea) {
     moveUpChatbox();
   })
 };
+
+// CLICK ENTER TO SUBMIT (<textarea>)
+let myForm = document.querySelector(".new_message");
+let inputOkay = document.querySelector(".chat-message-box");
+
+inputOkay.addEventListener("keyup", (event) => {
+  if (event.code === "Enter") {
+    document.querySelector(".message-submit").click();
+    inputOkay.value = "";
+  };
+});
 
