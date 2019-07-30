@@ -36,7 +36,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    raise
     @collection = ["n/a", "1", "2", "3", "4", "5"]
     @user = current_user
     # If previous page was the survey
