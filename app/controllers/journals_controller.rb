@@ -1,4 +1,5 @@
 class JournalsController < ApplicationController
+  before_action :set_questions
   def new
     @journal = Journal.new
   end
