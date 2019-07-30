@@ -72,26 +72,35 @@ class UsersController < ApplicationController
       end
       redirect_to user_path(@user)
     # If user is answering daily questions
-    elsif params[:user][:d_answer_one].present?
-      @user.update(d_answer_one: params[:user][:d_answer_one])
+    elsif params[:user][:dailyanswerone]
+      if params[:user][:d_answer_one] == ""
+        flash[:notice] = "Please submit an answer 😃"
+      else
+        @user.update(d_answer_one: params[:user][:d_answer_one])
+      end
       redirect_to user_path(@user)
-    elsif params[:user][:d_answer_two].present?
-      @user.update(d_answer_two: params[:user][:d_answer_two])
+    elsif params[:user][:dailyanswertwo]
+      if params[:user][:d_answer_two] == ""
+        flash[:notice] = "Please submit an answer 😃"
+      else
+        @user.update(d_answer_two: params[:user][:d_answer_two])
+      end
       redirect_to user_path(@user)
-    elsif params[:user][:d_answer_three].present?
-      @user.update(d_answer_three: params[:user][:d_answer_three])
+    elsif params[:user][:dailyanswerthree]
+      if params[:user][:d_answer_three] == ""
+        flash[:notice] = "Please submit an answer 😃"
+      else
+        @user.update(d_answer_three: params[:user][:d_answer_three])
+      end
       redirect_to user_path(@user)
     # If previous page was the profile choose page
     elsif params[:user][:profileanimal].present?
       # If user already has an profile
-      if @user.profiles.count >= 1
-        @user.profiles.last.destroy
-        update_profile
-      else
-        update_profile
-      end
+      @user.profiles.last.destroy if @user.profiles.count >= 1
+      update_profile
       redirect_to user_path(@user)
     else
+      raise
       render :survey
     end
   end
