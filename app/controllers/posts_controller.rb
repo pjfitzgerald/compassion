@@ -1,15 +1,17 @@
 class PostsController < ApplicationController
   before_action :set_user
-  before_action :set_questions
-  
+  before_action :set_questions, :set_journal, only: [:new, :create]
+
+  def index
+    @posts = Post.where(journal_id: Journal.where(user_id: User.find(current_user.id)))
+  end
+
   def new
-    @post = Post.new(journal_id: params[:journal_id])
-    @journal = Journal.find(params[:journal_id])
+    @post = Post.new
   end
 
   def create
     @post = Post.new(post_params)
-    @journal = Journal.find(params[:journal_id])
     if @post.save
       redirect_to journal_post_path # (/post/show path)
     else
@@ -25,5 +27,13 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:content)
+  end
+
+  def journal_params
+    params.require(:journal).permit(:journal_id)
+  end
+
+  def set_journal
+    @journal = Journal.find(journal_params)
   end
 end
