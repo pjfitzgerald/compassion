@@ -18,4 +18,8 @@ Rails.application.routes.draw do
   get "ongoing_chats", to: "users#ongoing_chats", as: :ongoing_chats
 
   mount ActionCable.server => "/cable"
+
+  resources :journals do
+    resources :posts
+  end
 end
