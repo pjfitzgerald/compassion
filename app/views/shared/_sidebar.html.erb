@@ -46,12 +46,12 @@
       <% end %>
 
       <!-- JOURNAL -->
-      <%#= link_to journal_posts_path do %>
+      <%= link_to journal_posts_path(@user.journal.id) do %>
       <div class="icon-journal-white sidebar-icons">
         <i class="icon fas fa-book"></i>
         <h4 class="sidebar-text">Journal</h4>
       </div>
-      <%# end %>
+      <% end %>
 
       <!-- SETTINGS -->
       <div class="icon-settings-white sidebar-icons">
