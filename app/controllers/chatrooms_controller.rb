@@ -1,6 +1,7 @@
 class ChatroomsController < ApplicationController
   before_action :set_chatrooms, only: :destroy
   before_action :set_questions, only: :show
+  before_action :set_rooms, only: :show
 
   def show
     @chatrooms = Chatroom.includes(messages: :user).find(params[:id])
@@ -61,6 +62,11 @@ class ChatroomsController < ApplicationController
 
   def set_chatrooms
     @chatrooms = Chatroom.find(params[:id].to_i)
+  end
+
+  def set_rooms
+    @matches = Match.where(user_id: current_user.id).or(Match.where(partner_id: current_user.id))
+    @rooms = @matches.map {|match| match.chatroom}
   end
 
   def chatrooms_params

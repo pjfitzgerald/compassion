@@ -1,36 +1,186 @@
+// ALL - CONTAINER
+// ———————————————
 
-.chat-messagebox {
+.chat-container {
+  margin: 25px 5vw 100px 5vw;
+  width: 95%;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
-.chat-user {
-  background-color: blue;
+.chatroom-messages-top-container,
+.chatroom-messages-middle-container,
+.chatroom-messages-bottom-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 500px;
+  max-width: 42.5vw;
 }
 
-.chat-partner {
-  background-color: gray;
-}
+// TOP - HEADER
+// ————————————
 
-.chat-container {
-  margin: auto;
-}
-
-.chat-body {
-  position: absolute;
-  left: 150px;
-  min-width: 50vw;
-  max-width: 50vw;
-}
-
-.message-submit {
-  background: #93D295;
-  height: 40px;
-  width: 150px;
+.chat-header {
+  text-align: center;
+  border-radius: 15px 15px 0px 0px;
+  background-color: $primary-color;
   color: white;
-  margin: 4px;
+  padding: 10px;
+  h4 {
+    margin-top: 6px;
+    font-weight: bold;
+  }
+}
+
+
+// MIDDLE - MESSAGES
+// —————————————————
+
+// MESSAGE-CONTAINER
+.messages {
+  font-size: 16px;
+  background-color: #FFF;
+  padding: 20px;
+  border-right: 2px solid $primary-color;
+  border-left: 2px solid $primary-color;
+  min-height: calc(55vh - 70px - 45px - 61px - 30px);
+  max-height: calc(95vh - 70px - 45px - 61px - 30px);
+  overflow: scroll;
+  transition: .25s;
+  box-shadow: inset 0px -5px 15px rgba(0,0,0,.1);
+}
+
+// MESSAGE-CONTAINER - AFTER CLICK
+.expandedMessageBox {
+  max-height: calc(74.9vh - 70px - 45px - 61px - 30px);
+}
+
+// MESSAGE CONTENT
+.message-content {
+  background-color: #F7F7F7;
+  line-height: 27.5px;
+  color: #4D4D4D;
+  border-radius: 0px 15px 15px 15px;
+  margin: 10px 10px;
+  max-width: 70%;
+  padding: 5px 20px 5px 20px;
+}
+
+// TIME
+.chatroom-message-time {
+  color: #9C9CAB;
+  position: relative;
+  margin-top: -30px;
+  font-size: 0.8em;
+}
+
+// CONTAINER FOR ALL TEXT, TIME, AVATARS
+.message {
+  display: flex;
+  min-width: 20vw;
+  margin-bottom: 10px;
+  // RIGHT-SIDE CONTENT
+  &.right {
+    flex-direction: row-reverse;
+    // MESSAGE CONTENT FOR RIGHT
+    .message-content {
+      line-height: 27.5px;
+      background: #bedff6;
+      border-radius: 15px 0px 15px 15px;
+      color: #222;
+      padding: 5px 20px 5px 20px;
+    }
+    // MESSAGE TIME FOR RIGHT
+    .chatroom-message-time {
+      float: right;
+    }
+  }
+}
+
+// AVATAR
+.chat-avatars img {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #333;
+  border-radius: 100%;
+}
+
+
+// BOTTOM - CREATE MESSAGE
+// ———————————————————————
+
+// CONTAINER
+.create-message {
+  padding: 20px 20px;
+  border-radius: 0px 0px 15px 15px;
+  background-color: white;
+  border-left: 2px solid $primary-color;
+  border-right: 2px solid $primary-color;
+  border-bottom: 2px solid $primary-color;
+}
+
+// TEXT INPUT
+textarea {
+  padding: 5px 10px;
+  width: 100%;
+  resize: none;
+  border: 2px solid $primary-color;
+  height: 40px;
   border-radius: 10px;
-  border: 1px solid white;
+  box-shadow: none;
+  font-size: 14px;
+  transition: height .25s;
+  &:focus {
+    outline: none;
+    color: #333;
+  }
+}
+
+textarea::placeholder {
+  color: $primary-color;
+}
+
+// TEXT INPUT - AFTER CLICK
+.extraHeight {
+  height: 200px;
+}
+
+// SEND-BUTTON
+.create-message .button-primary {
+  margin-top: 10px;
+  float: right;
+}
+
+
+// ONGOING CHATS SCROLLBAR
+// ———————————————————————
+
+.chatroom-ongoing-chats-container {
+  min-width: 400px;
+  max-width: 40vw;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+}
+
+.chatroom-ongoing-chats-cards {
+  padding: 20px 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-top: 2px solid $primary-color;
+  border-bottom: 2px solid $primary-color;
+  overflow: scroll;
+  height: 100%;
+  max-height: 90vh;
+  min-width: 450px;
+  max-width: 25vw;
+  box-shadow: 0 12px 8px -12px gray;
+}
+
+.chatroom-ongoing-chats-container .ongoing-card {
+  margin: 10px 0px;
 }
 
 
