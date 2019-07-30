@@ -3,9 +3,13 @@
     <div class="button-expand-large">
       <i class="fas fa-plus"></i>
     </div>
+
+    <%= link_to @user do %>
     <div class="avatar-medium-user">
       <%= image_tag("avatars/#{@user.profiles.last.animal.downcase}.png") %>
     </div>
+    <% end %>
+
     <div class="username username-hidden">
       <% name_array = @user.profiles.last.adjective.split(" ") %>
       <% username_length = @user.profiles.last.animal.length + @user.profiles.last.adjective.length %>
@@ -42,10 +46,12 @@
       <% end %>
 
       <!-- JOURNAL -->
+      <%#= link_to journal_posts_path do %>
       <div class="icon-journal-white sidebar-icons">
         <i class="icon fas fa-book"></i>
         <h4 class="sidebar-text">Journal</h4>
       </div>
+      <%# end %>
 
       <!-- SETTINGS -->
       <div class="icon-settings-white sidebar-icons">
