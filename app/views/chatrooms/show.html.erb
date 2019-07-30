@@ -2,53 +2,88 @@
 <%# content_for :meta_title, "#{@other_user.name} is on #{DEFAULT_META["meta_product_name"]}" %>
 <%# content_for :meta_description, @other_user.description %>
 <%# content_for :meta_image, cl_image_path(@other_user.photo.path) %>
-
-
-<div class="chatroom d-flex justify-content-between">
-  <%= render "shared/sidebar" %>
+<%= render "shared/sidebar" %>
+<div class="dashboard-body bodies">
   <div class="chat-container">
-
-    <div class="chat-body bodies">
-      <div class="chat-header">
-        <% if current_user == @chatroom.match.user %>
-            <h4>Your chat with <%= @chatrooms.match.partner.profiles.first.adjective.capitalize %> <%= @chatrooms.match.partner.profiles.first.animal.capitalize %></h4>
-        <% else %>
+    <div class="chat-container-real">
+      <div class="chatroom-messages-top-container">
+        <div class="chat-header">
+          <% if current_user == @chatroom.match.user %>
+          <h4><%= @chatrooms.match.partner.profiles.first.adjective.capitalize %> <%= @chatrooms.match.partner.profiles.first.animal.capitalize %></h4>
+          <% else %>
           <h4>Your chat with <%= @chatrooms.match.user.profiles.first.adjective.capitalize %> <%= @chatrooms.match.user.profiles.first.animal.capitalize %></h4>
-        <% end %>
+          <% end %>
+        </div>
       </div>
-      <div class="messages">
-        <% @messages.each do |message| %>
+
+      <div class="chatroom-messages-middle-container">
+        <div class="messages">
+          <% @messages.each do |message| %>
           <%= render "messages/message", message: message, user_is_messages_author: message.user == current_user %>
-        <% end %>
+          <% end %>
+        </div>
       </div>
-      <div class="create-message">
-        <%= simple_form_for [ @chatroom, Message.new ], remote: true, html: {autocomplete: "off" } do |f| %>
-          <%= f.text_area :content, label: false %>
-          <%= f.submit :submit, value: 'Send', class: "message-submit" %>
+
+      <div class="chatroom-messages-bottom-container">
+        <div class="create-message">
+          <%= simple_form_for [ @chatroom, Message.new ], remote: true, html: {autocomplete: "off" } do |f| %>
+          <span id="theTextArea">
+            <%= f.text_area :content, label: false, placeholder: "Your message here", class: "chat-message-box" %>
+          </span>
+          <%= f.submit :submit, value: 'Send', class: "button-primary message-submit" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <!-- ONGOING CHATS -->
+    <div class="chatroom-ongoing-chats-container">
+      <h2>Other conversations</h2>
+      <div class="chatroom-ongoing-chats-cards">
+        <% @rooms.each do |chatroom| %>
+        <%= render "shared/card_ongoing", chatroom: chatroom %>
         <% end %>
       </div>
     </div>
-  </div>
-</div>
+
+  </div><!-- EO .chat-container -->
+  <%= render "shared/footer" %>
+</div><!-- EO .dashboard-body .bodies -->
+
+<script>
+
+  let myForm = document.querySelector(".new_message");
+  let inputOkay = document.querySelector(".chat-message-box");
+
+  inputOkay.addEventListener("keyup", (event) => {
+    if (event.code === "Enter") {
+      document.querySelector(".message-submit").click();
+      inputOkay.value = "";
+    }
+  })
+
+
+</script>
+
 
 <% content_for :after_js do %>
-  <script>
-      scrollLastMessageIntoView();
-      App['chatroom_<%= @chatrooms.id %>'] = App.cable.subscriptions.create(
-        { channel: 'ChatroomsChannel', chatroom_id: <%= @chatroom.id %> }, {
-          received: (data) => {
-            console.log(data);
-                if (data.current_user_id !== <%= current_user.id %>) {
-                const messagesContainer = document.querySelector('.messages');
-                console.log(messagesContainer);
-                messagesContainer.insertAdjacentHTML('beforeend', data.message_partial);
-              scrollLastMessageIntoView();
-            }
-          }
+<script>
+  scrollLastMessageIntoView();
+  App['chatroom_<%= @chatrooms.id %>'] = App.cable.subscriptions.create(
+    { channel: 'ChatroomsChannel', chatroom_id: <%= @chatroom.id %> }, {
+      received: (data) => {
+        console.log(data);
+        if (data.current_user_id !== <%= current_user.id %>) {
+          const messagesContainer = document.querySelector('.messages');
+          console.log(messagesContainer);
+          messagesContainer.insertAdjacentHTML('beforeend', data.message_partial);
+          scrollLastMessageIntoView();
         }
-      );
-    </script>
-<% end %>
+      }
+    }
+    );
+  </script>
+  <% end %>
 
 
 
