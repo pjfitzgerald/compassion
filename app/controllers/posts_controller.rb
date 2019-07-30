@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :set_user
   
   def new
     @post = Post.new(journal_id: params[:journal_id])
@@ -16,6 +17,10 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def set_user
+    @user = current_user
+  end
 
   def post_params
     params.require(:post).permit(:content)
