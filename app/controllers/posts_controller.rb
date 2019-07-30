@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_user
+  before_action :set_questions
   
   def new
     @post = Post.new(journal_id: params[:journal_id])

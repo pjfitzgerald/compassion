@@ -116,20 +116,6 @@ class UsersController < ApplicationController
 
   private
 
-  def set_questions
-    @user_count = User.all.count
-    filepath = File.join(Rails.root, 'config', 'questions.csv')
-    questions_list = []
-    CSV.foreach(filepath) do |row|
-      unless row[1].nil?
-        unless row[1].split("").count > 50
-          questions_list << row[1] unless row[1].empty?
-        end
-      end
-    end
-    @questions = questions_list[3, 5]
-  end
-
   def reset_daily_answers
     @user.update(d_answer_one: "", d_answer_two: "", d_answer_three: "")
     redirect_to user_path(current_user)
