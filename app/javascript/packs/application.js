@@ -3,6 +3,7 @@ import { expandOrMinify } from "../components/sidebar";
 import { expandNewChat } from "../components/sidebar";
 import { expandSettings } from "../components/sidebar";
 import { toggleActive } from "../components/sidebar";
+import { expandedMessageBox } from "../components/chatbox";
 
 // MAIN SIDEBAR - EXPAND/MINIFY
 let button = document.querySelector(".button-expand-large");
@@ -36,5 +37,10 @@ if (toggleActiveIcons) {
   })
 };
 
-
+let chatTextArea = document.querySelector('.create-message');
+if (chatTextArea) {
+  chatTextArea.addEventListener("click", () => {
+    moveUpChatbox();
+  })
+};
 
