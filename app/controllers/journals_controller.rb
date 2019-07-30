@@ -1,14 +1,17 @@
 class JournalsController < ApplicationController
-  before_action :set_questions
-  def new
-    @journal = Journal.new
-  end
+  before_action :set_questions, :set_journal
 
-  def create
-    # if @journal
-  end
+  # def show
+  #   redirect_to journal_posts_path
+  # end
 
-  def show
-    @journal = Journal.find_by(user_id: current_user.id)
+  private
+
+  def set_journal
+    if current_user.journal
+      true
+    else
+      @journal = Journal.new(user: current_user)
+    end
   end
 end
