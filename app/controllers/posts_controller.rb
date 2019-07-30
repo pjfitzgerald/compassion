@@ -1,9 +1,13 @@
 class PostsController < ApplicationController
   before_action :set_user
-  before_action :set_questions, :set_journal, only: [:new, :create]
+  before_action :set_questions, :set_journal
 
   def index
-    @posts = Post.where(journal_id: Journal.where(user_id: User.find(current_user.id)))
+    @posts = Post.where(journal: @journal)
+  end
+
+  def show
+    @post = Post.find(post_params)
   end
 
   def new
@@ -25,15 +29,11 @@ class PostsController < ApplicationController
     @user = current_user
   end
 
-  def post_params
-    params.require(:post).permit(:content)
-  end
-
-  def journal_params
-    params.require(:journal).permit(:journal_id)
-  end
-
   def set_journal
-    @journal = Journal.find(journal_params)
+    @journal = current_user.journal
+  end
+
+  def post_params
+    params.require(:post).permit(:id)
   end
 end
