@@ -20,9 +20,9 @@
     </div>
     <h2>
       <% if chatroom.match.user == current_user %>
-        <%= chatroom.match.partner.profiles.last.adjective %>
+        <%= chatroom.match.partner.profiles.last.adjective.capitalize %>
       <% else %>
-        <%= chatroom.match.user.profiles.last.adjective %>
+        <%= chatroom.match.user.profiles.last.adjective.capitalize %>
       <% end %>
       <% if chatroom.match.user == current_user %>
         <%= chatroom.match.partner.profiles.last.animal %>
