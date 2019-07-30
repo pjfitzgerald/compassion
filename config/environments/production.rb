@@ -1,5 +1,5 @@
 Rails.application.configure do
-  config.action_mailer.default_url_options = { host: "http://TODO_PUT_YOUR_DOMAIN_HERE" }
+  config.action_mailer.default_url_options = { host: "http://www.compassion.chat" }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -92,4 +92,9 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # action cable production setup
+  config.action_cable.url = "ws://www.compassion.chat/cable"
+  config.action_cable.allowed_request_origins = [ "http://www.compassion.chat", "https://www.compassion.chat" ]
+
 end

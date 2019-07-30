@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   get "new_chat", to: "users#new_match", as: :new_chat
 
   get "ongoing_chats", to: "users#ongoing_chats", as: :ongoing_chats
+
+  mount ActionCable.server => "/cable"
 end
