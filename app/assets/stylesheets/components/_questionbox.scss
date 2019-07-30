@@ -14,7 +14,7 @@
 
   .question-box {
     width: 65%;
-    height: 329px;
+    height: 275px;
     background: rgba(80, 150, 80, .5);
     border-radius: 30px;
     text-align: center;
@@ -104,7 +104,7 @@
   }
 
 
-  .simple_form .form-group {
+  .question-box .simple_form .form-group {
     display: flex;
     justify-content: center;
     width: 40vw;
@@ -169,7 +169,7 @@
     display: flex;
     position: absolute;
     left: 45%;
-    top: 450px;
+    top: 535px;
   }
 
 

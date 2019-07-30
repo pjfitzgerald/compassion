@@ -8,7 +8,7 @@
         <%= simple_form_for @user, input_html: { id: "toggle-user-seraching" } do |f| %>
           <%= f.hidden_field :searching, value: false %>
           <%= button_tag type: 'submit', class: "topbar-toggle-search" do %>
-            <i class="fas fa-circle fa-1x toggle-off"></i>
+            <i class="fas fa-circle fa-xs toggle-off"></i>
           <% end %>
         <% end %>
         <p class="search-toggle-off">Active</p>
@@ -16,7 +16,7 @@
         <%= simple_form_for @user, input_html: { id: "toggle-user-seraching" } do |f| %>
           <%= f.hidden_field :searching, value: true %>
           <%= button_tag type: 'submit', class: "topbar-toggle-search" do %>
-            <i class="fas fa-circle fa-1x toggle-on"></i>
+            <i class="fas fa-circle fa-xs toggle-on"></i>
           <% end %>
         <% end %>
         <p class="search-toggle-on">Busy</p>
@@ -25,7 +25,15 @@
   </div>
   <div class="topbar-info">
     <p><strong><%= @matches.count %></strong> ongoing conversations</p>
-    <p><strong>Not</strong> answered todays questions</p>
+    <% if @user.d_answer_one.empty? %>
+      <p>You have <strong>not</strong> answered today's questions</p>
+    <% elsif @user.d_answer_two.empty? %>
+      <p> You have answered <strong>1</strong> question today </p>
+    <% elsif @user.d_answer_three.empty? %>
+      <p> You have answered <strong>2</strong> question today </p>
+    <% else %>
+      <p> You have answered <strong>All</strong> question today! 😁 </p>
+    <% end %>
     <p><strong>2</strong> days since last journal entry</p>
   </div>
 </div>
