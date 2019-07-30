@@ -20,17 +20,17 @@
     flex-direction: row-reverse;
     .message-content {
       text-align: right;
-      line-height: 30px;
-      background: #445697;
+      line-height: 27.5px;
+      background: #bedff6;
       border-radius: 15px 0px 15px 15px;
-      color: #E5F0E5;
+      color: #222;
       padding: 5px 20px 5px 20px;
     }
   }
 }
 .message-content {
   background-color: #F7F7F7;
-  line-height: 30px;
+  line-height: 27.5px;
   color: #4D4D4D;
   border-radius: 0px 15px 15px 15px;
   margin: 0 10px;
@@ -43,7 +43,7 @@
   border-radius: 50%;
 }
 
-#create-message {
+.create-message {
   padding: 20px 10px 10px 10px;
   border-radius: 0px 0px 10px 10px;
   background-color: white;
@@ -53,15 +53,21 @@
 .message_content {
   margin-bottom: 0;
 }
-input.form-control {
+textarea {
+  padding: 5px;
+  width: 100%;
+  resize: none;
   border: 3px solid #93D295;
+  height: 50px;
   border-radius: 10px;
   box-shadow: none;
   font-size: 14px;
   color: #868686;
+  transition: height .25s;
   &:focus {
     outline: none;
     color: black;
+    height: 200px;
     border: 3px solid #93D295;
     box-shadow: none;
   }
@@ -83,7 +89,10 @@ input.form-control {
   height: 50px;
 }
 
-
+.expandedMessageBox {
+  border: 10px solid red;
+  margin-top: -100px;
+}
 
 
 
