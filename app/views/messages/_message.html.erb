@@ -1,7 +1,9 @@
 <div class="message <%= user_is_messages_author ? "right" : "" %>">
   <%#= image_tag message.user.avatar, class: "avatar" %>
   <div class="chat-avatars">
+    <%# unless Message.last.user == Message.all[-2].user %>
     <%= image_tag("avatars/#{message.user.profiles.last.animal.downcase}.png") %>
+    <%# end %>
   </div>
   <div class="message-content">
     <!-- If the message was created before the current date -->
