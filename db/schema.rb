@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_26_092334) do
+ActiveRecord::Schema.define(version: 2019_07_30_085944) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,13 @@ ActiveRecord::Schema.define(version: 2019_07_26_092334) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["match_id"], name: "index_chatrooms_on_match_id"
+  end
+
+  create_table "journals", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_journals_on_user_id"
   end
 
   create_table "matches", force: :cascade do |t|
@@ -37,6 +44,14 @@ ActiveRecord::Schema.define(version: 2019_07_26_092334) do
     t.datetime "updated_at", null: false
     t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.text "content"
+    t.bigint "journal_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["journal_id"], name: "index_posts_on_journal_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -78,7 +93,9 @@ ActiveRecord::Schema.define(version: 2019_07_26_092334) do
   end
 
   add_foreign_key "chatrooms", "matches"
+  add_foreign_key "journals", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
+  add_foreign_key "posts", "journals"
   add_foreign_key "profiles", "users"
 end
