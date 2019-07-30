@@ -100,7 +100,6 @@ class UsersController < ApplicationController
       update_profile
       redirect_to user_path(@user)
     else
-      raise
       render :survey
     end
   end
