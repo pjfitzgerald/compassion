@@ -1,3 +1,21 @@
 <div class="new-chat-content-container">
   <h2>New Chat</h2>
+  <div class="new-chat-content-body">
+    <h6>Question <span>#1</span></h6>
+    <p><%= @questions[0] %></p>
+      <%= simple_form_for @user do |f| %>
+      <%= f.input :d_answer_one, label: false %>
+    <% end %>
+    <h6>Question <span>#2</span></h6>
+    <p><%= @questions[1] %></p>
+      <%= simple_form_for @user do |f| %>
+      <%= f.input :d_answer_two, label: false %>
+    <% end %>
+    <h6>Question <span>#3</span></h6>
+    <p><%= @questions[2] %></p>
+      <%= simple_form_for @user do |f| %>
+      <%= f.input :d_answer_three, label: false %>
+    <% end %>
+    <button class="button-default-transparent">Start new chat</button>
+  </div>
 </div>

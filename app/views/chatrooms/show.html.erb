@@ -1,6 +1,4 @@
 
-
-
 <%# content_for :meta_title, "#{@other_user.name} is on #{DEFAULT_META["meta_product_name"]}" %>
 <%# content_for :meta_description, @other_user.description %>
 <%# content_for :meta_image, cl_image_path(@other_user.photo.path) %>
@@ -12,18 +10,10 @@
 
     <div class="chat-body bodies">
       <div class="chat-header">
-        <% if current_user == @chatrooms.match.user %>
-          <% if @chatrooms.match.partner.username.nil? %>
-            <h4>Your chat with <%= @chatrooms.match.partner.email %></h4>
-          <% else %>
-            <h4>Your chat with <%= @chatrooms.match.partner.username.capitalize %></h4>
-          <% end %>
+        <% if current_user == @chatroom.match.user %>
+            <h4>Your chat with <%= @chatrooms.match.partner.profiles.first.adjective.capitalize %> <%= @chatrooms.match.partner.profiles.first.animal.capitalize %></h4>
         <% else %>
-          <% if @chatrooms.match.partner.username.nil? %>
-            <h4>Your chat with <%= @chatrooms.match.user.email %></h4>
-          <% else %>
-            <h4>Your chat with <%= @chatrooms.match.user.username.capitalize %></h4>
-          <% end %>
+          <h4>Your chat with <%= @chatrooms.match.user.profiles.first.adjective.capitalize %> <%= @chatrooms.match.user.profiles.first.animal.capitalize %></h4>
         <% end %>
       </div>
       <div class="messages">
@@ -31,10 +21,10 @@
           <%= render "messages/message", message: message, user_is_messages_author: message.user == current_user %>
         <% end %>
       </div>
-      <div id="create-message">
+      <div class="create-message">
         <%= simple_form_for [ @chatroom, Message.new ], remote: true, html: {autocomplete: "off" } do |f| %>
-          <%= f.input :content, label: false %>
-          <%= f.submit :submit, value: 'Send'%>
+          <%= f.text_area :content, label: false %>
+          <%= f.submit :submit, value: 'Send', class: "message-submit" %>
         <% end %>
       </div>
     </div>
@@ -56,7 +46,25 @@
             }
           }
         }
-      )
+      );
     </script>
 <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
