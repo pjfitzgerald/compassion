@@ -1,6 +1,6 @@
-<div class="journal-container">
+<!-- <div class="journal-container"> -->
   <!-- NEW ENTRY -->
-  <div class="new-journal-entry">
+<!--   <div class="new-journal-entry">
     <div class="new-journal-entry-top">
       <h2>Todays journal entry</h2>
       <p>07.07.2019</p>
@@ -13,20 +13,53 @@
         <input class="button-default-transparent journal-submit" type="submit">
       </form>
     </div>
+  </div> -->
+  <!-- LATEST ENTRIES -->
+<!--   <div class="latest-journal-entries-container">
+    <h2>Latest journal entries</h2>
+    <div class="latest-journal-entries-container-scroll"> -->
+      <%#= render "journal_entry" %>
+      <%#= render "journal_entry" %>
+      <%#= render "journal_entry" %>
+      <%#= render "journal_entry" %>
+      <%#= render "journal_entry" %>
+      <%#= render "journal_entry" %>
+      <%#= render "journal_entry" %>
+      <%#= render "journal_entry" %>
+      <%#= render "journal_entry" %>
+<!--     </div>
+  </div>
+</div> -->
+
+
+
+<div class="journal-container">
+  <!-- NEW ENTRY -->
+  <div class="new-journal-entry">
+    <div class="new-journal-entry-top">
+      <h2>Todays journal entry</h2>
+      <p>07.07.2019</p>
+    </div>
+    <div class="new-journal-entry-bottom">
+      <%= simple_form_for ([@journal, @post]) do |f| %>
+        <%= f.input :title, class: "input label", label: false, placeholder:"Title" %>
+        <%= f.text_area :content, class: "input text-area", placeholder: "Start a new journal entry!" %>
+        <%= f.submit :submit, class: "button-default-transparent journal-submit" %>
+        <!-- commented for future reference -->
+        <!-- <input type="text" class="input label" placeholder="Title"> -->
+        <!-- <textarea class="input text-area" placeholder="Your text goes here"></textarea> -->
+        <!-- <input type="text" class="input add-photo" placeholder="Add a photo">
+        <input class="button-default-transparent journal-submit" type="submit"> -->
+      <% end %>
+    </div>
   </div>
   <!-- LATEST ENTRIES -->
   <div class="latest-journal-entries-container">
     <h2>Latest journal entries</h2>
-    <div class="latest-journal-entries-container-scroll">
-      <%= render "journal_entry" %>
-      <%= render "journal_entry" %>
-      <%= render "journal_entry" %>
-      <%= render "journal_entry" %>
-      <%= render "journal_entry" %>
-      <%= render "journal_entry" %>
-      <%= render "journal_entry" %>
-      <%= render "journal_entry" %>
-      <%= render "journal_entry" %>
-    </div>
+      <div class="latest-journal-entries-container-scroll">
+        <% @journal.posts.reverse.each do |post| %>
+          <%= render "journal_entry", post: post %>
+        <% end %>
+      </div>
   </div>
 </div>
