@@ -1,0 +1,12 @@
+
+
+
+<div class="container d-flex justify-content-between">
+  <%= render "shared/sidebar" %>
+  <h2>Create a new journal post!</h2>
+  <%= simple_form_for [@journal, @post] do |f| %>
+    <%= f.input :title %>
+    <%= f.input :content %>
+    <%= f.submit "Save this post!", class: "btn btn-primary" %>
+  <% end %>
+</div>

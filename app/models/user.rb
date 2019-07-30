@@ -8,7 +8,15 @@ class User < ApplicationRecord
   has_many :inverse_matches, class_name: "Match", foreign_key: "partner_id"
   has_many :inverse_partners, through: :inverse_matches, source: :user
   has_many :profiles, dependent: :destroy
+  has_one :journal, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  after_create :create_journal
+
+  private
+
+  def create_journal
+    Journal.create(user: self)
+  end
 end
