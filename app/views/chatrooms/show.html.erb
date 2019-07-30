@@ -8,13 +8,35 @@
     <div class="chat-container-real">
       <div class="chatroom-messages-top-container">
         <div class="chat-header">
+
+          <!-- BUTTON -->
+          <div class="button-expand-medium">
+            <i class="fas fa-plus"></i>
+          </div>
+
+          <!-- USERNAME -->
           <% if current_user == @chatroom.match.user %>
           <h4><%= @chatrooms.match.partner.profiles.first.adjective.capitalize %> <%= @chatrooms.match.partner.profiles.first.animal.capitalize %></h4>
           <% else %>
           <h4>Your chat with <%= @chatrooms.match.user.profiles.first.adjective.capitalize %> <%= @chatrooms.match.user.profiles.first.animal.capitalize %></h4>
           <% end %>
-        </div>
-      </div>
+
+          <!-- AVATAR -->
+          <div class="avatar-medium hide">
+            <%= image_tag("avatars/#{@chatroom.match.partner.profiles.last.animal.downcase}.png") %>
+          </div>
+
+          <div class="header-questions hide">
+            <p><%= @questions[0] %></p>
+            <h5><%= @chatroom.match.partner.d_answer_one %>Not real answer</h5>
+            <p><%= @questions[1] %></p>
+            <h5><%= @chatroom.match.partner.d_answer_two %>Not real answer</h5>
+            <p><%= @questions[2] %></p>
+            <h5><%= @chatroom.match.partner.d_answer_three %>Not real answer</h5>
+          </div>
+
+        </div><!-- EO .chat-header -->
+      </div><!-- EO .chatroom-messages-top-container -->
 
       <div class="chatroom-messages-middle-container">
         <div class="messages">
@@ -49,22 +71,6 @@
   </div><!-- EO .chat-container -->
   <%= render "shared/footer" %>
 </div><!-- EO .dashboard-body .bodies -->
-
-<script>
-
-  let myForm = document.querySelector(".new_message");
-  let inputOkay = document.querySelector(".chat-message-box");
-
-  inputOkay.addEventListener("keyup", (event) => {
-    if (event.code === "Enter") {
-      document.querySelector(".message-submit").click();
-      inputOkay.value = "";
-    }
-  })
-
-
-</script>
-
 
 <% content_for :after_js do %>
 <script>
