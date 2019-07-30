@@ -7,12 +7,13 @@
 # puts element.attribute('href').value
 # end
 
-
 puts "Cleaning up database"
 User.destroy_all
 Match.destroy_all
 Chatroom.destroy_all
 Message.destroy_all
+Journal.destroy_all
+Post.destroy_all
 Profile.destroy_all
 puts "Creating new database"
 
@@ -38,10 +39,9 @@ users = [
     password: "wonderwoman"
   }]
 
+
 batman_messages = ["hey", "nice to meet you", "what was the best thing that happened today for you?" "hello", "how are you feeling?", "thanks for your help"]
 other_messages = ["hi batman", "nice to meet you too", "what was the best thing that happened today for you?" "hello", "how are you feeling?", "thanks for your help"]
-
-
 
 users.each do |user|
   user = User.create!(email: user[:email], password: user[:password], username: user[:username])
@@ -58,17 +58,39 @@ Match.create!(user: User.find(1) , partner: User.find(2))
 Match.create!(user: User.find(1) , partner: User.find(3))
 Match.create!(user: User.find(1) , partner: User.find(4))
 Match.create!(user: User.find(1) , partner: User.find(5))
+
+Journal.create!(user: User.find(1))
+Journal.create!(user: User.find(2))
+Journal.create!(user: User.find(3))
+Journal.create!(user: User.find(4))
+Journal.create!(user: User.find(5))
+
+Post.create!(journal: Journal.find(1), content: "This is a test (1)")
+Post.create!(journal: Journal.find(1), content: "This is a test (2)")
+Post.create!(journal: Journal.find(1), content: "This is a test (3)")
+Post.create!(journal: Journal.find(1), content: "This is a test (4)")
+
 Chatroom.create!(match: Match.find(1))
 Chatroom.create!(match: Match.find(2))
 Chatroom.create!(match: Match.find(3))
 Chatroom.create!(match: Match.find(4))
-
-
-
-
 
 puts "Created #{Profile.count} profiles."
 puts "Created #{User.count} users."
 puts "Created #{Match.count} matches."
 puts "Created #{Chatroom.count} chatrooms."
 puts "Created #{Message.count} messages."
+puts "Created #{Journal.count} journals."
+puts "Created #{Post.count} posts for Journal #{Journal.find(1).id}."
+
+
+
+
+
+
+
+
+
+
+
+

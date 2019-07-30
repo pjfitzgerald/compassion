@@ -29,7 +29,7 @@ class UsersController < ApplicationController
       @chatroom = Chatroom.create(match: @match)
       redirect_to chatroom_path(@chatroom)
     else
-      redirect_to user_path(@user), alert: "unable to find match at this time"
+      redirect_to user_path(@user), alert: "Unable to find match at this time"
     end
   end
 
