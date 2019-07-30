@@ -2,7 +2,11 @@ class MessagesController < ApplicationController
   # before_action :set_message, only: [:create]
 
   def create
-    @message = Message.new(message_params)
+    if params[:content]
+      @message = Message.new(content: params[:message])
+    else
+      @message = Message.new(message_params)
+    end
     @chatroom = Chatroom.find(params[:chatroom_id])
     @message.user = current_user
     @message.chatroom = @chatroom
