@@ -3,24 +3,12 @@
     <h1>
       <%= @user.profiles.last.adjective.capitalize %> <%= @user.profiles.last.animal %>
     </h1>
-    <div class="togglebutton">
-      <% if @user.searching %>
-        <%= simple_form_for @user, input_html: { id: "toggle-user-seraching" } do |f| %>
-          <%= f.hidden_field :searching, value: false %>
-          <%= button_tag type: 'submit', class: "topbar-toggle-search" do %>
-            <i class="fas fa-circle fa-xs toggle-off"></i>
-          <% end %>
-        <% end %>
-        <p class="search-toggle-off">Active</p>
-      <% else %>
-        <%= simple_form_for @user, input_html: { id: "toggle-user-seraching" } do |f| %>
-          <%= f.hidden_field :searching, value: true %>
-          <%= button_tag type: 'submit', class: "topbar-toggle-search" do %>
-            <i class="fas fa-circle fa-xs toggle-on"></i>
-          <% end %>
-        <% end %>
-        <p class="search-toggle-on">Busy</p>
-      <% end %>
+    <div class="toggleswitch">
+      <p class="toggle-text">Toggle Searching!</p>
+      <label class="switch">
+        <input class="checkbox" type="checkbox" <%= "checked" if @user.searching %> data-searching="<%= @user.searching %>">
+        <span class="slider round"></span>
+      </label>
     </div>
   </div>
   <div class="topbar-info">
@@ -34,6 +22,54 @@
     <% else %>
       <p> You have answered <strong>All</strong> question today! 😁 </p>
     <% end %>
-    <p><strong>2</strong> days since last journal entry</p>
+    <p>
+      <% if @user.journal.posts.reverse.first.created_at.strftime("%j").to_i == Time.now.strftime("%j").to_i %>
+          You've posted a journal entry today!
+      <% else %>
+          <strong><%= Time.now.strftime("%j").to_i - @user.journal.posts.reverse.first.created_at.strftime("%j").to_i %></strong> day(s) since your last journal post
+      <% end %>
+    </p>
   </div>
 </div>
+
+
+
+<script>
+  slider = document.querySelector(".slider");
+  checkbox = document.querySelector(".checkbox");
+  railsToken = document.querySelector("meta[name=csrf-token]").content
+  checkbox.addEventListener("click", (event) => {
+    // console.log("text");
+    if (document.querySelector(".checkbox").dataset.searching == "true") {
+      url = "/toggle_search?searching=false"
+      fetch(url, {
+        method: "PATCH",
+        headers: {
+          "X-CSRF-Token": railsToken
+        }
+      })
+    } else {
+      console.log("we re here")
+        url = "/toggle_search?searching=true"
+        fetch(url, {
+          method: "PATCH",
+          headers: {
+            "X-CSRF-Token": railsToken
+          }
+      })
+    }
+  });
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,12 +1,12 @@
 
-.togglebutton {
+.toggleswitch {
   display: flex;
+  border: blue 1px solid;
   position: absolute;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  width: 30px;
-  right: 30px;
+  right: 0;
+  top: 0;
+  width: 100%;
+
 }
 
 .search-toggle-on, .search-toggle-off {
@@ -15,53 +15,15 @@
   color: #919191;
 }
 
-
-.search-toggle-off {
-  color: #93D295;
-}
-
-.search-toggle-on {
-  color: #ed6868;
-  left: 5px;
-}
-
-
-
 .toggleSearching h1 {
-  padding-left: 60px;
+  padding-right: 60px;
   color: #0c1a0c;
 }
 
-.topbar-toggle-search {
-  background: transparent;
-  border: none;
-}
-
-.toggle-on {
+.toggleswitch p {
   position: absolute;
-  top: 40px;
-  color: #ed6868;
+  top: 26px;
+  right: 120px;
+  color: #627064;
 }
-
-.toggle-off {
-  position: absolute;
-  top: 40px;
-  color: #93D295;
-}
-
-
-  .toggleSearching {
-    display: flex;
-    justify-content: center;
-    padding-right: 73px;
-  }
-
-  .topbar-toggle-search:active, .topbar-toggle-search:focus, .topbar-toggle-search:focus:active, .topbar-toggle-search:active:focus {
-    background: none;
-    text-decoration: none;
-    outline: none;
-    box-shadow: none;
-  }
-
-
 
