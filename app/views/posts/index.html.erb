@@ -1,13 +1,20 @@
 <style>
 
-  .card-button-container {
+  .post-index-container {
     display: flex;
     flex-direction: column;
     justify-content: center;      
   }
 
+  .post-index-container h2 {
+    padding: 20px;
+    padding-bottom: 0px;     
+  }
 
-  
+
+  .new-post-container {
+    margin: 20px;
+  }
   .journal-container-index {
     width: 100%;
     height: 100%;
@@ -93,10 +100,13 @@
 
 </style>
 
-
 <%= render "shared/sidebar" %>
 <div class="dashboard-body">
-  <%= render "new_post" %>
+  <div class="post-index-container">
+    <h2>Journal</h2>
+    <div class="new-post-container">
+      <%= render "new_post" %>
+    </div>
     <div class="journal-container-index">
       <% @posts.reverse.each do |post| %>
         <div class="latest-journal-entries-card-index">
@@ -117,6 +127,7 @@
         </div>
       <% end %>
     </div>
+  </div>
 <%= render "shared/footer" %>
 </div>
 
