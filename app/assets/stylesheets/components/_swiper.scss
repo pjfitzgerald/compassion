@@ -1,18 +1,17 @@
 .swiper-container {
   width: 100%;
-  height: 100%;
+  height: 100;
 }
 
 
 
 .swiper-slide {
-  align-items: center;
-  padding: 100px 0px 100px 20px;
+  padding: 20px;
 }
 
-.swiper-wrapper {
-  align-content: center;
-}
+// .swiper-wrapper {
+//   align-content: center;
+// }
 
 
 .caret {
@@ -26,8 +25,8 @@
   outline: none;
 }
 
-.ongoing-landing {
-  border: none;
-  background: transparent;
-  box-shadow: -1px 33px 22px -20px rgba(0,0,0,0.1);
-}
+// .ongoing-landing {
+//   border: none;
+//   background: transparent;
+//   box-shadow: -1px 33px 22px -20px rgba(0,0,0,0.1);
+// }
