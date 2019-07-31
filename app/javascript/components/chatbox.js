@@ -37,32 +37,50 @@ function showQuestions() {
 
 // SHOW HEADER-INFORMATION FOR USER
 function showUserQuestions() {
+
+  // TOGGLE BETWEEN USERS AVATARS
   var avatarMediumNotActive = document.querySelectorAll(".header-avatars-container img"), i;
   for (let i = 0; i < avatarMediumNotActive.length; i++) {
     avatarMediumNotActive[i].classList.toggle("avatar-not-active");
   };
 
+  // TOGGLE BETWEEN USERS ANSWERS
   var chatHeaderQuestions = document.querySelectorAll(".header-questions h5"), i;
   for (let i = 0; i < chatHeaderQuestions.length; i++) {
     chatHeaderQuestions[i].classList.toggle("chat-hide");
   };
 
+  // TOGGLE BETWEEN USERS USERNAMES
   var chatHeaderUsername = document.querySelectorAll(".chatroom-usernames"), i;
   for (let i = 0; i < chatHeaderUsername.length; i++) {
     chatHeaderUsername[i].classList.toggle("chatroom-username-hide");
   };
 };
 
-  // var avatarMediumSelf = document.querySelector(".header-questions");
-  // avatarMediumSelf.classList.toggle("hide");
-
 // MOVE UP THE CHATBOX ON FOCUS (TEXTAREA)
 function moveUpChatbox() {
-  var sendMessageBox = document.querySelector('.messages');
-  sendMessageBox.classList.toggle("expandedMessageBox");
 
+  // DECREASES HEIGHT OF MESSAGES-CONTAINER
+  var sendMessageBox = document.querySelector('.chatroom-messages-middle-container');
+  sendMessageBox.classList.add("expanded-message-box");
+
+  // ADDS THE EXTRA HEIGHT TO THE TEXT-AREA
   var addHeight = document.querySelector(".chat-message-box");
-  addHeight.classList.toggle("extraHeight");
+  addHeight.classList.add("extra-height");
 };
 
-export { showQuestions, moveUpChatbox, showUserQuestions }
+// MINIFY TEXTAREA
+function minifyTextarea() {
+  var sendMessageBoxClose = document.querySelector('.chatroom-messages-middle-container');
+  if (sendMessageBoxClose.classList.contains("expanded-message-box")) {
+    sendMessageBoxClose.classList.toggle("expanded-message-box");
+  };
+
+  // ADDS THE EXTRA HEIGHT TO THE TEXT-AREA
+  var removeHeight = document.querySelector(".chat-message-box");
+  if (removeHeight.classList.contains("extra-height")) {
+    removeHeight.classList.toggle("extra-height");
+  };
+};
+
+export { showQuestions, moveUpChatbox, showUserQuestions, minifyTextarea }

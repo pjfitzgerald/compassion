@@ -160,7 +160,7 @@
 }
 
 // MESSAGE-CONTAINER - AFTER CLICK
-.expandedMessageBox {
+.expanded-message-box {
   max-height: calc(74.9vh - 70px - 45px - 61px - 30px);
 }
 
@@ -239,7 +239,6 @@ textarea {
   border-radius: 10px;
   box-shadow: none;
   font-size: 14px;
-  transition: height .25s;
   &:focus {
     outline: none;
     color: #333;
@@ -251,7 +250,7 @@ textarea::placeholder {
 }
 
 // TEXT INPUT - AFTER CLICK
-.extraHeight {
+.extra-height {
   height: 200px;
 }
 
@@ -295,9 +294,6 @@ textarea::placeholder {
 
 
 
-
-
-
 .chat-hide {
   display: none;
 }
@@ -305,7 +301,3 @@ textarea::placeholder {
 .chatroom-username-hide {
   display: none;
 }
-
-
-
-
