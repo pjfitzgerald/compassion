@@ -6,9 +6,15 @@ class ChatroomsController < ApplicationController
   def show
     @chatrooms = Chatroom.includes(messages: :user).find(params[:id])
     @chatroom = Chatroom.find(params[:id])
-    @user = current_user
     @messages = @chatroom.messages.order(created_at: :asc).last(20)
     @message = Message.new
+    @user = current_user
+    if current_user == @chatroom.match.user
+      @other_user = @chatroom.match.partner
+    else
+      @other_user = @chatroom.match.user
+    end
+    @other_rooms = Chatroom.all.where.not(id: @chatroom.id)
   end
 
   def new
