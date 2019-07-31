@@ -1,3 +1,6 @@
-<%= @post.title %>
-<%= @post.created_at.strftime("%x %-I:%M %p") %>
-<%= @post.content %>
+<%= render "shared/sidebar" %>
+
+
+  <%= @post.title %>
+  <%= @post.created_at.strftime("%x %-I:%M %p") %>
+  <%= @post.content %>
