@@ -2,6 +2,9 @@
 <%# content_for :meta_title, "#{@other_user.name} is on #{DEFAULT_META["meta_product_name"]}" %>
 <%# content_for :meta_description, @other_user.description %>
 <%# content_for :meta_image, cl_image_path(@other_user.photo.path) %>
+<style>
+</style>
+
 <%= render "shared/sidebar" %>
 <div class="dashboard-body bodies">
   <div class="chat-container">
@@ -14,25 +17,56 @@
             <i class="fas fa-plus"></i>
           </div>
 
-          <!-- USERNAME -->
-          <% if current_user == @chatroom.match.user %>
-          <h4><%= @chatrooms.match.partner.profiles.first.adjective.capitalize %> <%= @chatrooms.match.partner.profiles.first.animal.capitalize %></h4>
-          <% else %>
-          <h4>Your chat with <%= @chatrooms.match.user.profiles.first.adjective.capitalize %> <%= @chatrooms.match.user.profiles.first.animal.capitalize %></h4>
-          <% end %>
 
-          <!-- AVATAR -->
-          <div class="avatar-medium hide">
-            <%= image_tag("avatars/#{@chatroom.match.partner.profiles.last.animal.downcase}.png") %>
+
+          <!-- USERNAME -->
+          <h4 class="chatroom-usernames"><%= @other_user.profiles.first.adjective.capitalize %> <%= @other_user.profiles.first.animal.capitalize %></h4>
+          <h4 class="chatroom-usernames chatroom-username-hide"><%= current_user.profiles.first.adjective.capitalize %> <%= current_user.profiles.first.animal.capitalize %></h4>
+
+
+
+          <!-- AVATAR - OTHER USER -->
+          <div class="header-avatars-container hide">
+            <%= image_tag("avatars/#{@other_user.profiles.last.animal.downcase}.png", class: "header-avatars") %>
+            <%= image_tag("avatars/#{current_user.profiles.last.animal.downcase}.png", class: "header-avatars avatar-not-active") %>
           </div>
 
           <div class="header-questions hide">
             <p><%= @questions[0] %></p>
-            <h5><%= @chatroom.match.partner.d_answer_one %>Not real answer</h5>
+            <% if @other_user.d_answer_one === "" %>
+            <h5>Has not answered question yet.</h5>
+            <% else %>
+            <h5><%= @other_user.d_answer_one[0..50] %></h5>
+            <% end %>
+            <% if current_user.d_answer_one === "" %>
+            <h5 class="chat-hide">Has not answered question yet.</h5>
+            <% else %>
+            <h5 class="chat-hide"><%= current_user.d_answer_one[0..50] %></h5>
+            <% end %>
+
             <p><%= @questions[1] %></p>
-            <h5><%= @chatroom.match.partner.d_answer_two %>Not real answer</h5>
+            <% if @other_user.d_answer_two === "" %>
+            <h5>Has not answered question yet.</h5>
+            <% else %>
+            <h5><%= @other_user.d_answer_two[0..50] %></h5>
+            <% end %>
+            <% if current_user.d_answer_two === "" %>
+            <h5 class="chat-hide">Has not answered question yet.</h5>
+            <% else %>
+            <h5 class="chat-hide"><%= current_user.d_answer_two[0..50] %></h5>
+            <% end %>
+
             <p><%= @questions[2] %></p>
-            <h5><%= @chatroom.match.partner.d_answer_three %>Not real answer</h5>
+            <% if @other_user.d_answer_three === "" %>
+            <h5>Has not answered question yet.</h5>
+            <% else %>
+            <h5><%= @other_user.d_answer_three[0..50] %></h5>
+            <% end %>
+            <% if current_user.d_answer_three === "" %>
+            <h5 class="chat-hide">Has not answered question yet.</h5>
+            <% else %>
+            <h5 class="chat-hide"><%= current_user.d_answer_three[0..50] %></h5>
+            <% end %>
           </div>
 
         </div><!-- EO .chat-header -->
@@ -50,7 +84,7 @@
         <div class="create-message">
           <%= simple_form_for [ @chatroom, Message.new ], remote: true, html: {autocomplete: "off" } do |f| %>
           <span id="theTextArea">
-            <%= f.text_area :content, label: false, placeholder: "Your message here", class: "chat-message-box" %>
+            <%= f.text_area :content, label: false, autofocus: false, placeholder: "Your message here", class: "chat-message-box" %>
           </span>
           <%= f.submit :submit, value: 'Send', class: "button-primary message-submit" %>
           <% end %>
@@ -62,7 +96,7 @@
     <div class="chatroom-ongoing-chats-container">
       <h2>Other conversations</h2>
       <div class="chatroom-ongoing-chats-cards">
-        <% @rooms.each do |chatroom| %>
+        <% @other_rooms.each do |chatroom| %>
         <%= render "shared/card_ongoing", chatroom: chatroom %>
         <% end %>
       </div>
@@ -78,10 +112,8 @@
   App['chatroom_<%= @chatrooms.id %>'] = App.cable.subscriptions.create(
     { channel: 'ChatroomsChannel', chatroom_id: <%= @chatroom.id %> }, {
       received: (data) => {
-        console.log(data);
         if (data.current_user_id !== <%= current_user.id %>) {
           const messagesContainer = document.querySelector('.messages');
-          console.log(messagesContainer);
           messagesContainer.insertAdjacentHTML('beforeend', data.message_partial);
           scrollLastMessageIntoView();
         }
