@@ -9,8 +9,10 @@
   <% end %>
   <div class="ongoing-slider">
     <!-- CARD-ONGOING: app/views/shared/_card_ongoing.html.erb -->
+    <i class="fas fa-caret-left fa-5x caret"></i>
     <% @chatrooms.each do |chatroom| %>
         <%= render "shared/card_ongoing", chatroom: chatroom %>
     <% end %>
+    <i class="fas fa-caret-right fa-5x caret"></i>
   </div>
 </div>
