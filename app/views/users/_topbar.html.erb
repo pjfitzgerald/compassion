@@ -34,6 +34,12 @@
     <% else %>
       <p> You have answered <strong>All</strong> question today! 😁 </p>
     <% end %>
-    <p><strong>2</strong> days since last journal entry</p>
+    <p>
+      <% if @user.journal.posts.reverse.first.created_at.strftime("%j").to_i == Time.now.strftime("%j").to_i %>
+          You've posted a journal entry today!
+      <% else %>
+          <strong><%= Time.now.strftime("%j").to_i - @user.journal.posts.reverse.first.created_at.strftime("%j").to_i %></strong> day(s) since your last journal post
+      <% end %>
+    </p>
   </div>
 </div>
