@@ -17,7 +17,7 @@ class User < ApplicationRecord
   private
 
   def create_journal
-    Journal.create(user: self)
-    Post.create(title: "Your first journal post!", content: "The journal allows you to log your thoughts, in a 'your-eyes-only' interface. Journalling is recommended by many leading psychologists as a way to clear your mind of built up negative thoughts.")
+    journal = Journal.create(user: self)
+    Post.create(title: "Your first journal post!", content: "The journal allows you to log your thoughts, in a 'your-eyes-only' interface. Journalling is recommended by many leading psychologists as a way to clear your mind of built up negative thoughts.", journal: journal)
   end
 end
