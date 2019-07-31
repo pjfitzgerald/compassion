@@ -76,6 +76,7 @@ class UsersController < ApplicationController
     # If user is answering daily questions
     elsif params[:user][:dailyanswerone]
       if params[:user][:d_answer_one] == ""
+        raise
         flash[:notice] = "Please submit an answer"
       else
         @user.update(d_answer_one: params[:user][:d_answer_one])
@@ -101,6 +102,16 @@ class UsersController < ApplicationController
       @user.profiles.last.destroy if @user.profiles.count >= 1
       update_profile
       redirect_to user_path(@user)
+    elsif params[:user][:d_answer_one] == "" || params[:user][:d_answer_two] == "" || params[:user][:d_answer_three] == ""
+      @user.update(d_answer_one: params[:user][:d_answer_one],
+                   d_answer_two: params[:user][:d_answer_two],
+                   d_answer_three: params[:user][:d_answer_three])
+      redirect_to user_path(@user)
+    elsif params[:user][:d_answer_one].present? && params[:user][:d_answer_two].present? && params[:user][:d_answer_three].present?
+      @user.update(d_answer_one: params[:user][:d_answer_one],
+                   d_answer_two: params[:user][:d_answer_two],
+                   d_answer_three: params[:user][:d_answer_three])
+      redirect_to user_path(@user)
     else
       render :survey
     end
@@ -108,6 +119,10 @@ class UsersController < ApplicationController
 
   def survey
     @user = current_user
+  end
+
+  def toggle_search
+    current_user.update(searching: params[:searching] == "true")
   end
 
   def new

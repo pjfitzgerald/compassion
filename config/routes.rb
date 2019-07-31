@@ -22,4 +22,5 @@ Rails.application.routes.draw do
   resources :journals do
     resources :posts
   end
+  patch "toggle_search", to: "users#toggle_search", as: :toggle_search
 end

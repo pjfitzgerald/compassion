@@ -1,0 +1,10 @@
+toggleOff = `<a class="toggle-off" data-remote="true" href="/toggle_search?searching=false"><h4>false</h4></a>`
+toggleOn = `<a class="toggle-on" data-remote="true" href="/toggle_search?searching=true"><h4>true</h4></a>`
+
+<% if current_user.searching %>
+  document.querySelector(".toggle-on").remove();
+  document.querySelector(".togglebutton").insertAdjacentHTML("afterbegin", toggleOff);
+<% else %>
+  document.querySelector(".toggle-off").remove();
+  document.querySelector(".togglebutton").insertAdjacentHTML("afterbegin", toggleOn);
+<% end %>

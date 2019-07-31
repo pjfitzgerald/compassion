@@ -4,27 +4,10 @@
       <%= @user.profiles.last.adjective.capitalize %> <%= @user.profiles.last.animal %>
     </h1>
     <div class="togglebutton">
-      <% if @user.searching %>
-        <%= simple_form_for @user, input_html: { id: "toggle-user-seraching" } do |f| %>
-          <%= f.hidden_field :searching, value: false %>
-          <%= button_tag type: 'submit', class: "topbar-toggle-search" do %>
-            <div class="toggle-border">
-              <i class="fas fa-circle fa-xs toggle-off"></i>
-            </div>
-          <% end %>
-        <% end %>
-        <p class="search-toggle-off">Active</p>
-      <% else %>
-        <%= simple_form_for @user, input_html: { id: "toggle-user-seraching" } do |f| %>
-          <%= f.hidden_field :searching, value: true %>
-          <%= button_tag type: 'submit', class: "topbar-toggle-search" do %>
-            <div class="toggle-border">
-              <i class="fas fa-circle fa-xs toggle-on"></i>
-            </div>
-          <% end %>
-        <% end %>
-        <p class="search-toggle-on">Busy</p>
-      <% end %>
+      <label class="switch">
+        <input class="checkbox" type="checkbox" <%= "checked" if @user.searching %> data-searching="<%= @user.searching %>">
+        <span class="slider round"></span>
+      </label>
     </div>
   </div>
   <div class="topbar-info">
@@ -47,3 +30,45 @@
     </p>
   </div>
 </div>
+
+
+
+<script>
+  slider = document.querySelector(".slider");
+  checkbox = document.querySelector(".checkbox");
+  railsToken = document.querySelector("meta[name=csrf-token]").content
+  checkbox.addEventListener("click", (event) => {
+    // console.log("text");
+    if (document.querySelector(".checkbox").dataset.searching == "true") {
+      url = "/toggle_search?searching=false"
+      fetch(url, {
+        method: "PATCH",
+        headers: {
+          "X-CSRF-Token": railsToken
+        }
+      })
+    } else {
+      console.log("we re here")
+        url = "/toggle_search?searching=true"
+        fetch(url, {
+          method: "PATCH",
+          headers: {
+            "X-CSRF-Token": railsToken
+          }
+      })
+    }
+  });
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
