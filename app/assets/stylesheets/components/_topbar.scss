@@ -1,12 +1,12 @@
 
-.togglebutton {
+.toggleswitch {
   display: flex;
+  border: blue 1px solid;
   position: absolute;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  width: 30px;
-  right: 30px;
+  right: 0;
+  top: 0;
+  width: 100%;
+
 }
 
 .search-toggle-on, .search-toggle-off {
@@ -15,66 +15,15 @@
   color: #919191;
 }
 
-
-.search-toggle-off {
-  position: absolute;
-  color: #93D295;
-  right: 2px;
-}
-
-.search-toggle-on {
-  position: absolute;
-  color: #ed6868;
-  right: 6px;
-}
-
-
-
 .toggleSearching h1 {
-  padding-left: 60px;
+  padding-right: 60px;
   color: #0c1a0c;
 }
 
-.topbar-toggle-search {
-  background: transparent;
-  border: none;
-}
-
-
-.toggle-border {
+.toggleswitch p {
   position: absolute;
-  top: 20px;
-  border-radius: 50%;
-  height: 30px;
-  width: 30px;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid #93D295;
+  top: 26px;
+  right: 120px;
+  color: #627064;
 }
-
-.toggle-on {
-  color: #ed6868;
-}
-
-.toggle-off {
-  color: #93D295;
-}
-
-
-  .toggleSearching {
-    display: flex;
-    justify-content: center;
-    padding-right: 73px;
-  }
-
-  .topbar-toggle-search:active, .topbar-toggle-search:focus, .topbar-toggle-search:focus:active, .topbar-toggle-search:active:focus {
-    background: none;
-    text-decoration: none;
-    outline: none;
-    box-shadow: none;
-  }
-
-
 
