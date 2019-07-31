@@ -1,6 +1,13 @@
 <style>
+
+  .journal-parent-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;      
+
+  }
   
-    .journal-container-index {
+  .journal-container-index {
     width: 100%;
     height: 100%;
     display: flex;
@@ -64,30 +71,53 @@
   align-items: center;
 }
 
-@media 800px 
+.button-new-post {
+  width: 50%;
+  height: 40px;
+  background: gray;
+  color: white;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  transition: background .25s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* @media queries here */
+/* @media queries here */
+/* @media queries here */
+/* @media queries here */
 
 </style>
 
 
 <%= render "shared/sidebar" %>
-<div class="journal-container-index">
-  <% @posts.reverse.each do |post| %>
-    <div class="latest-journal-entries-card-index">
-      <div class="latest-journal-entries-index">
-        <h5>
-          <%= post.title %>
-        </h5>
-        <p class="latest-journal-entries-date-index">
-          <%= post.created_at %>
-        </p>
-        <p class="latest-journal-entries-text-index">
-          <%= post.content %>
-        </p>
+<div class="journal-parent-container">
+  <div class="journal-container-index">
+    <% @posts.reverse.each do |post| %>
+      <div class="latest-journal-entries-card-index">
+        <div class="latest-journal-entries-index">
+          <h5>
+            <%= post.title %>
+          </h5>
+          <p class="latest-journal-entries-date-index">
+            <%= post.created_at %>
+          </p>
+          <p class="latest-journal-entries-text-index">
+            <%= post.content %>
+          </p>
+        </div>
+        <%= link_to journal_post_path(post.journal.id, post.id) do %>
+          <button class="button-secondary-journal-index">Read</button>
+        <% end %>
       </div>
-      <%= link_to journal_post_path(post.journal.id, post.id) do %>
-        <button class="button-secondary-journal-index">Read</button>
-      <% end %>
-    </div>
+    <% end %>
+  </div>
+  <%= link_to new_journal_post_path do %>
+    <button class="button-new-post">New Post</button>
   <% end %>
 </div>
+
 <%= render "shared/footer" %>
