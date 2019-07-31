@@ -97,7 +97,6 @@
 <%= render "shared/sidebar" %>
 <div class="dashboard-body">
   <%= render "new_post" %>
-  <div class="card-button-container">
     <div class="journal-container-index">
       <% @posts.reverse.each do |post| %>
         <div class="latest-journal-entries-card-index">
@@ -109,7 +108,7 @@
               <%= post.created_at %>
             </p>
             <p class="latest-journal-entries-text-index">
-              <%= post.content %>
+              <%= post.content.truncate(50) %>
             </p>
           </div>
           <%= link_to journal_post_path(post.journal.id, post.id) do %>
@@ -118,12 +117,6 @@
         </div>
       <% end %>
     </div>
-    <div>
-      <%= link_to new_journal_post_path do %>
-        <button class="button-new-post">New Post</button>
-      <% end %>
-    </div>
-  </div>
 <%= render "shared/footer" %>
 </div>
 

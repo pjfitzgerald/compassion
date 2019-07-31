@@ -28,7 +28,7 @@ class PostsController < ApplicationController
         flash[:notice] = "Something went wrong! 🤔"
       end
     end
-    redirect_to user_path(current_user)
+    redirect_back(fallback_location: root_path)
   end
 
   def update
