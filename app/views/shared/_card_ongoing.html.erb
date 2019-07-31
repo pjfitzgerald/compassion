@@ -1,45 +1,41 @@
-<div class="swiper-container">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide">
-      <div class="ongoing-card">
-        <%= link_to chatroom_path(chatroom.id) do %>
-        <div class="ongoing-card-top">
-          <div class="avatar-medium">
-            <% if chatroom.match.user == current_user %>
-              <%= image_tag("avatars/#{chatroom.match.partner.profiles.last.animal.downcase}.png") %>
-            <% else %>
-              <%= image_tag("avatars/#{chatroom.match.user.profiles.last.animal.downcase}.png") %>
-            <% end %>
-          </div>
-        </div>
-        <% end %>
-        <div class="ongoing-card-middle">
-          <div class="user-id">
-            <% if chatroom.match.user == current_user %>
-              <p>#<%= chatroom.match.partner.id %></p>
-            <% else %>
-              <p>#<%= chatroom.match.user.id %></p>
-            <% end %>
-          </div>
-          <h2>
-            <% if chatroom.match.user == current_user %>
-              <%= chatroom.match.partner.profiles.last.adjective.capitalize %>
-            <% else %>
-              <%= chatroom.match.user.profiles.last.adjective.capitalize %>
-            <% end %>
-            <% if chatroom.match.user == current_user %>
-              <%= chatroom.match.partner.profiles.last.animal %>
-            <% else %>
-              <%= chatroom.match.user.profiles.last.animal %>
-            <% end %>
-          </h2>
-          <p>Started conversation <%= chatroom.created_at.strftime("%x") %></p>
-        </div>
-        <div class="ongoing-card-bottom">
-          <%= link_to "Continue", chatroom_path(chatroom.id), class: "button-primary" %>
-          <%= link_to "End", chatroom, class: "button-secondary", method: :delete, data: { confirm: 'Are you sure?' } %>
-        </div>
-      </div>
+
+<div class="ongoing-card">
+  <%= link_to chatroom_path(chatroom.id) do %>
+  <div class="ongoing-card-top">
+    <div class="avatar-medium">
+      <% if chatroom.match.user == current_user %>
+        <%= image_tag("avatars/#{chatroom.match.partner.profiles.last.animal.downcase}.png") %>
+      <% else %>
+        <%= image_tag("avatars/#{chatroom.match.user.profiles.last.animal.downcase}.png") %>
+      <% end %>
     </div>
   </div>
+  <% end %>
+  <div class="ongoing-card-middle">
+    <div class="user-id">
+      <% if chatroom.match.user == current_user %>
+        <p>#<%= chatroom.match.partner.id %></p>
+      <% else %>
+        <p>#<%= chatroom.match.user.id %></p>
+      <% end %>
+    </div>
+    <h2>
+      <% if chatroom.match.user == current_user %>
+        <%= chatroom.match.partner.profiles.last.adjective.capitalize %>
+      <% else %>
+        <%= chatroom.match.user.profiles.last.adjective.capitalize %>
+      <% end %>
+      <% if chatroom.match.user == current_user %>
+        <%= chatroom.match.partner.profiles.last.animal %>
+      <% else %>
+        <%= chatroom.match.user.profiles.last.animal %>
+      <% end %>
+    </h2>
+    <p>Started conversation <%= chatroom.created_at.strftime("%x") %></p>
+  </div>
+  <div class="ongoing-card-bottom">
+    <%= link_to "Continue", chatroom_path(chatroom.id), class: "button-primary" %>
+    <%= link_to "End", chatroom, class: "button-secondary", method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
 </div>
+
