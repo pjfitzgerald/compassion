@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.where(journal: @journal)
+    @post = Post.new
   end
 
   def show
