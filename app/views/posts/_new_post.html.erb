@@ -1,0 +1,13 @@
+  <div class="new-journal-entry">
+    <div class="new-journal-entry-top">
+      <h2>Todays journal entry</h2>
+      <p>07.07.2019</p>
+    </div>
+    <div class="new-journal-entry-bottom">
+      <%= simple_form_for ([@journal, @post]) do |f| %>
+        <%= f.input :title, class: "input label", label: false, placeholder:"Title" %>
+        <%= f.text_area :content, class: "input text-area", placeholder: "Start a new journal entry!" %>
+        <%= f.submit :submit, class: "button-default-transparent journal-submit" %>
+      <% end %>
+    </div>
+  </div>
