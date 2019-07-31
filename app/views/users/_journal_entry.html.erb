@@ -14,7 +14,5 @@
   <%= link_to journal_post_path(post.journal, post.id) do %>
     <button class="button-secondary">Read</button>
   <% end %>
-  <%= link_to journal_post_path(post.journal, post.id), data: { confirm: 'Are you sure?' } method: :delete do %>
-    <button class="button-secondary">Delete</button>
-  <% end %>
+  <button class="button-secondary" data-toggle="modal" data-target="#modal-delete">Delete</button>
 </div>

@@ -59,6 +59,7 @@
       <div class="latest-journal-entries-container-scroll">
         <% @journal.posts.reverse.each do |post| %>
           <%= render "journal_entry", post: post %>
+          <%= render "shared/modal_delete", post: post %>
         <% end %>
       </div>
   </div>

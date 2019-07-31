@@ -76,21 +76,21 @@ class UsersController < ApplicationController
     # If user is answering daily questions
     elsif params[:user][:dailyanswerone]
       if params[:user][:d_answer_one] == ""
-        flash[:notice] = "Please submit an answer 😃"
+        flash[:notice] = "Please submit an answer"
       else
         @user.update(d_answer_one: params[:user][:d_answer_one])
       end
       redirect_to user_path(@user)
     elsif params[:user][:dailyanswertwo]
       if params[:user][:d_answer_two] == ""
-        flash[:notice] = "Please submit an answer 😃"
+        flash[:notice] = "Please submit an answer"
       else
         @user.update(d_answer_two: params[:user][:d_answer_two])
       end
       redirect_to user_path(@user)
     elsif params[:user][:dailyanswerthree]
       if params[:user][:d_answer_three] == ""
-        flash[:notice] = "Please submit an answer 😃"
+        flash[:notice] = "Please submit an answer"
       else
         @user.update(d_answer_three: params[:user][:d_answer_three])
       end
