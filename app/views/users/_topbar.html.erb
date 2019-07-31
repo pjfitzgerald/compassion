@@ -23,10 +23,14 @@
       <p> You have answered <strong>All</strong> question today! 😁 </p>
     <% end %>
     <p>
-      <% if @user.journal.posts.reverse.first.created_at.strftime("%j").to_i == Time.now.strftime("%j").to_i %>
-          You've posted a journal entry today!
+      <% if @user.journal.posts.first %>
+        <% if @user.journal.posts.reverse.first.created_at.strftime("%j").to_i == Time.now.strftime("%j").to_i %>
+            You've posted a journal entry today!
+        <% else %>
+            <strong><%= Time.now.strftime("%j").to_i - @user.journal.posts.reverse.first.created_at.strftime("%j").to_i %></strong> day(s) since your last journal post
+        <% end %>
       <% else %>
-          <strong><%= Time.now.strftime("%j").to_i - @user.journal.posts.reverse.first.created_at.strftime("%j").to_i %></strong> day(s) since your last journal post
+        Make a new journal entry...
       <% end %>
     </p>
   </div>
