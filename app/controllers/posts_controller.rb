@@ -23,9 +23,9 @@ class PostsController < ApplicationController
     else
       @post = Post.new(title: params[:post][:title], content: params[:post][:content], journal: current_user.journal)
       if @post.save
-        flash[:notice] = "Journal entry created! 😎"
+        flash[:notice] = "Journal entry created!"
       else
-        flash[:notice] = "Something went wrong! 🤔"
+        flash[:notice] = "Something went wrong!"
       end
     end
     redirect_back(fallback_location: root_path)
@@ -37,6 +37,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
+    flash[:notice] = "Deleted your post!"
     redirect_to user_path(current_user)
   end
 
