@@ -10,15 +10,15 @@
   <div class="ongoing-slider">
     <!-- CARD-ONGOING: app/views/shared/_card_ongoing.html.erb -->
     <i class="fas fa-caret-left fa-5x caret"></i>
-    <% @chatrooms.each do |chatroom| %>
       <div class="swiper-container">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <%= render "shared/card_ongoing", chatroom: chatroom %>
-          </div>
+          <% @chatrooms.each do |chatroom| %>
+            <div class="swiper-slide">
+              <%= render "shared/card_ongoing", chatroom: chatroom %>
+            </div>
+          <% end %>
         </div>
       </div>
-    <% end %>
     <i class="fas fa-caret-right fa-5x caret"></i>
   </div>
 </div>
