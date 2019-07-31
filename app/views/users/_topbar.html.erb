@@ -8,7 +8,9 @@
         <%= simple_form_for @user, input_html: { id: "toggle-user-seraching" } do |f| %>
           <%= f.hidden_field :searching, value: false %>
           <%= button_tag type: 'submit', class: "topbar-toggle-search" do %>
-            <i class="fas fa-circle fa-xs toggle-off"></i>
+            <div class="toggle-border">
+              <i class="fas fa-circle fa-xs toggle-off"></i>
+            </div>
           <% end %>
         <% end %>
         <p class="search-toggle-off">Active</p>
@@ -16,7 +18,9 @@
         <%= simple_form_for @user, input_html: { id: "toggle-user-seraching" } do |f| %>
           <%= f.hidden_field :searching, value: true %>
           <%= button_tag type: 'submit', class: "topbar-toggle-search" do %>
-            <i class="fas fa-circle fa-xs toggle-on"></i>
+            <div class="toggle-border">
+              <i class="fas fa-circle fa-xs toggle-on"></i>
+            </div>
           <% end %>
         <% end %>
         <p class="search-toggle-on">Busy</p>
