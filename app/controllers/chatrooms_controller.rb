@@ -14,7 +14,7 @@ class ChatroomsController < ApplicationController
     else
       @other_user = @chatroom.match.user
     end
-    @other_rooms = Chatroom.all.where.not(id: @chatroom.id)
+    @other_rooms = @chatrooms.where.not(id: @chatroom.id)
   end
 
   def new
