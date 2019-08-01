@@ -4,7 +4,6 @@
 
 .chat-container {
   margin: 25px 5vw 100px 5vw;
-  width: 95%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -15,8 +14,8 @@
 .chatroom-messages-bottom-container {
   display: flex;
   flex-direction: column;
-  min-width: 500px;
-  max-width: 42.5vw;
+  min-width: 50vw;
+  max-width: 100vw;
 }
 
 /* —————————————————————————————— */
@@ -49,8 +48,10 @@
   position: absolute;
   z-index: 999;
   margin-top: 10px;
-  margin-left: 225px;
+  margin-left: 23vw;
 }
+
+
 
 /* —————————— HEADER - AFTER CLICK —————————— */
 
@@ -64,7 +65,7 @@
 // AVATAR
 .header-avatars-container {
   position: absolute;
-  min-width: 500px;
+  min-width: 50vw;
 }
 
 .chat-header .header-avatars,
@@ -92,31 +93,32 @@
   width: 100px;
   margin-top: 75px;
   margin-left: 60px;
-  transition: .25s;
   border: 3px solid white;
   border-radius: 100%;
   opacity: .75;
   &:hover {
     margin-left: 70px;
     opacity: 1;
+    transition: .25s;
   }
 }
 
 // HEADER QUESTIONS
 .header-questions {
   margin-top: 60px;
-  min-width: 500px;
-  max-width: 42.5vw;
+  min-width: 50vw;
+  max-width: 100vw;
   height: 55px;
   position: absolute;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   flex-direction: column;
-  font-size: .85em;
+  font-size: .9em;
+  margin-left: 15vw;
 }
 
 .header-questions p {
-  margin-top: 5px;
+  margin-top: 0px;
   margin-right: 20px;
   z-index: 999;
 }
@@ -125,9 +127,64 @@
   margin-top: -15px;
   margin-right: 20px;
   z-index: 999;
-  font-size: .95em;
+  font-size: 1em;
   color: black;
   font-weight: bold;
+}
+
+// MEDIA QUERIES
+@media only screen and (max-width: 1050px) {
+  .header-questions {
+    margin-top: 70px;
+    font-size: .85em;
+  }
+
+  .header-questions h5 {
+    font-size: .9em;
+  }
+
+  .chat-header .header-avatars {
+    height: 90px;
+    width: 90px;
+    margin-top: 80px;
+    margin-left: 10px;
+  }
+
+  .chat-header .avatar-not-active {
+    height: 80px;
+    width: 80px;
+    margin-top: 85px;
+    margin-left: 50px;
+    &:hover {
+      margin-left: 60px;
+    }
+  }
+}
+
+@media only screen and (max-width: 870px) {
+  .chat-header .button-expand-medium {
+    margin-left: 25vw;
+  }
+
+  .header-avatars-container {
+    display: none;
+  }
+
+  .header-questions {
+    margin-top: 60px;
+    align-items: center;
+    margin-left: 0vw;
+    font-size: .9em;
+  }
+
+  .header-questions p {
+    margin-right: 0px;
+  }
+
+  .header-questions h5 {
+    margin-right: 0px;
+    font-size: 1em;
+  }
 }
 
 /* —————————————————————————————— */
@@ -175,6 +232,14 @@
   padding: 5px 20px 5px 20px;
 }
 
+// TEXT
+.chatroom-message-text {
+  max-width: 350px;
+  display: block;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
 // TIME
 .chatroom-message-time {
   color: #9C9CAB;
@@ -197,11 +262,15 @@
       background: #bedff6;
       border-radius: 15px 0px 15px 15px;
       color: #222;
-      padding: 5px 20px 5px 20px;
+      padding: 5px 0px 5px 20px !important;
     }
     // MESSAGE TIME FOR RIGHT
     .chatroom-message-time {
       float: right;
+    }
+    .chatroom-message-text {
+      margin-right: -20px;
+      padding-right: 35px;
     }
   }
 }
@@ -262,38 +331,43 @@ textarea::placeholder {
 
 
 /* —————————————————————————————— */
-/* ——— ONGOING CHATS SECTION  ——— */
+/* ——— ONGOING CHATS SWIPER  ——— */
 /* —————————————————————————————— */
 
-.chatroom-ongoing-chats-container {
-  min-width: 400px;
-  max-width: 40vw;
-  margin: auto;
-  text-align: center;
-  justify-content: center;
-}
-
-.chatroom-ongoing-chats-cards {
-  padding: 20px 20px;
+.ongoing-slider-chatroom-container {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  border-top: 2px solid $primary-color;
-  border-bottom: 2px solid $primary-color;
-  overflow: scroll;
-  height: 100%;
-  max-height: 90vh;
-  min-width: 450px;
-  max-width: 25vw;
-  box-shadow: 0 12px 8px -12px gray;
+  margin-bottom: 50px;
 }
 
-.chatroom-ongoing-chats-container .ongoing-card {
-  margin: 10px 0px;
+.ongoing-slider-chatroom-container i {
+  margin: 1vw;
+}
+
+.ongoing-slider-chatroom-container .swiper-pagination {
+  margin-top: 325px;
+}
+
+.ongoing-slider-chatroom {
+  padding-left: 0vw !important;
+  width: 90% !important;
+  margin-left: 0;
+  margin-right: 0;
+  justify-content: center;
+}
+
+.ongoing-slider-chatroom-container-title {
+  text-align: center;
+  margin: 50px 0px 50px 0px;
+  border-bottom: 1px solid $primary-color;
 }
 
 
+/* —————————————————————————————— */
+/* ——————————— RULES  ——————————— */
+/* —————————————————————————————— */
 
+// FOR ONCLICK - DEFAULT HIDERS
 .chat-hide {
   display: none;
 }
