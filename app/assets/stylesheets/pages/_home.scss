@@ -6,7 +6,7 @@
 
 .landing {
   display: flex;
-  color: white;
+  color: #F4F4F4;
   width: 100%;
   height: 80vh;
   background-image: image-url("home_elephant.png");
@@ -43,7 +43,7 @@
   align-items: center;
   align-self: center;
   height: 80vh;
-  background: white;
+  background: #F4F4F4;
 }
 
 .about-top {
@@ -75,12 +75,12 @@
 
 .login-signup {
   display: flex;
-  max-width: 50vw;
 }
 
 .login-signup button {
   margin-right: 30px;
 }
+
 
 .about-card i, .about-card i, .about-card h4 {
   color: $primary-color-dark;
@@ -103,9 +103,21 @@
   margin-top: 60px;
 }
 
+<<<<<<< HEAD
+=======
+.question-about button {
+  background: #F4F4F4;
+  height: 40px;
+  width: 150px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,.2);
+  color: #93D295;
+}
+
+>>>>>>> master
 
 .question-about h3, .question-card h3 {
-  color: white;
+  color: #F4F4F4;
 }
 
 .question-card {
@@ -138,35 +150,41 @@
 }
 
 .question-card i, .question-card p {
-  color: white;
+  color: #F4F4F4;
 }
 
 .home-question input {
+<<<<<<< HEAD
   border: .5px solid white;
   background: rgba(33, 147, 176, .5);
   color: white;
+=======
+  border: .5px solid #F4F4F4;
+  background: #6EAD70;
+  color: #F4F4F4;
+>>>>>>> master
   padding: 10px;
   border-radius: 20px;
 }
 
 .question-submit {
-  background: white;
+  background: #F4F4F4;
 }
 
 
 .home-newchat {
-  border: 1px solid white;
+  border: 1px solid #F4F4F4;
   background: transparent;
   width: 200px;
   padding: 10px 0px;
   border-radius: 5px;
   box-shadow: 1px 1px 3px rgba(0,0,0,.2);
-  color: white;
+  color: #F4F4F4;
 }
 
 .homepage-users {
   display: flex;
-  background: white;
+  background: #F4F4F4;
   height: 80vh;
   justify-content: center;
   align-items: center;
@@ -184,7 +202,7 @@
 
 .home-user-card {
   display: flex;
-  background: white;
+  background: #F4F4F4;
   width: 30vw;
   text-align: center;
   align-items: center;
@@ -201,7 +219,7 @@
   justify-content: center;
   height: 100px;
   border-radius: 50%;
-  border: 2px white solid;
+  border: 2px #F4F4F4 solid;
   box-shadow: 1px 1px 3px rgba(0,0,0,.4);
   width: 100px;
 }
@@ -228,6 +246,31 @@
   border: 2px solid #93D295;
 }
 
+<<<<<<< HEAD
+=======
+.home-card-buttons button {
+  color: #F4F4F4;
+  border: none;
+  border-radius: 5px;
+  height: 4vh;
+  width: 6vw;
+  box-shadow: 1px 1px 3px rgba(0,0,0,.2);
+}
+
+.continue {
+  background: #93D295;
+}
+
+.end {
+  background: #D29393;
+}
+
+.home-card-content p {
+  color: #939393;
+}
+
+
+>>>>>>> master
 .dot {
   cursor: pointer;
   height: 15px;

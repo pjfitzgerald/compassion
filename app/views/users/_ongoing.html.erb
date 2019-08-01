@@ -9,7 +9,11 @@
   <% end %>
   <div class="ongoing-slider">
     <!-- CARD-ONGOING: app/views/shared/_card_ongoing.html.erb -->
-    <i class="fas fa-caret-left fa-5x caret"></i>
+    <% unless @user.matches.empty? %>
+      <div>
+        <i class="fas fa-caret-left fa-5x caret"></i>
+      </div>
+    <% end %>
       <div class="swiper-container">
         <div class="swiper-wrapper">
           <% @chatrooms.each do |chatroom| %>
@@ -22,6 +26,10 @@
         <br>
         <div class="swiper-pagination swiper-pagination-black"></div>
       </div>
-    <i class="fas fa-caret-right fa-5x caret"></i>
+    <% unless @user.matches.empty? %>
+      <div>
+        <i class="fas fa-caret-right fa-5x caret"></i>
+      </div>
+    <% end %>
   </div>
 </div>
