@@ -1,3 +1,9 @@
+
+.survey-container legend {
+  font-weight: bold;
+  // padding-bottom: 0px;
+}
+
 .survey-container {
   display: flex;
   height: 100vh;
@@ -69,6 +75,7 @@
   background: #93D295;
   border-radius: 8px;
   box-shadow: 0px 2px 3px rgba(0,0,0,.5);
+  margin-top: 50px;
 }
 
 .survey-submit input {
