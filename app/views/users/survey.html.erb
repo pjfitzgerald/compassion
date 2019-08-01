@@ -1,8 +1,10 @@
 <div class="survey-container">
-  <img src="https://res.cloudinary.com/db3hrutzq/image/upload/v1563898761/Compassion%20images/Rhino_cn0xve.png" alt="n/a">
-  <div class="back-btn">
+  <!--   <img src="https://res.cloudinary.com/db3hrutzq/image/upload/v1563898761/Compassion%20images/Rhino_cn0xve.png" alt="n/a"> -->
+  <div class="close-button-container">
     <%= link_to root_path do %>
-      <i class="fas fa-arrow-left">  Back to Homepage</i>
+    <button class="button-close" style="color: white;">
+      <i class="fas fa-plus"></i>
+    </button>
     <% end %>
   </div>
   <div class="survey-form">
@@ -10,33 +12,36 @@
     <h4>These questions will help us create the best possible match for you.</h4>
     <!-- <p> (1 - Never, 2 - Rarely, 3 - Sometimes, 4 - Often, 5 - Very Often) </p> -->
     <%= simple_form_for @user do |f| %>
-      <div class="ans-one">
-        <%= f.input :answer_one, as: :radio_buttons, collection: ["Never", "Rarely", "Sometimes", "Often", "Very Often"], checked: "Never", label: "1. How often do you exercise?" %>
-      </div>
-      <br>
-      <div class="ans-two">
-        <%= f.input :answer_two, as: :radio_buttons, collection: ["Never", "Rarely", "Sometimes", "Often", "Very Often"], checked: "Never", label: "2. How often do you sleep more than 8 hours a night?" %>
-      </div>
-      <br>
-      <div class="ans-three">
-        <%= f.input :answer_three, as: :radio_buttons, collection: ["Never", "Rarely", "Sometimes", "Often", "Very Often"], checked: "Never", label: "3. How often do you consume drugs or alcohol?" %>
-      </div>
-      <br>
-      <div class="ans-four">
-        <%= f.input :answer_four, as: :radio_buttons, collection: ["Never", "Rarely", "Sometimes", "Often", "Very Often"], checked: "Never", label: "4. How often do you use social media?" %>
-      </div>
-      <br>
-      <div class="ans-five">
-        <%= f.input :answer_five, as: :radio_buttons, collection: ["Never", "Rarely", "Sometimes", "Often", "Very Often"], checked: "Never", label: "5. How often do you hang out with a group of close friends or family?" %>
-      </div>
-      <%= f.hidden_field :survey, value: true %>
-      <div class="survey-submit">
-        <%= f.submit :submit %>
-      </div>
-    <% end %>
-    <div class="survey-skip">
-      <%= link_to "skip for now", profile_choose_path %>
+    <div class="ans-one">
+      <%= f.input :answer_one, as: :radio_buttons, collection: ["Never", "Rarely", "Sometimes", "Often", "Very Often"], checked: "Never", label: "1. How often do you exercise?" %>
     </div>
+    <div class="underline-survey"></div>
     <br>
+    <div class="ans-two">
+      <%= f.input :answer_two, as: :radio_buttons, collection: ["Never", "Rarely", "Sometimes", "Often", "Very Often"], checked: "Never", label: "2. How often do you sleep more than 8 hours a night?" %>
+    </div>
+    <div class="underline-survey"></div>
+    <br>
+    <div class="ans-three">
+      <%= f.input :answer_three, as: :radio_buttons, collection: ["Never", "Rarely", "Sometimes", "Often", "Very Often"], checked: "Never", label: "3. How often do you consume drugs or alcohol?" %>
+    </div>
+    <div class="underline-survey"></div>
+    <br>
+    <div class="ans-four">
+      <%= f.input :answer_four, as: :radio_buttons, collection: ["Never", "Rarely", "Sometimes", "Often", "Very Often"], checked: "Never", label: "4. How often do you use social media?" %>
+    </div>
+    <div class="underline-survey"></div>
+    <br>
+    <div class="ans-five">
+      <%= f.input :answer_five, as: :radio_buttons, collection: ["Never", "Rarely", "Sometimes", "Often", "Very Often"], checked: "Never", label: "5. How often do you hang out with a group of close friends or family?" %>
+    </div>
+    <div class="buttons-container">
+      <%= f.hidden_field :survey, value: true %>
+      <%= f.submit :submit, class: "button-default-transparent" %>
+      <% end %>
+      <%= link_to profile_choose_path do %>
+      <button class="button-secondary-bordered">Skip for now</button>
+      <% end %>
+    </div>
   </div>
 </div>
