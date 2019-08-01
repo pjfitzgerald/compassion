@@ -1,8 +1,11 @@
 <div class="forgot-container">
-  <img src="https://res.cloudinary.com/db3hrutzq/image/upload/v1563898761/Compassion%20images/Rhino_cn0xve.png" alt="n/a">
-  <div class="back-btn">
-    <%= link_to root_path do %>
-      <i class="fas fa-arrow-left">  Back</i>
+<!--   <img src="https://res.cloudinary.com/db3hrutzq/image/upload/v1563898761/Compassion%20images/Rhino_cn0xve.png" alt="n/a">
+ -->
+  <div class="close-button-container">
+    <%= link_to :back do %>
+    <button class="back-btn" style="color: white;">
+      Back
+    </button>
     <% end %>
   </div>
   <div class="forgot-form">
@@ -18,7 +21,7 @@
       </div>
       <br>
       <div class="form-actions">
-        <%= f.button :submit, "Send reset password instructions", class: "forgot-btn" %>
+        <%= f.button :submit, "Send reset password instructions", class: "button-default-transparent forgot-btn" %>
       </div>
     <% end %>
     <br>
