@@ -1,0 +1,16 @@
+<div class="post-card-show">
+  <div class="post-title-show">
+    <h5> <%= @post.title %> </h5>
+  </div>
+  <div class="post-date-show">
+    <p>
+      <%= @post.created_at.strftime("%x %-I:%M %p") %>
+    </p>
+  </div>
+  <div class="post-text-show">
+    <p> <%= @post.content %> </p>
+  </div>
+  <%= link_to journal_posts_path do %>
+      <button class="button-secondary">Back</button>
+  <% end %>
+</div>
