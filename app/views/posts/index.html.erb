@@ -1,5 +1,14 @@
 <style>
 
+  #post-btn-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px; 
+    } button {
+        margin: 12px;
+  }
+
+
   .post-index-container {
     display: flex;
     flex-direction: column;
@@ -25,10 +34,10 @@
     height: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     background: #F4F4F4;
     padding: 50px;
-    padding-left: 80px;
+    /*padding-left: 80px;*/
 
     /*margin-top: 100px;*/
   }
@@ -40,14 +49,20 @@
     margin-bottom: 20px;
     padding: 20px;
     width: 75%;
-    box-shadow: 1px 1px 1px 1px gray;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.4);
     border-radius: 12px;
+    border: 1px solid #93d295;
     background-color: #F4F4F4;
     /*background: radial-gradient(#9fd4a0, #7db37f);*/
     display: flex;
     flex-direction: column;
     /*justify-content: center;*/
     max-width: 650px;
+  }
+
+  .latest-journal-entries-card-index h5 {
+    text-align: center;
+    font-weight: bold;
   }
 
   .latest-journal-entries-index {
@@ -58,7 +73,8 @@
 
   .latest-journal-entries-date-index {
     color: black;
-    font-weight: bold;
+    font-family: 'Fira Sans', sans-serif;
+    /*font-weight: bold;*/
     margin-top: 2.5px;
     margin-bottom: 0px;
     border-bottom: solid 1px #ddd;
@@ -70,18 +86,18 @@
     width: 100%;
   }
 
-  .button-secondary-journal-index {
-  width: 100%;
-  height: 40px;
-  background: #D29393;
-  color: white;
-  border-radius: 10px;
-  outline: none;
-  border: none;
-  transition: background .25s;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+ .button-secondary-journal-index {
+    width: 100%;
+    height: 40px;
+    background: #D29393;
+    color: white;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    transition: background .25s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .button-new-post {
@@ -104,33 +120,40 @@
 /* @media queries here */
 
 </style>
-
 <%= render "shared/sidebar" %>
-<div class="dashboard-body">
+<div style="min-height: 100vh;"class="dashboard-body">
   <div class="post-index-container">
     <h2>Journal</h2>
     <div class="new-post-container">
       <%= render "new_post" %>
     </div>
-    <h4>Previous Posts</h4>
-    <div class="journal-container-index">
-      <% @posts.reverse.each do |post| %>
-        <div class="latest-journal-entries-card-index">
-          <div class="latest-journal-entries-index">
-            <h5>
-              <%= post.title %>
-            </h5>
-            <p class="latest-journal-entries-date-index">
-              <%= post.created_at %>
-            </p>
-            <p class="latest-journal-entries-text-index">
-              <%= post.content.truncate(50) %>
-            </p>
+    <div>
+      <h4>Previous Posts</h4>
+    </div>
+      <div class="journal-container-index">
+      <% unless current_user.journal.posts.empty? %>
+        <% @posts.reverse.each do |post| %>
+          <%= render "shared/modal_delete", post: post %>
+          <div class="latest-journal-entries-card-index">
+            <div class="latest-journal-entries-index">
+              <h5>
+                <%= post.title %>
+              </h5>
+              <p class="latest-journal-entries-date-index">
+                <%= post.created_at.strftime("%x %-I:%M %p") %>
+              </p>
+              <p class="latest-journal-entries-text-index">
+                <%= post.content.truncate(50) %>
+              </p>
+            </div>
+            <div id="post-btn-container">
+              <%= link_to journal_post_path(post.journal.id, post.id) do %>
+                <button class="button-primary-bordered">Read</button>
+              <% end %>
+              <button class="button-secondary" data-toggle="modal" data-target="#modal-delete">Delete</button>
+            </div>
           </div>
-          <%= link_to journal_post_path(post.journal.id, post.id) do %>
-            <button class="button-secondary-journal-index">Read</button>
-          <% end %>
-        </div>
+        <% end %>
       <% end %>
     </div>
   </div>
