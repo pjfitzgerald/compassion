@@ -94,28 +94,28 @@
   </div><!-- EO .chat-container -->
 
   <% unless @other_rooms.empty? %>
-  <div class="ongoing-slider-chatroom-container-title">
-    <h2>Other conversations</h2>
-  </div>
-  <div class="ongoing-slider-chatroom-container">
-    <i class="fas fa-caret-left fa-5x caret"></i>
-    <div class="ongoing-slider ongoing-slider-chatroom">
-      <!-- CARD-ONGOING: app/views/shared/_card_ongoing.html.erb -->
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <% @other_rooms.each do |chatroom| %>
-          <div class="swiper-slide">
-            <%= render "shared/card_ongoing", chatroom: chatroom %>
-          </div>
-          <% end %>
-        </div>
-        <br>
-        <br>
-      </div>
+    <div class="ongoing-slider-chatroom-container-title">
+      <h2>Other conversations</h2>
     </div>
-    <i class="fas fa-caret-right fa-5x caret"></i>
-    <div class="swiper-pagination swiper-pagination-black"></div>
-  </div>
+    <div class="ongoing-slider-chatroom-container">
+      <i class="fas fa-caret-left fa-5x caret"></i>
+      <div class="ongoing-slider ongoing-slider-chatroom">
+        <!-- CARD-ONGOING: app/views/shared/_card_ongoing.html.erb -->
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <% @other_rooms.each do |chatroom| %>
+            <div class="swiper-slide">
+              <%= render "shared/card_ongoing", chatroom: chatroom %>
+            </div>
+            <% end %>
+          </div>
+          <br>
+          <br>
+        </div>
+      </div>
+      <i class="fas fa-caret-right fa-5x caret"></i>
+      <div class="swiper-pagination swiper-pagination-black"></div>
+    </div>
   <% end %>
 
   <%= render "shared/footer" %>

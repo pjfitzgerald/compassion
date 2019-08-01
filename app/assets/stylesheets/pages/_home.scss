@@ -6,7 +6,7 @@
 
 .landing {
   display: flex;
-  color: white;
+  color: #F4F4F4;
   width: 100%;
   height: 80vh;
   background-image: image-url("home_elephant.png");
@@ -43,7 +43,7 @@
   align-items: center;
   align-self: center;
   height: 80vh;
-  background: white;
+  background: #F4F4F4;
 }
 
 .about-top {
@@ -75,12 +75,12 @@
 
 .login-signup {
   display: flex;
-  max-width: 50vw;
 }
 
 .login-signup button {
   margin-right: 30px;
 }
+
 
 .about-card i, .about-card i, .about-card h4 {
   color: #93D295;
@@ -104,7 +104,7 @@
 }
 
 .question-about button {
-  background: white;
+  background: #F4F4F4;
   height: 40px;
   width: 150px;
   border-radius: 5px;
@@ -114,7 +114,7 @@
 
 
 .question-about h3, .question-card h3 {
-  color: white;
+  color: #F4F4F4;
 }
 
 .question-card {
@@ -151,35 +151,35 @@
 }
 
 .question-card i, .question-card p {
-  color: white;
+  color: #F4F4F4;
 }
 
 .home-question input {
-  border: .5px solid white;
+  border: .5px solid #F4F4F4;
   background: #6EAD70;
-  color: white;
+  color: #F4F4F4;
   padding: 10px;
   border-radius: 20px;
 }
 
 .question-submit {
-  background: white;
+  background: #F4F4F4;
 }
 
 
 .home-newchat {
-  border: 1px solid white;
+  border: 1px solid #F4F4F4;
   background: transparent;
   width: 200px;
   padding: 10px 0px;
   border-radius: 5px;
   box-shadow: 1px 1px 3px rgba(0,0,0,.2);
-  color: white;
+  color: #F4F4F4;
 }
 
 .homepage-users {
   display: flex;
-  background: white;
+  background: #F4F4F4;
   height: 80vh;
   justify-content: center;
   align-items: center;
@@ -197,7 +197,7 @@
 
 .home-user-card {
   display: flex;
-  background: white;
+  background: #F4F4F4;
   width: 30vw;
   text-align: center;
   align-items: center;
@@ -214,7 +214,7 @@
   justify-content: center;
   height: 100px;
   border-radius: 50%;
-  border: 2px white solid;
+  border: 2px #F4F4F4 solid;
   box-shadow: 1px 1px 3px rgba(0,0,0,.4);
   width: 100px;
 }
@@ -268,7 +268,7 @@
 }
 
 .home-card-buttons button {
-  color: white;
+  color: #F4F4F4;
   border: none;
   border-radius: 5px;
   height: 4vh;
