@@ -12,7 +12,7 @@
   <p class="latest-journal-entries-date"><%= post.created_at.strftime("%x %-I:%M %p") %></p>
   <p class="latest-journal-entries-text"><%= post.content.truncate(30) %></p>
   <%= link_to journal_post_path(post.journal, post.id) do %>
-    <button class="button-secondary">Read</button>
+    <button class="button-white">Read</button>
   <% end %>
   <button class="button-secondary" data-toggle="modal" data-target="#modal-delete">Delete</button>
 </div>
