@@ -35,7 +35,7 @@
   </div>
   <div class="ongoing-card-bottom">
     <%= link_to "Continue", chatroom_path(chatroom.id), class: "button-primary" %>
-    <%= link_to "End", chatroom, class: "button-secondary", method: :delete, data: { confirm: 'Are you sure?' } %>
+    <button class="button-secondary" data-toggle="modal" data-target="#modal-delete-chat">Delete</button>
   </div>
 </div>
 

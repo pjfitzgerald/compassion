@@ -1,0 +1,20 @@
+<div class="modal fade" id="modal-delete-chat" tabindex="-1" data-backdrop="false" role="dialog" aria-labelledby="questions-info" aria-hidden="true" style="box-shadow: 10px 10px 10px rgba(0,0,0,.8);">
+  <div class="modal-background">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="justify-content: center;">
+          <h3 class="modal-title" id="questions-info">Are you sure?</h3>
+        </div>
+        <div class="modal-body">
+          <p>This will permanently delete this conversation</p>
+        </div>
+        <div class="modal-footer" style="justify-content: center;">
+          <button type="button" class="button-primary-bordered" data-dismiss="modal">No, take me back</button>
+          <%= link_to chatroom_path(chatroom.id), method: :delete do %>
+            <button class="button-secondary">Delete</button>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

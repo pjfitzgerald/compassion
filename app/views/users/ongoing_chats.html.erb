@@ -9,6 +9,7 @@
     <div class="ongoing-cards-body">
       <% @chatrooms.each do |chatroom| %>
         <%= render "shared/card_ongoing", chatroom: chatroom %>
+        <%= render "shared/modal_delete_chat", chatroom: chatroom %>
       <% end %>
     </div><!-- EO .ongoing-cards-body -->
 
