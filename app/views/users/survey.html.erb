@@ -6,23 +6,28 @@
     <% end %>
   </div>
   <div class="survey-form">
-    <h4>Answer these quick questions, so you can be matched right away!</h4>
-    <p> (1 - never, 2 - not likely, 3 - somewhat likely, 4 - very likely, 5 - Gimme Now) </p>
+    <br>
+    <h4>These questions will help us create the best possible match for you.</h4>
+    <!-- <p> (1 - Never, 2 - Rarely, 3 - Sometimes, 4 - Often, 5 - Very Often) </p> -->
     <%= simple_form_for @user do |f| %>
       <div class="ans-one">
-        <%= f.input :answer_one, as: :radio_buttons, collection: ["n/a", 1, 2, 3, 4, 5], checked: "n/a", label: "1. How likely are you to eat a banana?" %>
+        <%= f.input :answer_one, as: :radio_buttons, collection: ["Never", "Rarely", "Sometimes", "Often", "Very Often"], checked: "n/a", label: "1. How often do you exercise?" %>
       </div>
+      <br>
       <div class="ans-two">
-        <%= f.input :answer_two, as: :radio_buttons, collection: ["n/a", 1, 2, 3, 4, 5], checked: "n/a", label: "2. How likely are you to eat an apple?" %>
+        <%= f.input :answer_two, as: :radio_buttons, collection: ["Never", "Rarely", "Sometimes", "Often", "Very Often"], checked: "n/a", label: "2. How often do you sleep more than 8 hours a night?" %>
       </div>
+      <br>
       <div class="ans-three">
-        <%= f.input :answer_three, as: :radio_buttons, collection: ["n/a", 1, 2, 3, 4, 5], checked: "n/a", label: "3. How likely are you to eat a kiwi?" %>
+        <%= f.input :answer_three, as: :radio_buttons, collection: ["Never", "Rarely", "Sometimes", "Often", "Very Often"], checked: "n/a", label: "3. How often do you consume drugs or alcohol?" %>
       </div>
+      <br>
       <div class="ans-four">
-        <%= f.input :answer_four, as: :radio_buttons, collection: ["n/a", 1, 2, 3, 4, 5], checked: "n/a", label: "4. How likely are you to eat a pear?" %>
+        <%= f.input :answer_four, as: :radio_buttons, collection: ["Never", "Rarely", "Sometimes", "Often", "Very Often"], checked: "n/a", label: "4. How often do you use social media?" %>
       </div>
+      <br>
       <div class="ans-five">
-        <%= f.input :answer_five, as: :radio_buttons, collection: ["n/a", 1, 2, 3, 4, 5], checked: "n/a", label: "5. How likely are you to eat an orange?" %>
+        <%= f.input :answer_five, as: :radio_buttons, collection: ["Never", "Rarely", "Sometimes", "Often", "Very Often"], checked: "n/a", label: "5. How often do you hang out with a group of close friends or family?" %>
       </div>
       <%= f.hidden_field :survey, value: true %>
       <div class="survey-submit">
@@ -32,5 +37,6 @@
     <div class="survey-skip">
       <%= link_to "skip for now", profile_choose_path %>
     </div>
+    <br>
   </div>
 </div>

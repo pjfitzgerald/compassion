@@ -3,6 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @user = current_user
-    @question = ["Do you like sports?", "Do you enjoy cooking?", "Do you sing in the shower?"].sample
+    @question = "Autumn"
   end
 end
