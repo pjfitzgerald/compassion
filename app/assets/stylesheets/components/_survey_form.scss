@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  background: radial-gradient(#9fd4a0, #6f9e70);
+  background: radial-gradient($primary-color, $primary-color-dark);
   height: 100%;
 }
 
@@ -74,7 +74,7 @@
   justify-content: center;
   align-items: center;
   margin: auto;
-  background: linear-gradient(90deg, rgba(159,212,160,0) 0%, rgba(111,158,112,1) 50%, rgba(159,212,160,0) 100%);
+  background: linear-gradient(90deg, rgba(33,147,176,0) 0%, rgba(255,255,255,1) 50%, rgba(33,147,176,0) 100%);
 }
 
 .buttons-container {
