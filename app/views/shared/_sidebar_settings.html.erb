@@ -24,7 +24,7 @@
       </div>
     </div>
     <div class="settings-buttons">
-      <%= link_to profile_choose_path(@user) do %>
+      <%= link_to profile_choose_path(current_user) do %>
       <button class="button-default-transparent">Edit profile</button>
       <% end %>
       <%= link_to survey_path(@user) do %>
