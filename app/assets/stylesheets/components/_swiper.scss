@@ -1,18 +1,27 @@
 .swiper-container {
-  width: 90%;
+  min-width: 950px;
+  max-width: 100%;
   height: 100%;
+  // border: 1px solid red !important;
+  margin: 0;
 }
-
-
 
 .swiper-slide {
-  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  // border: 1px solid black !important;
 }
+
+.swiper-container .ongoing-card {
+  justify-content: space-around;
+  // border: 1px solid blue !important;
+}
+
 
 // .swiper-wrapper {
 //   align-content: center;
 // }
-
 
 .caret {
   color: $primary-color;

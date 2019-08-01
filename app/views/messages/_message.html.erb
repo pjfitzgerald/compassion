@@ -11,14 +11,14 @@
     <div class="chatroom-message-time">
       <%= message.created_at.strftime("%A %b %d %-I:%M%p").downcase %>
     </div>
-    <%= message.content %>
+    <span class="chatroom-message-text"><%= message.content %></span>
   </div>
   <% else %>
   <div class="message-content">
     <div class="chatroom-message-time">
       <%= message.created_at.strftime("%-I:%M%p").downcase %>
     </div>
-    <%= message.content %>
+    <span class="chatroom-message-text"><%= message.content %></span>
   </div>
   <% end %>
 </div>
