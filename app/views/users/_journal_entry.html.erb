@@ -11,8 +11,12 @@
   <div class="underline"></div>
   <p class="latest-journal-entries-date"><%= post.created_at.strftime("%x %-I:%M %p") %></p>
   <p class="latest-journal-entries-text"><%= post.content.truncate(30) %></p>
-  <%= link_to journal_post_path(post.journal, post.id) do %>
-    <button class="button-white">Read</button>
-  <% end %>
-  <button class="button-secondary" data-toggle="modal" data-target="#modal-delete">Delete</button>
+  <div style="display: flex;">
+    <%= link_to journal_post_path(post.journal, post.id) do %>
+      <button class="button-default-transparent" style="margin-right: 1vw">Read</button>
+    <% end %>
+    <button class="button-secondary" style="margin-right: 1vw" data-toggle="modal" data-target="#modal-delete">
+      Delete
+    </button>
+  </div>
 </div>
