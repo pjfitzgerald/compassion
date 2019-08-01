@@ -24,7 +24,9 @@
 
 .login-container, .sign-up-container, .forgot-container {
   display: flex;
+  width: 100%;
   height: 100%;
+  background: radial-gradient($primary-color, $primary-color-dark);
 }
 
 .login-form form, .forgot-form form {
@@ -38,13 +40,13 @@
 .login-form, .forgot-form {
   display: flex;
   height: 100vh;
-  width: 55%;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   align-items: center;
   align-content: center;
-  background: white;
+  background: transparent;
 }
 
 .login-container h2, .signup-container h2, .forgot-container h2 {
@@ -180,12 +182,12 @@ abbr[title="required"] {
 .copyright-tag {
   position: absolute;
   bottom: 16px;
-  color: #939393;
-  right: 19%;
+  color: white;
+  right: 42%;
 }
 
 .login-form a, .signup-form a, .forgot-form a {
-  color: #2FC7FF;
+  color: white;
 }
 
 .form-actions input {
@@ -204,8 +206,10 @@ abbr[title="required"] {
 
 
 .signup-container h2,
+.login-form h2,
+.login-form p,
 .signup-container p {
-  color: $primary-color-dark !important;
+  color: white;
 }
 
 
