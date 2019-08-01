@@ -127,6 +127,7 @@ abbr[title="required"] {
   justify-content: center;
   align-content: center;
   align-items: center;
+
 }
 
 .signup-btn {
@@ -193,6 +194,12 @@ abbr[title="required"] {
 
 .forgot-form .email label {
   font-size: 24px;
+}
+
+.signup-form select {
+  // align-content: center;
+  padding: 20px;
+  height: 26px;
 }
 
 
