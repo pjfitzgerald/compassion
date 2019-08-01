@@ -15,6 +15,12 @@
     <%= render "topbar" %>
     <!-- QUESTION-HEADER: app/views/users/_questionbox.html.erb -->
     <%= render "questionbox" %>
+    <!-- link to new chat -->
+    <div class="new-chat-questionbox">
+      <%= link_to new_chat_path(id: current_user.id) do %>
+        <button class="button-primary big-chat"> Chat now ! </button>
+      <% end %>
+    </div>
     <!-- ONGOING: app/views/users/_ongoing.html.erb -->
     <%= render "ongoing" %>
     <!-- JOURNAL: app/views/users/_journal.html.erb -->
