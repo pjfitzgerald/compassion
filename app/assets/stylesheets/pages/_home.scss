@@ -4,6 +4,10 @@
   min-height:  100vh;
 }
 
+.question-about button {
+  color: $primary-color-dark !important;
+}
+
 .landing {
   display: flex;
   color: #F4F4F4;
