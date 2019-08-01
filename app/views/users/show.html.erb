@@ -20,6 +20,10 @@
     <!-- JOURNAL: app/views/users/_journal.html.erb -->
     <%= render "journal" %>
 
+    <% @chatrooms.each do |chatroom| %>
+      <%= render "shared/modal_delete_chat", chatroom: chatroom %>
+    <% end %>
+
     <div class="text-container">
       <h1>Talk to someone</h1>
       <p>There are currently <strong><%= @user_count %></strong> people online. I bet they all would like to talk to you!<br>Start a new chat and see what a new conversation can bring you.</p>

@@ -47,7 +47,7 @@ class ChatroomsController < ApplicationController
 
   def destroy
     @chatrooms.match.destroy
-    redirect_to current_user
+    redirect_back(fallback_location: root_path)
   end
 
   private

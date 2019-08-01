@@ -38,7 +38,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
     flash[:notice] = "Deleted your post!"
-    redirect_to user_path(current_user)
+    redirect_back(fallback_location: root_path)
   end
 
   private
