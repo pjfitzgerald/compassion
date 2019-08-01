@@ -4,7 +4,7 @@
       <%= @user.profiles.last.adjective.capitalize %> <%= @user.profiles.last.animal %>
     </h1>
     <div class="toggleswitch">
-      <p class="toggle-text">Toggle Searching!</p>
+      <p class="toggle-text">Available</p>
       <label class="switch">
         <input class="checkbox" type="checkbox" <%= "checked" if @user.searching %> data-searching="<%= @user.searching %>">
         <span class="slider round"></span>

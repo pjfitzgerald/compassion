@@ -33,10 +33,10 @@
       <%= f.hidden_field :profileadj, value: @profile.adjective %>
       <%= f.hidden_field :profiledesc, value: @profile.description %>
       <%= f.hidden_field :profileimg, value: "avatars/#{@profile.animal.downcase}" %>
-      <%= f.submit :submit, value: "continue", class: "button-default-transparent" %>
+      <%= f.submit :submit, value: "Continue", class: "button-default-transparent" %>
       <% end %>
       <%= link_to do %>
-      <button class="button-secondary">Refresh</button>
+      <button class="button-secondary">Choose Another</button>
       <% end %>
     </div>
   </div>
