@@ -5,6 +5,7 @@
 
 <div class="profile-container">
   <h1 class="profile-title">Choose your profile</h1>
+  <h5 class="profile-subheading">Add personality to your profile while staying anonymous!</h5>
   <div class="profile-button-abort">
     <% if current_user.profiles.last.present? %>
       <%= link_to user_path(current_user) do %>
