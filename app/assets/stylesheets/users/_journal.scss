@@ -1,7 +1,7 @@
   .journal-container {
     width: 100%;
     display: flex;
-    background: radial-gradient(#9fd4a0, #7db37f);
+    background: radial-gradient($primary-color, $primary-color-dark);
     padding: 80px;
     margin-top: 100px;
   }
@@ -42,7 +42,7 @@
 
   .new-journal-entry-bottom .form-group input {
     background: rgba(255,255,255,.8);
-    border: 1px solid #8AC48C;
+    // border: 1px solid #8AC48C;
     height: 40px;
     border-radius: 15px;
     padding-left: 10px;
@@ -100,7 +100,7 @@
     height: 450px;
     width: 100%;
     overflow-y: scroll;
-    background: linear-gradient(rgba(80,150,80,.25), rgba(159,212,160,1), rgba(80,150,80,.25));
+    background: linear-gradient(#4bbad6, #4bbad6, #4bbad6);
   }
 
   .latest-journal-entries-container h2 {
