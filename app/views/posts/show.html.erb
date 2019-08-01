@@ -1,71 +1,4 @@
-<style> 
 
-.journal-container-show {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    background: #F7F7F7;
-    padding: 50px;
-    padding-left: 80px;
-
-    /*margin-top: 100px;*/
-  }
-
-  .latest-journal-entries-card-show {
-    margin-left: 70px;
-    margin-right: 0px;
-    margin-top:;
-    margin-bottom: 20px;
-    padding: 20px;
-    width: 75%;
-    box-shadow: 1px 1px 1px 1px gray;
-    border-radius: 12px;
-    background-color: #F7F7F7;
-    /*background: radial-gradient(#9fd4a0, #7db37f);*/
-    display: flex;
-    flex-direction: column;
-    /*justify-content: center;*/
-    max-width: 650px;
-    margin-bottom: auto;
-  }
-
-  .latest-journal-entries-title-show {
-    width: 100%;
-  }
-
-
-  .latest-journal-entries-date-show {
-    color: black;
-    font-weight: bold;
-    margin-top: 2.5px;
-    margin-bottom: 0px;
-    border-bottom: solid 1px #ddd ;
-  }
-
-  .latest-journal-entries-text-show {
-    color: #333;
-    margin-top: 10px;
-    width: 100%;
-    border-bottom: solid 1px #ddd;
-  }
-
-  .button-secondary-journal-show {
-  width: 100%;
-  height: 40px;
-  background: #D29393;
-  color: white;
-  border-radius: 10px;
-  outline: none;
-  border: none;
-  transition: background .25s;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-</style>
 
 <%= render "shared/sidebar" %>
 <div class="journal-container-show">
@@ -74,7 +7,7 @@
       <h5> <%= @post.title %> </h5>
     </div>
     <div class="latest-journal-entries-date-show">
-      <p> 
+      <p>
         <%= @post.created_at.strftime("%x %-I:%M %p") %>
       </p>
     </div>
@@ -84,6 +17,9 @@
     <%= link_to journal_posts_path do %>
         <button class="button-secondary-journal-show">Back</button>
     <% end %>
+  </div>
+  <div class="post-show-image">
+    <%= image_tag "journal" %>
   </div>
 </div>
 
