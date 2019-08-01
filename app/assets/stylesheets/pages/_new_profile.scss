@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(#9fd4a0, #6f9e70);
+  background: radial-gradient($primary-color, $primary-color-dark);
 }
 
 .profile-title {
@@ -97,6 +97,7 @@
   justify-content: center;
   align-items: center;
   background: $secondary-color;
+  color: white;
   border: 3px solid white;
   border-radius: 100%;
   font-size: 1em;
