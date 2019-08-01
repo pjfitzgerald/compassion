@@ -85,7 +85,15 @@ for (let i = 0; i < chatTextAreaUser.length; i++) {
   })
 };
 
+// ONCLICK [ENTER] - ENTER TO SUBMIT MESSAGE
+let myForm = document.querySelector(".new_message");
+let inputOkay = document.querySelector(".chat-message-box");
 
+inputOkay.addEventListener("keydown", (event) => {
+  if (event.shiftKey === false && event.keyCode === 13 ) {
+    document.querySelector(".message-submit").click();
+  };
+});
 
 
 // ONCLICK TEXTAREA - EXPAND MESSAGE BOX
@@ -99,25 +107,15 @@ if (chatTextArea) {
 };
 
 // MINIFY TEXTAREA
-// let chatBody = document.querySelectorAll(".body");
-// if (chatTextArea) {
-//   chatTextArea.addEventListener("click", (event) => {
-//     if (event.target != chatTextArea) {
-//       return;
-//     } else {
+// let chatBody = document.querySelectorAll("*:not(.chat-message-box)"), p;
+// for (let p = 0; p < chatBody.length; p++) {
+//   if (chatBody[p]) {
+//     chatBody[p].addEventListener("click", (event) => {
+//       console.log(event);
 //       minifyTextarea();
-//     }
-//   })
+//     });
+//   };
 // };
 
-// ONCLICK [ENTER] - ENTER TO SUBMIT MESSAGE
-let myForm = document.querySelector(".new_message");
-let inputOkay = document.querySelector(".chat-message-box");
 
-inputOkay.addEventListener("keydown", (event) => {
-  if (event.shiftKey === false && event.keyCode === 13 ) {
-    document.querySelector(".message-submit").click();
-    inputOkay.value = "";
-  };
-});
 
