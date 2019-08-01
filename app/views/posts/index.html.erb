@@ -1,14 +1,16 @@
 <%= render "shared/sidebar" %>
 <div style="min-height: 100vh;"class="dashboard-body">
   <div class="white-box-header">
-    <h4>Your Journal</h4>
+    <h2>Your Journal</h2>
   </div>
   <div class="post-index-container">
-    <div class="new-post-container">
-      <%= render "new_post" %>
-    </div>
-    <div>
-      <h4>Previous Posts</h4>
+    <div class="new-post-top">
+      <div>
+        <h2>Previous Entries</h2>
+      </div>
+      <div class="new-post-container">
+        <%= render "new_post" %>
+      </div>
     </div>
       <div class="journal-container-index">
       <% unless current_user.journal.posts.empty? %>

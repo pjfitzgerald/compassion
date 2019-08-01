@@ -1,12 +1,12 @@
 <div class="new-journal-container">
   <div class="new-journal-entry-index">
+    <h5>Add a New Journal Entry</h5>
     <div class="new-journal-entry-index-bottom">
-      <h5>Add a New Journal Entry</h5>
       <%= simple_form_for ([@journal, @post]) do |f| %>
-        <%= f.input :title, class: "input label", label: false, placeholder:"Title" %>
-        <%= f.text_area :content, class: "input text-area", placeholder: "Start a new journal entry!" %>
-        <br><br><br>
-        <%= f.submit :submit, class: "button-grey" %>
+        <%= f.input :title, class: "input label new-post-title", label: false, placeholder:"Title", input_html: { autocomplete: 'off' } %>
+        <%= f.text_area :content, class: "input text-area", placeholder: "Start a new journal entry!", input_html: { autocomplete: 'off' } %>
+        <br><br>
+        <%= f.submit :Save, class: "button-grey" %>
       <% end %>
     </div>
   </div>

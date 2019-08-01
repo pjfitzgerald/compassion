@@ -1,8 +1,17 @@
 .new-journal-container {
   display: flex;
-  justify-content: center;
   width: 100%;
-  align-content: center;
+}
+
+.new-post-top {
+ display: flex;
+ position: relative;
+ padding-left: 300px;
+ align-items: center;
+ padding-bottom: 50px;
+ width: 100%;
+ height: 650px;
+ max-height: 100vh;
 }
 
 .white-box-header {
@@ -11,17 +20,23 @@
   height: 7vh;
 }
 
-.white-box-header h4 {
+.white-box-header h2  {
   position: absolute;
   left: 18px;
   bottom: 0;
   color: $primary-color;
 }
 
+.post-index-container h2 {
+  position: absolute;
+  color: white;
+  left: 5px;
+  bottom: 0;
+}
+
 
 .new-journal-entry-index-bottom {
   display: flex;
-  background: blue;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -29,20 +44,31 @@
 }
 
 
-.new-journal-entry-index-bottom input{
-  width: 200px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
+
+.new-journal-entry-index-bottom input {
+  width: 300px;
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
 
-.new-journal-entry-index-bottom input:focus {
-  width: 350px;
+.new-journal-entry-index-bottom input:focus, {
+  width: 500px;
 }
+
 
 .new-journal-entry-index-bottom textarea {
-  width: 200px;
-  height: 200px;
+  width: 500px;
+  height: 300px;
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
+
+.new-journal-entry-index-bottom textarea:focus, {
+  width: 600px;
+  height: 400px;
+}
+
+
 
 
 .new-journal-entry-index {
@@ -66,8 +92,11 @@
   min-width: 45%;
 }
 
-.new-journal-entry-index-bottom h5 {
+.new-journal-entry-index h5 {
   color: white;
+  padding-bottom: 10px;
+  border-bottom: 1px white solid;
+  width: 220px;
 }
 
 .new-journal-entry-index-bottom .form-group {
@@ -222,6 +251,7 @@ align-items: center;
 
 .post-index-container {
   display: flex;
+  position: relative;
   background: radial-gradient(#9fd4a0, #7db37f);
   flex-direction: column;
   justify-content: center;
@@ -234,11 +264,6 @@ align-items: center;
   padding-bottom: 0px;
 }
 
-.post-index-container h4 {
-  padding: 20px;
-  color: white;
-  padding-bottom: 0px;
-}
 
 
 .new-post-container {
