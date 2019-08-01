@@ -83,12 +83,12 @@
 
 
 .about-card i, .about-card i, .about-card h4 {
-  color: #93D295;
+  color: $primary-color-dark;
 }
 
 
 .landing-questions {
-  background: #93D295;
+  background: radial-gradient($primary-color, $primary-color-dark);
   display: flex;
   justify-content: center;
   height: 80vh;
@@ -102,7 +102,6 @@
   padding: 60px;
   margin-top: 60px;
 }
-
 .question-about button {
   background: #F4F4F4;
   height: 40px;
@@ -112,13 +111,12 @@
   color: #93D295;
 }
 
-
 .question-about h3, .question-card h3 {
   color: #F4F4F4;
 }
 
 .question-card {
-  background: #7AB97C;
+  background: rgba(33, 147, 176, .5);
   display: flex;
   flex-direction: column;
   width: 50vw;
@@ -136,10 +134,6 @@
   width: 30vw;
 }
 
-.question-submit {
-
-}
-
 .question-icon {
   position: absolute;
   display: flex;
@@ -155,9 +149,9 @@
 }
 
 .home-question input {
-  border: .5px solid #F4F4F4;
-  background: #6EAD70;
-  color: #F4F4F4;
+  border: .5px solid white;
+  background: rgba(33, 147, 176, .5);
+  color: white;
   padding: 10px;
   border-radius: 20px;
 }
@@ -219,18 +213,6 @@
   width: 100px;
 }
 
-.kiwi {
-  background: rgb(35, 153, 143);
-}
-
-.hippo {
-  background: rgb(230, 155, 25);
-}
-
-.dragon {
-  background: rgb(45, 156, 235);
-}
-
 .user-card-top {
   display: flex;
   align-items: center;
@@ -243,20 +225,6 @@
   border-top-right-radius: 16px;
 }
 
-
-.home-card-buttons {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 17vw;
-  height: 8vh;
-  border-left: 2px solid #93D295;
-  border-bottom: 2px solid #93D295;
-  border-right: 2px solid #93D295;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
-
 .home-card-content {
   display: flex;
   text-align: left;
@@ -266,28 +234,6 @@
   padding: 25px 7px 10px;
   border: 2px solid #93D295;
 }
-
-.home-card-buttons button {
-  color: #F4F4F4;
-  border: none;
-  border-radius: 5px;
-  height: 4vh;
-  width: 6vw;
-  box-shadow: 1px 1px 3px rgba(0,0,0,.2);
-}
-
-.continue {
-  background: #93D295;
-}
-
-.end {
-  background: #D29393;
-}
-
-.home-card-content p {
-  color: #939393;
-}
-
 
 .dot {
   cursor: pointer;
