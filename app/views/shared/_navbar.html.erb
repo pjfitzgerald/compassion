@@ -14,12 +14,20 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Dashboard", user_path(current_user), class: "nav-link button-default-transparent" %>
+        <% if current_user.profiles.last.nil? %>
+          <div class="uselessredirect">
+            <p>Click me! <i class="fas fa-long-arrow-alt-right"></i></p>
+          </div>
+        <% else %>
+          <li class="nav-item active">
+            <%= link_to "Dashboard", user_path(current_user), class: "nav-link button-default-transparent" %>
+        <% end %>
         </li>
         <li class="nav-item dropdown">
-          <% if current_user.profiles.last.empty? %>
-            <%= image_tag "avatars/bear.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% if current_user.profiles.last.nil? %>
+            <%= link_to profile_choose_path(current_user) do %>
+              <%= image_tag "avatars/bear.png", class: "avatar dropdown-toggle" %>
+            <% end %>
           <% else %>
             <%= image_tag "avatars/#{@user.profiles.last.animal.downcase}.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
