@@ -76,7 +76,6 @@ class UsersController < ApplicationController
     # If user is answering daily questions
     elsif params[:user][:dailyanswerone]
       if params[:user][:d_answer_one] == ""
-        raise
         flash[:notice] = "Please submit an answer"
       else
         @user.update(d_answer_one: params[:user][:d_answer_one])
