@@ -65,8 +65,8 @@
 }
 
 .new-journal-entry-index-bottom textarea:focus, {
-  width: 600px;
-  height: 400px;
+  width: 800px;
+  height: 350px;
 }
 
 
@@ -226,16 +226,16 @@
   margin-top: 10px;
   margin-bottom: 20px;
   padding: 20px;
-  width: 75%;
+  width: 50%;
+  max-width: 4000px;
   box-shadow: 0px 3px 6px rgba(0,0,0,0.4);
   border-radius: 12px;
-  border: 1px solid #93d295;
+  border: 1px solid $primary-color-dark;
   background-color: #F4F4F4;
   /*background: radial-gradient(#9fd4a0, #7db37f);*/
   display: flex;
   flex-direction: column;
   /*justify-content: center;*/
-  max-width: 650px;
 }
 
 .latest-journal-entries-card-index h5 {
