@@ -11,6 +11,11 @@
     padding-bottom: 0px;     
   }
 
+  .post-index-container h4 {
+    padding: 20px;
+    padding-bottom: 0px;     
+  }
+
 
   .new-post-container {
     margin: 20px;
@@ -21,7 +26,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    background: #F7F7F7;
+    background: #F4F4F4;
     padding: 50px;
     padding-left: 80px;
 
@@ -37,7 +42,7 @@
     width: 75%;
     box-shadow: 1px 1px 1px 1px gray;
     border-radius: 12px;
-    background-color: #F7F7F7;
+    background-color: #F4F4F4;
     /*background: radial-gradient(#9fd4a0, #7db37f);*/
     display: flex;
     flex-direction: column;
@@ -107,6 +112,7 @@
     <div class="new-post-container">
       <%= render "new_post" %>
     </div>
+    <h4>Previous Posts</h4>
     <div class="journal-container-index">
       <% @posts.reverse.each do |post| %>
         <div class="latest-journal-entries-card-index">
