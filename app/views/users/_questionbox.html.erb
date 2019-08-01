@@ -20,11 +20,11 @@
     </div>
     <h1>
       <% if @user.d_answer_one.empty? %>
-        <h4>Question 1/3</h4> <h1><%= @questions[0] %></h1>
+        <h4>Daily Question 1/3</h4> <h1><%= @questions[0] %></h1>
       <% elsif @user.d_answer_two.empty? && @user.d_answer_one != "" %>
-        <h4>Question 2/3</h4> <h1><%= @questions[1] %></h1>
+        <h4>Daily Question 2/3</h4> <h1><%= @questions[1] %></h1>
       <% elsif @user.d_answer_three.empty? && @user.d_answer_two != "" %>
-        <h4>Question 3/3</h4> <h1><%= @questions[2] %></h1>
+        <h4>Daily Question 3/3</h4> <h1><%= @questions[2] %></h1>
       <% else %>
           <br>
           <br>
