@@ -14,6 +14,8 @@
       <%= f.input :d_answer_three, label: false %>
       <%= f.submit :submit, style: "display: none;"%>
     <% end %>
-    <button class="button-default-transparent">Start new chat</button>
+    <%= link_to new_chat_path(id: current_user.id) do %>
+        <button class="button-default-transparent">Start new chat</button>
+    <% end %>
   </div>
 </div>
