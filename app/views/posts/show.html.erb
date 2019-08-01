@@ -1,12 +1,17 @@
-
-
 <%= render "shared/sidebar" %>
-<div class="dashboard-body">
+<div class="dashboard-body bodies">
   <div class="journal-container-show">
-    <%= render "shared/post_card" %>
+    <div class="journal-container-show-content">
+      <div class="journal-content-container">
+        <%= render "shared/post_card" %>
+      </div>
+    </div>
     <div class="post-show-image">
       <%= image_tag "journal" %>
     </div>
   </div>
+  <div class="pencil"></div>
+  <div class="footer-container-journal">
+    <%= render "shared/footer" %>
+  </div>
 </div>
-<%= render "shared/footer" %>
