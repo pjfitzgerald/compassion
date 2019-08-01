@@ -73,31 +73,13 @@
 
 
 
-.login-singup {
+.login-signup {
   display: flex;
-  max-width: 40vw;
+  max-width: 50vw;
 }
 
-
-.login {
-  background: #93D295;
-  padding: 10px 50px 10px 50px;
-  color: white;
-  border-radius: 5px;
-  border: none;
-}
-
-.signup a, .login a {
-  color: white;
-}
-
-.signup {
-  background: #D29393;
-  margin-left: 50px;
-  padding: 10px 50px 10px 50px;
-  color: white;
-  border-radius: 5px;
-  border: none;
+.login-signup button {
+  margin-right: 30px;
 }
 
 .about-card i, .about-card i, .about-card h4 {
@@ -324,7 +306,7 @@
 }
 
 .caret:hover {
-  color: rgba(26, 66, 21, .8);
+  color: rgba(33, 147, 176, .8);
 }
 
 .banner {
