@@ -93,11 +93,11 @@
   min-width: 45%;
 }
 
-.new-journal-entry-index h5 {
+.new-journal-entry-index h3 {
   color: white;
   padding-bottom: 10px;
   border-bottom: 1px white solid;
-  width: 220px;
+  width: 310px;
 }
 
 .new-journal-entry-index-bottom .form-group {
@@ -114,7 +114,7 @@
 
 .new-journal-entry-index-bottom .form-group input {
   background: rgba(255,255,255,.8);
-  border: 1px solid #8AC48C;
+  border: 2px solid $primary-color-dark;
   height: 40px;
   border-radius: 15px;
   padding-left: 10px;
@@ -126,9 +126,7 @@
   color: #AAA;
 }
 
-.new-journal-entry-index-bottom .form-group input:focus {
-  outline: none;
-}
+
 
 .label,
 .add-photo {

@@ -1,27 +1,12 @@
 
 
 <%= render "shared/sidebar" %>
-<div class="journal-container-show">
-  <div class="latest-journal-entries-card-show">
-    <div class="latest-journal-entries-title-show">
-      <h5> <%= @post.title %> </h5>
+<div class="dashboard-body">
+  <div class="journal-container-show">
+    <%= render "shared/post_card" %>
+    <div class="post-show-image">
+      <%= image_tag "journal" %>
     </div>
-    <div class="latest-journal-entries-date-show">
-      <p>
-        <%= @post.created_at.strftime("%x %-I:%M %p") %>
-      </p>
-    </div>
-    <div class="latest-journal-entries-text-show">
-      <p> <%= @post.content %> </p>
-    </div>
-    <%= link_to journal_posts_path do %>
-        <button class="button-secondary-journal-show">Back</button>
-    <% end %>
-  </div>
-  <div class="post-show-image">
-    <%= image_tag "journal" %>
   </div>
 </div>
-
-
 <%= render "shared/footer" %>
