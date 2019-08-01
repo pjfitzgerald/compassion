@@ -7,7 +7,7 @@
 </div> -->
 
 <div class="latest-journal-entries">
-  <h5><%= post.title %></h5>
+  <h5><%= post.title.truncate(30) %></h5>
   <div class="underline"></div>
   <p class="latest-journal-entries-date"><%= post.created_at.strftime("%x %-I:%M %p") %></p>
   <p class="latest-journal-entries-text"><%= post.content.truncate(30) %></p>

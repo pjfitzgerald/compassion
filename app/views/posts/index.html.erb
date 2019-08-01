@@ -1,5 +1,5 @@
 <%= render "shared/sidebar" %>
-<div style="min-height: 100vh;"class="dashboard-body">
+<div class="dashboard-body">
   <div class="white-box-header">
     <h2>Your Journal</h2>
   </div>
@@ -19,7 +19,7 @@
           <div class="latest-journal-entries-card-index">
             <div class="latest-journal-entries-index">
               <h5>
-                <%= post.title %>
+                <%= post.title.truncate(50) %>
               </h5>
               <p class="latest-journal-entries-date-index">
                 <%= post.created_at.strftime("%x %-I:%M %p") %>
