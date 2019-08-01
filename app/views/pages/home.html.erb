@@ -9,10 +9,10 @@
       <% unless current_user %>
         <div class="login-signup">
           <%= link_to new_user_session_path do %>
-            <button class="login">Login</button>
+            <button class="button-primary">Login</button>
           <% end %>
           <%= link_to new_user_registration_path do %>
-            <button class="signup">Signup</button>
+            <button class="button-secondary">Signup</button>
           <% end %>
         </div>
       <% end %>
