@@ -31,7 +31,7 @@
   display: flex;
   justify-content: center;
   border-radius: 15px 15px 0px 0px;
-  background-color: $primary-color;
+  background-color: $primary-color-dark;
   color: white;
   height: 55px;
   transition: .25s;
@@ -207,8 +207,8 @@
   font-size: 16px;
   background-color: #FFF;
   padding: 20px;
-  border-right: 2px solid $primary-color;
-  border-left: 2px solid $primary-color;
+  border-right: 2px solid $primary-color-dark;
+  border-left: 2px solid $primary-color-dark;
   min-height: calc(55vh - 70px - 45px - 61px - 30px);
   max-height: calc(95vh - 70px - 45px - 61px - 30px);
   overflow: scroll;
@@ -223,13 +223,14 @@
 
 // MESSAGE CONTENT
 .message-content {
-  background-color: #F7F7F7;
+  background-color: $primary-color;
   line-height: 27.5px;
-  color: #4D4D4D;
+  color: #222;
   border-radius: 0px 15px 15px 15px;
   margin: 10px 10px;
   max-width: 70%;
   padding: 5px 20px 5px 20px;
+  font-weight: 100;
 }
 
 // TEXT
@@ -241,7 +242,7 @@
 
 // TIME
 .chatroom-message-time {
-  color: #9C9CAB;
+  color: $primary-color-dark;
   position: relative;
   margin-top: -30px;
   font-size: 0.8em;
@@ -292,9 +293,9 @@
   padding: 20px 20px;
   border-radius: 0px 0px 15px 15px;
   background-color: white;
-  border-left: 2px solid $primary-color;
-  border-right: 2px solid $primary-color;
-  border-bottom: 2px solid $primary-color;
+  border-left: 2px solid $primary-color-dark;
+  border-right: 2px solid $primary-color-dark;
+  border-bottom: 2px solid $primary-color-dark;
 }
 
 // TEXT INPUT
@@ -302,7 +303,7 @@ textarea {
   padding: 5px 10px;
   width: 100%;
   resize: none;
-  border: 2px solid $primary-color;
+  border: 2px solid $primary-color-dark;
   height: 40px;
   border-radius: 10px;
   box-shadow: none;
@@ -314,7 +315,7 @@ textarea {
 }
 
 textarea::placeholder {
-  color: $primary-color;
+  color: $primary-color-dark;
 }
 
 // TEXT INPUT - AFTER CLICK
