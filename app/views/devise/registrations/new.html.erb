@@ -1,9 +1,10 @@
-<div class="signup-container">
-  <img src="https://res.cloudinary.com/db3hrutzq/image/upload/v1563898761/Compassion%20images/Rhino_cn0xve.png" alt="n/a">
-  <div class="close-button-container">
+<div class="sign-up-container">
+<!--   <img src="https://res.cloudinary.com/db3hrutzq/image/upload/v1563898761/Compassion%20images/Rhino_cn0xve.png" alt="n/a">
+ -->
+ <div class="close-button-container">
     <%= link_to root_path do %>
-    <button class="button-close" style="color: white;">
-      <i class="fas fa-arrow-left" style="transform: rotate(-45deg);"></i>
+    <button class="back-btn" style="color: white;">
+      <i class="fas fa-arrow-left"></i>
     </button>
     <% end %>
   </div>
@@ -29,9 +30,7 @@
         <%= f.input :gender, hint: "optional", collection: [ "Female", "Male"], required: true %>
       </div>
       <br>
-      <div class="form-actions">
-        <%= f.button :submit, "Sign up", class: "button-primary" %>
-      </div>
+      <%= f.button :submit, "Sign up", class: "button-primary" %>
     <% end %>
     <br>
     <%= render "devise/shared/links" %>
