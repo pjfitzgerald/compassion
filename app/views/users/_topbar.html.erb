@@ -4,7 +4,8 @@
       <%= @user.profiles.last.adjective.capitalize %> <%= @user.profiles.last.animal %>
     </h1>
     <div class="toggleswitch">
-      <p class="toggle-text">Available</p>
+      <p class="toggle-text" style="color: #D29393;">Unvailable</p>
+      <p class="toggle-text text-hide" style="color: #2193b0;">Available</p>
       <label class="switch">
         <input class="checkbox" type="checkbox" <%= "checked" if @user.searching %> data-searching="<%= @user.searching %>">
         <span class="slider round"></span>
@@ -40,6 +41,7 @@
 
 <script>
   slider = document.querySelector(".slider");
+  available = document.querySelectorAll(".toggle-text");
   checkbox = document.querySelector(".checkbox");
   railsToken = document.querySelector("meta[name=csrf-token]").content
   checkbox.addEventListener("click", (event) => {
@@ -53,7 +55,6 @@
         }
       })
     } else {
-      console.log("we re here")
         url = "/toggle_search?searching=true"
         fetch(url, {
           method: "PATCH",
@@ -64,11 +65,37 @@
     }
   });
 
+  if (document.querySelector(".checkbox").dataset.searching == "true") {
+    for (let i = 0; i < available.length; i++) {
+      available[1].classList.remove("text-hide");
+      available[0].classList.add("text-hide");
+    };
+  } else {
+    for (let i = 0; i < available.length; i++) {
+      available[0].classList.remove("text-hide");
+      available[1].classList.add("text-hide");
+    };
+  }
+
+
+  checkbox.addEventListener("click", (event) => {
+    for (let i = 0; i < available.length; i++) {
+      available[i].classList.toggle("text-hide");
+    };
+  });
+
+
+
+
 </script>
 
 
-
-
+<!--
+var chatHeaderH4 = document.querySelectorAll(".chat-header h4"), i;
+for (let i = 0; i < chatHeaderH4.length; i++) {
+  chatHeaderH4[i].classList.toggle("move-h4");
+};
+ -->
 
 
 
