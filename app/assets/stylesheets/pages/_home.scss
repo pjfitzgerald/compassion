@@ -12,11 +12,11 @@
   display: flex;
   color: #F4F4F4;
   width: 100%;
-  height: 80vh;
+  height: 60vh;
   background-image: image-url("home_elephant.png");
-  background-size: cover;
   padding: 100px;
   background-size: cover;
+  background-position: bottom left;
 }
 
 .landing h2, .landing-about h2,  {
