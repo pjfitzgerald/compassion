@@ -59,13 +59,25 @@
   align-self: center;
   width: 35vw;
   height: 20vh;
+}
 
+.about-top p {
+  margin-top: 20px;
+}
+
+.about-top h2 {
+  color: $primary-color-dark;
 }
 
 .about-cards {
   display: flex;
   justify-content: space-between;
   width: 80%;
+  margin-top: 50px;
+}
+
+.about-cards p {
+  margin-top: 20px;
 }
 
 .about-card {

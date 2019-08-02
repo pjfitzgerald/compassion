@@ -71,15 +71,24 @@
 .button-primary-bordered {
   width: 150px;
   height: 40px;
-  background: none;
-  color: $primary-color;
+  background: $primary-color-dark;
+  color: white;
   border-radius: 10px;
   outline: none;
-  border: 2px solid $primary-color-dark;
+  border: none;
   transition: background .25s;
+  border: 2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .button-primary:hover {
+  background: $primary-color;
+  color: white;
+}
+
+.button-primary-bordered:hover {
   background: $primary-color;
   color: white;
 }
