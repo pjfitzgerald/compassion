@@ -117,7 +117,9 @@
       <div class="swiper-pagination swiper-pagination-black"></div>
     </div>
   <% end %>
-
+  <% @other_rooms.each do |chatroom| %>
+    <%= render "shared/modal_delete_chat", chatroom: chatroom %>
+  <% end %>
   <%= render "shared/footer" %>
 
 </div><!-- EO .dashboard-body .bodies -->
