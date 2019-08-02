@@ -4,3 +4,30 @@
   right: 25px;
   z-index: 1000;
 }
+
+.alert-info {
+  background: rgba(33, 147, 176, .8);
+  color: white;
+  border: 3px solid white;
+  border-radius: 12px;
+  padding: 50px;
+  box-shadow: 0px 2px 3px rgba(0,0,0,.2);
+}
+
+.alert-warning {
+  background: rgba(210,147,147, .8);
+  color: white;
+  border: 3px solid white;
+  border-radius: 12px;
+  padding: 50px;
+  box-shadow: 0px 2px 3px rgba(0,0,0,.2);
+}
+
+.alert .close {
+  color: white;
+  transition: .25;
+}
+
+.alert .close:hover {
+  color: darkred;
+}
