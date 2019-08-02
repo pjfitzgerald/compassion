@@ -1,8 +1,10 @@
 <div class="login-container">
   <img src="https://res.cloudinary.com/db3hrutzq/image/upload/v1563898761/Compassion%20images/Rhino_cn0xve.png" alt="n/a">
-  <div class="back-btn">
+  <div class="close-button-container">
     <%= link_to root_path do %>
-      <i class="fas fa-arrow-left">  Back</i>
+    <button class="button-close" style="color: white;">
+      <i class="fas fa-arrow-left" style="transform: rotate(-45deg);"></i>
+    </button>
     <% end %>
   </div>
   <div class="login-form">
@@ -23,7 +25,7 @@
       </div>
       <br>
       <div class="form-actions">
-        <%= f.button :submit, "Log in", class: "login-btn" %>
+        <%= f.button :submit, "Log in", class: "button-primary" %>
       </div>
     <% end %>
     <br>
