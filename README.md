@@ -1,3 +1,3 @@
-A mutual support platform for people who are suffering.
+## A mutual support platform for people who are suffering.
 
 Currently in development.
