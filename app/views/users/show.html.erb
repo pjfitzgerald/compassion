@@ -22,7 +22,9 @@
       <% end %>
     </div>
     <!-- ONGOING: app/views/users/_ongoing.html.erb -->
-    <%= render "ongoing" %>
+    <% if current_user.matches.size > 0 %>
+      <%= render "ongoing" %>
+    <% end %>
     <!-- JOURNAL: app/views/users/_journal.html.erb -->
     <%= render "journal" %>
 
