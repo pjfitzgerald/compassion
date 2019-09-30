@@ -14,6 +14,13 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   after_create :create_journal
 
+  include PgSearch
+  pg_search_scope :search_by_partner,
+    against: :partner,
+    using: {
+      tsearch: { prefix: true }
+    }
+
   private
 
   def create_journal

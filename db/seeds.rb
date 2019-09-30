@@ -8,11 +8,11 @@
 # end
 
 puts "Cleaning up database"
+Journal.destroy_all
 User.destroy_all
 Match.destroy_all
 Chatroom.destroy_all
 Message.destroy_all
-Journal.destroy_all
 Post.destroy_all
 Profile.destroy_all
 puts "Creating new database"
@@ -20,23 +20,28 @@ puts "Creating new database"
 users = [
   {
     email: "batman@batman.com",
-    password: "batman"
+    password: "batman",
+    username: "batman"
   },
   {
     email: "superman@superman.com",
-    password: "superman"
+    password: "superman",
+    username: "superman"
   },
   {
     email: "spiderman@spiderman.com",
-    password: "spiderman"
+    password: "spiderman",
+    username: "spiderman"
   },
   {
     email: "ironman@ironman.com",
-    password: "ironman"
+    password: "ironman",
+    username: "ironman"
   },
   {
     email: "Wonderwoman@wonderwoman.com",
-    password: "wonderwoman"
+    password: "wonderwoman",
+    username: "wonderwoman"
   }]
 
 
