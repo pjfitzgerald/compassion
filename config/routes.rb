@@ -4,9 +4,14 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => '/sidekiq'
   end
   devise_for :users, controllers: { registrations: "registrations", sessions: "sessions" }
-  root to: 'pages#home'
+  
+  root to: 'pages#landing'
+  get "waitlist", to: 'pages#waitlist', as: :waitlist
+  
   resources :users
+  
   get "survey", to: "users#survey", as: :survey
+  
   resources :chatrooms, only: [:show, :destroy] do
     resources :messages, only: [:create]
   end

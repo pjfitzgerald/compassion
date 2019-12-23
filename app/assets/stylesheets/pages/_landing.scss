@@ -1,0 +1,43 @@
+
+
+.landing-action {
+  display: flex;
+  color: #F4F4F4;
+  width: 100%;
+  height: 60vh;
+  background-image: image-url("home_elephant.png");
+  padding: 100px;
+  background-size: cover;
+  background-position: bottom left;
+  
+}
+
+.welcome-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 500px;
+}
+
+.welcome-card button {
+  max-width: 40vw;
+}
+
+
+
+.test-class {
+  color: blue;
+}
+
+.landing-submit-form {
+  // border: 1px solid $primary-color;
+  border-color: $primary-color;
+}
+
+.landing-submit-btn {
+  background-color: $primary-color;
+}
+
+.home-container {
+  background-color: $primary-color;
+}
