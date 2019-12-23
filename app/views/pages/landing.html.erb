@@ -1,0 +1,301 @@
+<div class="home-container">
+  <div class="landing-action">
+    <div class="welcome-card">
+      <h2>We're better together</h2>
+      <br>
+      <h3>Join us on our journey to help cultivate a more compassionate world</h3>
+      <br>
+      <br>
+      <%= simple_form_for @email do |f| %>
+        <%= f.input :email, label: "Join the waitlist", class: "landing-submit-form", input_html: { style: "color: black" } %>
+        <%= f.submit :submit, class: "btn landing-submit-btn"  %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%#= render 'shared/footer' %>
+
+
+
+
+
+
+<%# below is inspo %>
+
+<%# 
+<head>
+  <link href="https://assets.website-files.com/5d1c19958da8421b84946137/css/community-home.9e6a420c1.css"
+    rel="stylesheet" type="text/css">
+</head>
+
+
+<body cz-shortcut-listen="true">
+  <div class="page-wrapper-home">
+    <div data-collapse="medium" data-animation="default" data-duration="600" data-doc-height="1" class="navbar-3 w-nav">
+      <div data-w-id="804f1662-0ba4-917f-d000-9412101ecf90" class="container-9 w-container">
+        <nav role="navigation" class="nav-menu-4 w-nav-menu">
+          <div class="div-block-206">
+            <div class="div-block-207">
+              <a href="/" class="nav-link-3 w-nav-link" style="max-width: 940px;">
+                home</a>
+              <a href="/about" class="nav-link-5 w-nav-link w--current" style="max-width: 940px;">
+                about</a>
+              <a href="/help" class="nav-link-5 w-nav-link" style="max-width: 940px;">
+                faq</a>
+              <a href="/blog" class="nav-link-5 w-nav-link" style="max-width: 940px;">
+                blog</a>
+              <a href="/help" class="nav-link-5 faqlinkmobile w-nav-link" style="max-width: 940px;">
+                faq</a>
+              <a href="/blog" class="bloglink w-nav-link" style="max-width: 940px;">
+                blog</a>
+              <a href="/waitlist" class="nav-link-2 w-nav-link" style="max-width: 940px;">
+                waitlist</a>
+            </div>
+          </div>
+        </nav>
+        <div class="menu-button-2 w-nav-button">
+          <a href="#" data-w-id="804f1662-0ba4-917f-d000-9412101ecf9d" class="hamburger-wrapper w-inline-block">
+            <div data-w-id="804f1662-0ba4-917f-d000-9412101ecf9e" class="burger-line"
+              style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+            </div>
+            <div data-w-id="804f1662-0ba4-917f-d000-9412101ecf9f" class="burger-line">
+            </div>
+            <div data-w-id="804f1662-0ba4-917f-d000-9412101ecfa0" class="burger-line"
+              style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="w-nav-overlay" data-wf-ignore="">
+      </div>
+    </div>
+    <div class="div-block-170">
+      <div class="notifytab-letter">
+        <a href="#" class="link-block-18 w-inline-block">
+          <div class="columns-22 w-row">
+            <div class="column-39 w-col w-col-2 w-col-small-2 w-col-tiny-2">
+            </div>
+            <div class="column-40 w-col w-col-10 w-col-small-10 w-col-tiny-10">
+              <div class="div-block-195">
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="notifytab">
+        <a href="#" class="link-block-18 w-inline-block">
+          <div class="columns-22 w-row">
+            <div class="column-39 w-col w-col-2 w-col-tiny-2 w-col-small-2">
+              <div class="div-block-193">
+                <img
+                  src="https://assets.website-files.com/5d1c19958da8421b84946137/5d1c199d2b2ad2606b455e7b_matt%20linkedin%20.jpeg"
+                  width="20" alt="" class="profileholder">
+              </div>
+            </div>
+            <div class="column-40 w-col w-col-10 w-col-tiny-10 w-col-small-10">
+              <div class="div-block-195">
+                <div class="text-block-49">
+                  Introducing Community</div>
+                <div class="text-block-50">
+                  A&nbsp;letter from our CEO</div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="div-block-154">
+        <div class="section-15">
+          <div class="div-block-153">
+            <div class="logowrap">
+              <a href="/" class="w-inline-block">
+                <img
+                  src="https://assets.website-files.com/5d1c19958da8421b84946137/5d66e3de357e2922cbf78439_community-logo-tm.png"
+                  width="120" alt="" class="image-54">
+              </a>
+            </div>
+            <div class="div-block-208">
+              <div class="text-block-54">
+                <strong>
+                  Community enables direct, meaningful communication between </strong>
+                <span class="text-span">
+                  <strong>
+                    community leaders</strong>
+                </span>
+                <strong>
+                  and their&nbsp;</strong>
+                <span class="text-span-2">
+                  <strong>
+                    community&nbsp;members.</strong>
+                </span>
+                <br>
+              </div>
+              <div class="div-block-194">
+                <img
+                  src="https://assets.website-files.com/5d167f1e2daf2f6f192d3fc7/5d167f1e2daf2ffc232d41ca_Comp%201_1.gif"
+                  alt="">
+              </div>
+              <div class="homev5maintext">
+                Imagine getting to know and interact with your audience as individuals—with names and&nbsp;faces,
+                interests and opinions, hometowns&nbsp;and&nbsp;pronouns. Imagine reaching every single one
+                of&nbsp;them. </div>
+              <div class="homev5maintext w-richtext">
+                <p>
+                  Imagine being social, without the conflicting commercial interests, toxicity, and <strong
+                    data-w-id="b45a289e-c5d6-1760-7e16-9e63a053527d">
+                    data privacy*</strong>
+                  issues of social&nbsp;media. <br>
+                  <br>
+                  Imagine speaking and responding authentically.<br>
+                  Imagine building deep and delightful relationships.<br>
+                  Imagine being truly seen and heard.<br>
+                  Imagine belonging.<br>
+                  Imagine&nbsp;Community.</p>
+              </div>
+              <div class="text-block-48">
+                *Your privacy is important. And it’s not for&nbsp;sale. <br>
+                ‍<br>
+                - We don't sell ads against communities. <br>
+                - We don't sell data to third parties. <br>
+                - We don't share Community Member data profiles with other Community Leaders.</div>
+            </div>
+            <a href="/waitlist" data-w-id="b45a289e-c5d6-1760-7e16-9e63a0535295" class="link-block-17 w-inline-block">
+              <div class="div-block-197">
+                <div class="requestlink-white-2">
+                  JOIN&nbsp;THE&nbsp;WAITLIST</div>
+              </div>
+            </a>
+            <div id="fullview" class="fullview">
+              <div id="w-node-9e63a053529a-9d0a7b51" class="fullview__item w-clearfix">
+                <h2 class="fullview__item-title">
+                  Heading</h2>
+                <a href="#" class="link-7">
+                  Text Link</a>
+              </div>
+              <div class="fullview__item w-clearfix">
+                <h2 class="fullview__item-title">
+                  Heading</h2>
+                <a href="#" class="link-7">
+                  Text Link</a>
+              </div>
+              <div class="fullview__item w-clearfix">
+                <h2 class="fullview__item-title">
+                  Heading</h2>
+                <a href="#" class="link-7">
+                  Text Link</a>
+              </div>
+              <a href="#" class="fullview__close w-button">
+                CLOSE</a>
+            </div>
+            <div class="text-block-57">
+              For media inquiries contact:&nbsp;media@community.com</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div data-collapse="small" data-animation="default" data-duration="400" class="navbar-4 w-nav">
+      <a href="#" class="w-nav-brand">
+      </a>
+      <nav role="navigation" class="nav-menu-5 w-nav-menu">
+        <div class="div-block-203">
+          <a href="/" data-w-id="b45a289e-c5d6-1760-7e16-9e63a05352b1" class="footerlinkblock-2 w-inline-block">
+            <div class="privacytext-2">
+              home</div>
+          </a>
+          <a href="/about" class="footerlinkblock-2 w-inline-block w--current">
+            <div class="privacytext-2">
+              about</div>
+          </a>
+          <a href="/blog" class="footerlinkblock-2 w-inline-block">
+            <div class="privacytext-2">
+              blog</div>
+          </a>
+          <a href="/help" class="footerlinkblock-2 bloghide w-inline-block">
+            <div class="privacytext-2">
+              faq</div>
+          </a>
+          <a href="/waitlist" class="footerlinkblock-2 w-inline-block">
+            <div class="privacytext-2">
+              waitlist</div>
+          </a>
+        </div>
+        <div class="div-block-204">
+          <a href="#" class="copyrightlinkblock-2 w-inline-block">
+            <div class="copyrighttext-2">
+              © 2019 community</div>
+          </a>
+          <div class="div-block-205">
+            <a href="/terms" class="termshomefooter-2 w-inline-block">
+              <div class="privacytext2-2">
+                terms</div>
+            </a>
+            <a href="/privacy" class="termshomefooter-2 w-inline-block">
+              <div class="privacytext2-2">
+                privacy</div>
+            </a>
+          </div>
+        </div>
+      </nav>
+      <div class="w-nav-overlay" data-wf-ignore="">
+      </div>
+    </div>
+    <div class="div-block-152">
+      <div class="div-block-155">
+        <div class="div-block-159">
+        </div>
+      </div>
+      <div class="div-block-151">
+        <a href="#" data-w-id="b45a289e-c5d6-1760-7e16-9e63a05352cc" class="footerlinkblock-2 w-inline-block">
+          <div class="privacytext-2">
+            home</div>
+        </a>
+        <a href="#" class="footerlinkblock-2 w-inline-block">
+          <div class="privacytext-2">
+            about</div>
+        </a>
+        <a href="#" class="footerlinkblock-2 w-inline-block">
+          <div class="privacytext-2">
+            blog</div>
+        </a>
+        <a href="/privacy" class="footerlinkblock-2 w-inline-block">
+          <div class="privacytext2-2">
+            privacy</div>
+        </a>
+        <a href="/terms" class="footerlinkblock-2 w-inline-block">
+          <div class="privacytext2-2">
+            terms</div>
+        </a>
+        <a href="#" class="footerlinkblock-2 w-inline-block">
+          <div class="copyrighttext-2">
+            © 2019 Community</div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js" type="text/javascript"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+  </script>
+  <script src="https://assets.website-files.com/5d1c19958da8421b84946137/js/community-home.7a0ee8704.js"
+    type="text/javascript">
+  </script>
+  <!--[if lte IE 9]>
+<script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js">
+</script>
+<![endif]-->
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ %>
