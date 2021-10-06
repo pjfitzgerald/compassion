@@ -57,7 +57,7 @@ GEM
     byebug (11.1.3)
     coderay (1.1.3)
     concurrent-ruby (1.1.6)
-    connection_pool (2.2.3)
+    connection_pool (2.2.5)
     crass (1.0.6)
     devise (4.7.2)
       bcrypt (~> 3.0)
@@ -161,7 +161,7 @@ GEM
       sprockets-rails
       tilt
     semantic_range (2.3.0)
-    sidekiq (6.1.0)
+    sidekiq (6.2.1)
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
       redis (>= 4.2.0)
